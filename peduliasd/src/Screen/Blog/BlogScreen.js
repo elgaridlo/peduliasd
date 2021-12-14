@@ -22,7 +22,7 @@ const BlogScreen = () => {
                     <div className="row gx-lg-8 gx-xl-12 gy-4 gy-lg-0">
                         <div className="col-lg-8 align-self-center">
                             <div className="blog-filter filter">
-                                <p>Cari Artikel: Makan Nasi</p>
+                                <p>Cari Artikel: Makan Nasi Dendeng</p>
                             </div>
 
                         </div>
