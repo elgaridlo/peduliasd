@@ -6,6 +6,7 @@ const connectDB = require('./config/db')
 const userRoute = require('./routers/userRoutes')
 const kidRoute = require('./routers/kidRoutes')
 const workshopRoute = require('./routers/workshopRoutes')
+const educationprogramRoute = require('./routers/educationProgramRoutes')
 const errorHandler = require('./controllers/errorController')
 const appError = require('./utils/appError')
 
@@ -21,12 +22,14 @@ app.use(express.json())
 app.use('/api/users', userRoute)
 app.use('/api/kid', kidRoute)
 app.use('/api/workshop', workshopRoute)
+app.use('/api/educationprogram', educationprogramRoute)
 
+app.use('/uploads', express.static(path.join(process.cwd(), '/uploads')))
 // const __dirname = path.resolve()
 if(process.env.NODE_ENV ==='production') {
-    app.use(express.static(path.join(__dirname, '/peduliasd/build')))
+    app.use(express.static(path.join(process.cwd(), '/peduliasd/build')))
 
-    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'peduliasd', 'build', 'index.html')))
+    app.get('*', (req, res) => res.sendFile(path.resolve(process.cwd(), 'peduliasd', 'build', 'index.html')))
 } else {
     app.get('/', (req, res) => {
         res.send('API is running...')

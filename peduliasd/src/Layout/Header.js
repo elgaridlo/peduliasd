@@ -36,7 +36,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg center-nav transparent navbar-light">
           <div className="container flex-lg-row flex-nowrap align-items-center">
             <div className="navbar-brand w-100">
-              <LinkContainer to="/" >
+              {/* <LinkContainer to="/" >
                 <Navbar.Brand>
                   <Image
                     src={'logoasd.png'}
@@ -44,11 +44,14 @@ const Header = () => {
                     alt=""
                   />
                 </Navbar.Brand>
-              </LinkContainer>
+              </LinkContainer> */}
+              <a href="/">
+                <img src="logoasd.png" srcSet="logoasd.png" alt="" />
+              </a>
             </div>
             <div className={`navbar-collapse offcanvas-nav ${showNav ? 'open': ''}`} >
               <div className="offcanvas-header d-lg-none d-xl-none">
-                <LinkContainer to="/" >
+                {/* <LinkContainer to="/" >
                   <Navbar.Brand >
                     <Image
                       src={'logoasd.png'}
@@ -57,7 +60,8 @@ const Header = () => {
                       width={"70px"}
                     />
                   </Navbar.Brand>
-                </LinkContainer>
+                </LinkContainer> */}
+                <a href="/"><img src="logoasd.png" srcSet="logoasd.png" alt="" /></a>
                 <button
                   type="button"
                   className="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
@@ -77,6 +81,7 @@ const Header = () => {
                 <li className="nav-item"><a className="nav-link" href="/program-edukasi">Program</a></li>
                 <li className="nav-item"><a className="nav-link" href="/artikel">Artikel</a></li>
                 <li className="nav-item"><a className="nav-link" href="/skrining">Tes Skrining</a></li>
+                <li className="nav-item"><a className="nav-link" href="/belanja">Belanja</a></li>
               </ul>
               {/* <ul className="navbar-nav">
                 <li className="nav-item">

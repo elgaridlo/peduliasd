@@ -15,6 +15,8 @@ import AddUserScreen from './Screen/Admin/AddUserScreen'
 import UserListScreen from './Screen/Admin/UserScreen'
 import UserByIdScreen from './Screen/Admin/UserByIdScreen'
 import { Container } from 'react-bootstrap'
+import BelanjaScreen from './Screen/Belanja/BelanjaScreen'
+import SkriningScreen from './Screen/Skrining/SkriningScreen'
 
 function App() {
   return (
@@ -28,7 +30,9 @@ function App() {
               <Route path="/tentang-kami" component={AboutUsScreen} exact />
               <Route path="/tentang-asd" component={AboutASDScreen} exact />
               <Route path="/program-edukasi" component={EducationProgramScreen} exact />
-              <Route path="/artikel" component={BlogScreen} exact />
+              <Route path="/artikel" component={BlogScreen} />
+              <Route path="/belanja" component={BelanjaScreen} />
+              <Route path="/skrining" component={SkriningScreen} />
               <Route path="/beranda" component={HomeScreen} exact />
               <Route path="/add-user" component={AddUserScreen} exact />
               <Route path="/user-list" component={UserListScreen} exact />
@@ -36,6 +40,11 @@ function App() {
               <Route path="/" component={HomeScreen} exact />
             </Switch>
         </main>
+        <div className="progress-wrap">
+          <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          </svg>
+        </div>
       </Router>
     </div>
   )
