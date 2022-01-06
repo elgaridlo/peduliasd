@@ -3,8 +3,12 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { userCreated, userLoginReducer, userProfileReducer } from './reducers/authReducers'
 import { userbyIdReducer, userlistReducer } from './reducers/userReducers'
+import { workshopStore } from './store/workshopStore'
+import { eduProgramStore } from './store/eduProgramStore'
 
 const reducer = combineReducers({
+    ...workshopStore,
+    ...eduProgramStore,
     userLogin: userLoginReducer,
     userDetail: userProfileReducer,
     addNewUser: userCreated,

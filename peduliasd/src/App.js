@@ -11,12 +11,13 @@ import AboutUsScreen from './Screen/About/AboutUsScreen'
 import AboutASDScreen from './Screen/About/AboutASDScreen'
 import EducationProgramScreen from './Screen/EducationProgram/EducationProgramScreen'
 import BlogScreen from './Screen/Blog/BlogScreen'
-import AddUserScreen from './Screen/Admin/AddUserScreen'
-import UserListScreen from './Screen/Admin/UserScreen'
-import UserByIdScreen from './Screen/Admin/UserByIdScreen'
+import AddUserScreen from './Screen/Admin/User/AddUserScreen'
+import UserListScreen from './Screen/Admin/User/UserScreen'
+import UserByIdScreen from './Screen/Admin/User/UserByIdScreen'
 import { Container } from 'react-bootstrap'
 import BelanjaScreen from './Screen/Belanja/BelanjaScreen'
 import SkriningScreen from './Screen/Skrining/SkriningScreen'
+import AdminScreen from './Screen/Admin/AdminScreen'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/skrining" component={SkriningScreen} />
               <Route path="/beranda" component={HomeScreen} exact />
               <Route path="/add-user" component={AddUserScreen} exact />
+              <Route path="/admin" component={AdminScreen} exact />
               <Route path="/user-list" component={UserListScreen} exact />
               <Route path="/user-detail/:id" component={UserByIdScreen} exact/>
               <Route path="/" component={HomeScreen} exact />

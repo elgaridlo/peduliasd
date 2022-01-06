@@ -173,6 +173,7 @@ const Header = () => {
                           <i className="uil uil-cog"></i>
                         </a>
                         <ul className="dropdown-menu">
+                          <li className="nav-item"><a className="dropdown-item" href="/admin">Admin</a></li>
                           <li className="nav-item"><a className="dropdown-item" href="/profil">Profile</a></li>
                           <li className="nav-item"><a className="dropdown-item" href="/" onClick={logoutHandler}>Logout</a></li>
                         </ul>

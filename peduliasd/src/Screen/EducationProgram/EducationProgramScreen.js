@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { eduListProgramAction } from '../../actions/eduProgramAction'
+import Loader from '../../utils/Components/Loader'
+import Message from '../../utils/Components/Message'
 
 const EducationProgramScreen = () => {
+
+    const dispatch = useDispatch()
+
+    const eduListProgram = useSelector((state) => state.eduListProgram)
+    const { loading, error, listEduProgram } = eduListProgram
+
+    useEffect(() => {
+        dispatch(eduListProgramAction())
+    },[])
+
     return (
         <>
             <section className="wrapper bg-light">
@@ -19,109 +33,29 @@ const EducationProgramScreen = () => {
 
                     <div className="grid grid-view projects-masonry">
                         <div className="row gx-md-8 gy-10 gy-md-13 isotope">
-                            <div className="project item col-md-6 col-xl-4 product">
-                                <figure className="lift rounded mb-6">
-                                    <a href="./single-project.html">
-                                        {' '}
-                                        <img src="/uploads/1.png" alt="" />
-                                    </a>
-                                </figure>
-                                <div className="project-details d-flex justify-content-center flex-column">
-                                    <div className="post-header">
-                                        <div className="post-category mb-2 text-yellow">
-                                            Coffee
+                            {loading ? (
+                                <div style={{paddingTop: '30px'}}>
+                                    <Loader/>
+                                </div>
+                            ) : error ? (
+                                <Message variant='danger'>{error}</Message>
+                            ): 
+                                listEduProgram && listEduProgram.map((item) => (
+                                    <div key={item._id} className="project item col-md-6 col-xl-4 product">
+                                        <figure className="lift rounded mb-6">
+                                                <img src={item.image} alt="" />
+                                        </figure>
+                                        <div className="project-details d-flex justify-content-center flex-column">
+                                            <div className="post-header">
+                                                <div className="post-category mb-2 text-yellow">
+                                                    {item.workshopType.description}
+                                                </div>
+                                                <h2 className="post-title h3">{item.title}</h2>
+                                            </div>
                                         </div>
-                                        <h2 className="post-title h3">Cras Fermentum Sem</h2>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div className="project item col-md-6 col-xl-4 workshop">
-                                <figure className="lift rounded mb-6">
-                                    <a href="./single-project2.html">
-                                        {' '}
-                                        <img src="./assets/img/photos/pd2.jpg" alt="" />
-                                    </a>
-                                </figure>
-                                <div className="project-details d-flex justify-content-center flex-column">
-                                    <div className="post-header">
-                                        <div className="post-category mb-2 text-red">
-                                            Stationary
-                                        </div>
-                                        <h2 className="post-title h3">Mollis Ipsum Mattis</h2>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="project item col-md-6 col-xl-4 still-life">
-                                <figure className="lift rounded mb-6">
-                                    <a href="./single-project3.html">
-                                        {' '}
-                                        <img src="./assets/img/photos/pd3.jpg" alt="" />
-                                    </a>
-                                </figure>
-                                <div className="project-details d-flex justify-content-center flex-column">
-                                    <div className="post-header">
-                                        <div className="post-category mb-2 text-orange">
-                                            Branding
-                                        </div>
-                                        <h2 className="post-title h3">Ipsum Ultricies Cursus</h2>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="project item col-md-6 col-xl-4 product">
-                                <figure className="lift rounded mb-6">
-                                    <a href="./single-project2.html">
-                                        {' '}
-                                        <img src="./assets/img/photos/pd4.jpg" alt="" />
-                                    </a>
-                                </figure>
-                                <div className="project-details d-flex justify-content-center flex-column">
-                                    <div className="post-header">
-                                        <div className="post-category mb-2 text-purple">
-                                            Product
-                                        </div>
-                                        <h2 className="post-title h3">
-                                            Inceptos Euismod Egestas
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="project item col-md-6 col-xl-4 product">
-                                <figure className="lift rounded mb-6">
-                                    <a href="./single-project.html">
-                                        {' '}
-                                        <img src="./assets/img/photos/pd5.jpg" alt="" />
-                                    </a>
-                                </figure>
-                                <div className="project-details d-flex justify-content-center flex-column">
-                                    <div className="post-header">
-                                        <div className="post-category mb-2 text-leaf">Print</div>
-                                        <h2 className="post-title h3">
-                                            Sollicitudin Ornare Porta
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="project item col-md-6 col-xl-4 workshop">
-                                <figure className="lift rounded mb-6">
-                                    <a href="./single-project3.html">
-                                        {' '}
-                                        <img src="./assets/img/photos/pd6.jpg" alt="" />
-                                    </a>
-                                </figure>
-                                <div className="project-details d-flex justify-content-center flex-column">
-                                    <div className="post-header">
-                                        <div className="post-category mb-2 text-aqua">
-                                            Workshop
-                                        </div>
-                                        <h2 className="post-title h3">Ipsum Mollis Vulputate</h2>
-                                    </div>
-                                </div>
-                            </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
