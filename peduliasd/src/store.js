@@ -5,10 +5,12 @@ import { userCreated, userLoginReducer, userProfileReducer } from './reducers/au
 import { userbyIdReducer, userlistReducer } from './reducers/userReducers'
 import { workshopStore } from './store/workshopStore'
 import { eduProgramStore } from './store/eduProgramStore'
+import { articleStore } from './store/articleStore'
 
 const reducer = combineReducers({
     ...workshopStore,
     ...eduProgramStore,
+    ...articleStore,
     userLogin: userLoginReducer,
     userDetail: userProfileReducer,
     addNewUser: userCreated,

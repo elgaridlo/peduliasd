@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listArticleAction } from '../../actions/articleAction'
 
 const BlogScreen = () => {
+
+    const articleList = useSelector((state) => state.articleList)
+    const {loading, error, listArticle} = articleList
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(listArticleAction())
+    },[])
+
     return (
         <>
             <section className="wrapper bg-soft-primary">
@@ -46,40 +58,38 @@ const BlogScreen = () => {
 
                             <div className="blog grid grid-view">
                                 <div className="row isotope gx-md-8 gy-8 mb-8">
-                                    <article className="item post col-md-6">
-                                        <div className="card">
-                                            <figure className="card-img-top overlay overlay1 hover-scale"><a href="/"> <img src="./assets/img/photos/b4.jpg" alt="" /></a>
-                                                <figcaption>
-                                                    <h5 className="from-top mb-0">Read More</h5>
-                                                </figcaption>
-                                            </figure>
-                                            <div className="card-body">
-                                                <div className="post-header">
-                                                    <div className="post-category text-line">
-                                                        <a href="/" className="hover" rel="category">Coding</a>
+                                    {listArticle && listArticle.map((item) => (
+                                        <article key={item._id} className="item post col-md-6">
+                                            <div className="card">
+                                                <figure className="card-img-top overlay overlay1 hover-scale"><a href="/"> <img src={item.poster} alt="" /></a>
+                                                    <figcaption>
+                                                        <h5 className="from-top mb-0">Read More</h5>
+                                                    </figcaption>
+                                                </figure>
+                                                <div className="card-body">
+                                                    <div className="post-header">
+                                                        <div className="post-category text-line">
+                                                            <a href="/" className="hover" rel="category">Coding</a>
+                                                        </div>
+
+                                                        <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="/">{item.title}</a></h2>
                                                     </div>
 
-                                                    <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="./blog-post.html">Ligula tristique quis risus</a></h2>
+                                                    <div className="post-content" dangerouslySetInnerHTML={{__html: item.content}}>
+                                                    </div>
+
                                                 </div>
 
-                                                <div className="post-content">
-                                                    <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor. Aenean lacinia bibendum nulla sed.</p>
+                                                <div className="card-footer">
+                                                    <ul className="post-meta d-flex mb-0">
+                                                        <li className="post-date"><i className="uil uil-calendar-alt"></i><span>{item.updatedAt}</span></li>
+                                                    </ul>
                                                 </div>
 
                                             </div>
 
-                                            <div className="card-footer">
-                                                <ul className="post-meta d-flex mb-0">
-                                                    <li className="post-date"><i className="uil uil-calendar-alt"></i><span>14 Apr 2021</span></li>
-                                                    <li className="post-comments"><a href="/"><i className="uil uil-comment"></i>4</a></li>
-                                                    <li className="post-likes ms-auto"><a href="/"><i className="uil uil-heart-alt"></i>5</a></li>
-                                                </ul>
-
-                                            </div>
-
-                                        </div>
-
-                                    </article>
+                                        </article>
+                                    ))}
 
                                     <article className="item post col-md-6">
                                         <div className="card">

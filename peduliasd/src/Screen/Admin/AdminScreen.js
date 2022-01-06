@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 import { userListAction } from '../../actions/userAction'
+import CreateArticle from './Article/CreateArticle'
 import AddEduProgram from './EduProgram/AddEduProgram'
 import AddWorkshop from './Workshop/AddWorkshop'
 
@@ -61,8 +62,8 @@ const AdminScreen = () => {
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" data-bs-toggle="tab" href="#tab1-3">
-                                        <i className="uil uil-laptop-cloud pe-1"></i>
-                                        <span>Tab 3</span>
+                                        <i className="uil uil-file-plus-alt pe-1"></i>
+                                        <span>Artikel</span>
                                     </a>
                                 </li>
                             </ul>
@@ -74,7 +75,7 @@ const AdminScreen = () => {
                                     <AddWorkshop />
                                 </div>
                                 <div className="tab-pane fade" id="tab1-3">
-                                    Text 3
+                                    <CreateArticle />
                                 </div>
                             </div>
                         </div>
