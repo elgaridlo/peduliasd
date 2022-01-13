@@ -1,26 +1,14 @@
-import React, { useState } from 'react'
-import { Spinner } from 'react-bootstrap'
+import React from 'react'
 
-const AlertStyle = ({ variant = 'info', children='tolong diisi pesannya', show = false }) => {
-    const [iconString, setIconString] = useState('')
-    switch (variant) {
-        case 'danger':
-            setIconString('uil-times-circle')
-            break;
-        case 'success':
-            setIconString('uil-check-circle')
-        case 'warning':
-            setIconString('uil-exclamation-triangle')
-        case 'info':
-            setIconString('uil-exclamation-circle')
-        default:
-            setIconString('uil-exclamation-circle')            
-            break;
-    }
+const AlertStyle = ({ variant = 'info', children='tolong diisi pesannya', show = false, icons = 'uil-check-circle' }) => {
     return (
-        <div className={`alert alert-${variant} alert-icon`} role="alert" hidden={!show}>
-            <i className={`uil ${iconString}`}></i> {children}
-        </div>
+        // <div className={`alert alert-${variant} alert-icon`} role="alert" hidden={!show}>
+        //     <i className={`uil uil-check-circle`}></i> {children}
+        // </div>
+        <div className={`alert alert-${variant} alert-icon alert-dismissible fade ${show ? 'show': ''}`} role="alert">
+            <i className={`uil ${icons}`}></i> {children}.
+            <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> 
     )
 }
 

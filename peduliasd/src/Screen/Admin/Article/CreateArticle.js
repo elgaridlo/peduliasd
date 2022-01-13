@@ -1,20 +1,19 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { createArticleAction } from '../../../actions/articleAction'
 import RTE from '../../../utils/Summernote/Rte'
 
 const CreateArticle = ({ history }) => {
     const [title, setTitle] = useState('')
-    const [workshopType, setWorkshopType] = useState('')
-    const [image, setImage] = useState('')
-    const [uploading, setUploading] = useState(false)
+    const [, setImage] = useState('')
+    const [, setUploading] = useState(false)
     const [imageData, setImageData] = useState(null)
     const [content, setContent] = useState('')
 
 
-    const workshopList = useSelector((state) => state.workshopList)
-    const { loading: loadingEdu, error: errorEdu, listWorkshopProgram } = workshopList
+    // const workshopList = useSelector((state) => state.workshopList)
+    // const { loading: loadingEdu, error: errorEdu, listWorkshopProgram } = workshopList
 
     const dispatch = useDispatch()
 

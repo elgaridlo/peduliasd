@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
 import { userListAction } from '../../actions/userAction'
 import CreateArticle from './Article/CreateArticle'
 import AddEduProgram from './EduProgram/AddEduProgram'
+import ListEduProgramScreen from './EduProgram/ListEduProgramScreen'
 import AddWorkshop from './Workshop/AddWorkshop'
 
 const AdminScreen = () => {
     const userList = useSelector((state) => state.userList)
-    const { loading, error, userlist } = userList
+    const { userlist } = userList
 
     const dispatch = useDispatch()
 
@@ -16,7 +16,7 @@ const AdminScreen = () => {
         if (!userlist) {
             dispatch(userListAction())
         }
-    }, [])
+    }, [userlist, dispatch])
     // useEffect(() => {
     //     if(success && success.status === 'Success') {
     //         dispatch(removeUserNewData())
@@ -66,6 +66,24 @@ const AdminScreen = () => {
                                         <span>Artikel</span>
                                     </a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab1-4">
+                                        <i className="uil uil-file-plus-alt pe-1"></i>
+                                        <span>List Program Edukasi</span>
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab1-5">
+                                        <i className="uil uil-file-plus-alt pe-1"></i>
+                                        <span>List Kategori Workshop</span>
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab1-6">
+                                        <i className="uil uil-file-plus-alt pe-1"></i>
+                                        <span>List Artikel</span>
+                                    </a>
+                                </li>
                             </ul>
                             <div className="tab-content">
                                 <div className="tab-pane fade show active" id="tab1-1">
@@ -75,6 +93,15 @@ const AdminScreen = () => {
                                     <AddWorkshop />
                                 </div>
                                 <div className="tab-pane fade" id="tab1-3">
+                                    <CreateArticle />
+                                </div>
+                                <div className="tab-pane fade" id="tab1-4">
+                                    <ListEduProgramScreen />
+                                </div>
+                                <div className="tab-pane fade" id="tab1-5">
+                                    <CreateArticle />
+                                </div>
+                                <div className="tab-pane fade" id="tab1-6">
                                     <CreateArticle />
                                 </div>
                             </div>

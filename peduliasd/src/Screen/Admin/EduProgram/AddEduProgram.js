@@ -1,9 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { eduCreateProgramAction } from '../../../actions/eduProgramAction'
-import { addUser, removeUserNewData } from '../../../actions/userAction'
+import { eduCreateProgramAction, removeEduProgramNewData } from '../../../actions/eduProgramAction'
 import { listWorkshopction } from '../../../actions/workshopAction'
+import AlertStyle from '../../../utils/Components/Alert'
+import { AlertEnum } from '../../../utils/Enums/AlertEnum'
 
 const AddEduProgram = ({ history }) => {
     const [title, setTitle] = useState('')
@@ -11,10 +12,10 @@ const AddEduProgram = ({ history }) => {
     const [image, setImage] = useState('')
     const [uploading, setUploading] = useState(false)
     const [imageData, setImageData] = useState(null)
+    const [alertShow, setAlertShow] = useState()
   
-
-    const addNewUser = useSelector((state) => state.addNewUser)
-    const { loading, error, success } = addNewUser
+    const newEduProgram = useSelector((state) => state.newEduProgram)
+    const { loading, error, newEduProgram: newData } = newEduProgram
 
     const workshopList = useSelector((state) => state.workshopList)
     const { loading: loadingEdu, error: errorEdu, listWorkshopProgram } = workshopList
@@ -26,11 +27,11 @@ const AddEduProgram = ({ history }) => {
     },[])
 
     useEffect(() => {
-        if (success && success.status === 'Success') {
-            dispatch(removeUserNewData())
-            history.push('/user-list')
-        }
-    }, [title, workshopType, success])
+        // if (newData && newData.status === 'Success') {
+        //     // dispatch(removeEduProgramNewData())
+        //     // history.push('/user-list')
+        // }
+    }, [workshopType])
 
     const uploadHandler = async(e) => {
         setUploading(true)
@@ -70,6 +71,11 @@ const AddEduProgram = ({ history }) => {
     return (
         <>
             <section className="wrapper">
+                {
+                    newData && (
+                        <AlertStyle variant= 'success' icons= {AlertEnum.DANGER} show={true}>Program berhasil ditambahkan !</AlertStyle>
+                    )
+                }
                 <div className="container py-14 py-md-16">
                     <div>
                         <h2 className="fs-15 text-uppercase text-line text-primary text-center mb-3">Buat Program Edukasi</h2>
@@ -128,6 +134,7 @@ const AddEduProgram = ({ history }) => {
                                                         onChange={uploadHandler}
                                                         required
                                                     />
+                                                    <p className="text-muted"><strong>*</strong> Masukkan ukuran gambar 1080 x 1080 dan ukuran tidak lebih dari 1MB.</p>
                                                     <div className="valid-feedback">
                                                         Looks good!
                                                     </div>

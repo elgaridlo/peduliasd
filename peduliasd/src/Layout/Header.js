@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/authActions'
 
@@ -11,7 +9,7 @@ const Header = () => {
   const [showNav, setShowNav]= useState(false)
 
   const userLogin = useSelector((state) => state.userLogin)
-  const { loading, error, userInfo } = userLogin
+  const { userInfo } = userLogin
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -46,7 +44,7 @@ const Header = () => {
                 </Navbar.Brand>
               </LinkContainer> */}
               <a href="/">
-                <img src="logoasd.png" srcSet="logoasd.png" alt="" />
+                <img src="/logoasd.png" srcSet="/logoasd.png" alt="" />
               </a>
             </div>
             <div className={`navbar-collapse offcanvas-nav ${showNav ? 'open': ''}`} >
@@ -61,7 +59,7 @@ const Header = () => {
                     />
                   </Navbar.Brand>
                 </LinkContainer> */}
-                <a href="/"><img src="logoasd.png" srcSet="logoasd.png" alt="" /></a>
+                <a href="/"><img src="/logoasd.png" srcSet="/logoasd.png" alt="" /></a>
                 <button
                   type="button"
                   className="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
@@ -173,7 +171,7 @@ const Header = () => {
                           <i className="uil uil-cog"></i>
                         </a>
                         <ul className="dropdown-menu">
-                          <li className="nav-item"><a className="dropdown-item" href="/admin">Admin</a></li>
+                          {userInfo.user.role === 'admin' && (<li className="nav-item"><a className="dropdown-item" href="/admin">Admin</a></li>)}
                           <li className="nav-item"><a className="dropdown-item" href="/profil">Profile</a></li>
                           <li className="nav-item"><a className="dropdown-item" href="/" onClick={logoutHandler}>Logout</a></li>
                         </ul>

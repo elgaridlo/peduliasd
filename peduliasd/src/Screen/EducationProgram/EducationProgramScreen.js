@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { LinkContainer } from 'react-router-bootstrap'
 import { eduListProgramAction } from '../../actions/eduProgramAction'
 import Loader from '../../utils/Components/Loader'
 import Message from '../../utils/Components/Message'
@@ -7,6 +8,9 @@ import Message from '../../utils/Components/Message'
 const EducationProgramScreen = () => {
 
     const dispatch = useDispatch()
+
+    const userLogin = useSelector((state) => state.userLogin)
+    const {userInfo} = userLogin
 
     const eduListProgram = useSelector((state) => state.eduListProgram)
     const { loading, error, listEduProgram } = eduListProgram
@@ -43,7 +47,16 @@ const EducationProgramScreen = () => {
                                 listEduProgram && listEduProgram.map((item) => (
                                     <div key={item._id} className="project item col-md-6 col-xl-4 product">
                                         <figure className="lift rounded mb-6">
-                                                <img src={item.image} alt="" />
+                                                {userInfo ? 
+                                                userInfo.user.role === 'admin' ? (
+                                                    <LinkContainer to={`/program-edukasi/${item._id}`}>
+                                                        <img src={item.image} alt="" />
+                                                    </LinkContainer>
+                                                ): (
+                                                    <img src={item.image} alt="" />
+                                                ): (
+                                                    <img src={item.image} alt="" />
+                                                )}
                                         </figure>
                                         <div className="project-details d-flex justify-content-center flex-column">
                                             <div className="post-header">
