@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CREATE_EDUPROGRAM_FAIL, CREATE_EDUPROGRAM_REMOVE, CREATE_EDUPROGRAM_REQUEST, CREATE_EDUPROGRAM_SUCCESS, GET_BY_ID_EDUPROGRAM_FAIL, GET_BY_ID_EDUPROGRAM_REQUEST, GET_BY_ID_EDUPROGRAM_SUCCESS, LIST_EDUPROGRAM_FAIL, LIST_EDUPROGRAM_REQUEST, LIST_EDUPROGRAM_SUCCESS } from "../constants/eduProgramConstants"
+import { CREATE_EDUPROGRAM_FAIL, CREATE_EDUPROGRAM_REMOVE, CREATE_EDUPROGRAM_REQUEST, CREATE_EDUPROGRAM_SUCCESS, DELETE_EDUPROGRAM_FAIL, DELETE_EDUPROGRAM_REQUEST, DELETE_EDUPROGRAM_SUCCESS, GET_BY_ID_EDUPROGRAM_FAIL, GET_BY_ID_EDUPROGRAM_REQUEST, GET_BY_ID_EDUPROGRAM_SUCCESS, LIST_EDUPROGRAM_FAIL, LIST_EDUPROGRAM_REQUEST, LIST_EDUPROGRAM_SUCCESS } from "../constants/eduProgramConstants"
 
 export const eduCreateProgramAction = (payload) => async (dispatch) => {
     try {
@@ -83,6 +83,37 @@ export const getEduProgramByIdAction = (id) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: GET_BY_ID_EDUPROGRAM_FAIL,
+            payload:
+              error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message,
+          })
+    }
+}
+
+export const deleteEduProgramAction = (id) => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: DELETE_EDUPROGRAM_REQUEST
+        })
+
+        const { userLogin: {userInfo} } = getState()
+
+        const config = {
+            // headers: {        
+            //     Authorization: `Bearer ${userInfo.token}`
+            // }
+        }
+
+        await axios.delete(`/api/educationprogram/${id}`, config)
+
+        dispatch({
+            type: DELETE_EDUPROGRAM_SUCCESS
+        })
+
+    } catch (error) {
+        dispatch({
+            type: DELETE_EDUPROGRAM_FAIL,
             payload:
               error.response && error.response.data.message
                 ? error.response.data.message

@@ -1,7 +1,8 @@
-import { EduListProgramReducer, eduProgramCreated, GetEduProgramByIdReducer } from "../reducers/eduProgramReducer";
+import { deleteEduProgramReducer, EduListProgramReducer, eduProgramCreated, GetEduProgramByIdReducer } from "../reducers/eduProgramReducer";
 
 export const eduProgramStore = {
     newEduProgram: eduProgramCreated,
     eduListProgram: EduListProgramReducer,
-    eduProgramDetail: GetEduProgramByIdReducer
+    eduProgramDetail: GetEduProgramByIdReducer,
+    deleteEduProgram: deleteEduProgramReducer
 }

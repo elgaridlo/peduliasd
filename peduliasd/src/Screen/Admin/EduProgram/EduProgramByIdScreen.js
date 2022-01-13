@@ -27,24 +27,18 @@ const EduProgramByIdScreen = ({ match }) => {
                                 <figure className="rounded"><img src={eduDetail ? eduDetail.image : ''} srcSet={eduDetail ? eduDetail.image : ''} alt=""/></figure>
                             </div>
                             <div className="col-lg-6">
-                                <img src="/assets/img/icons/telemarketer.svg" className="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-                                <h2 className="display-4 mb-8">Convinced yet? Let's make something great together.</h2>
+                                <img src="/assets/img/icons/shield.svg" className="svg-inject icon-svg text-primary" alt="" />
+                                <h4 className="display-5 mb-8">Only Saw by Admin</h4>
                                 <div className="d-flex flex-row">
                                     <div>
-                                        <div className="icon text-primary fs-28 me-6 mt-n1"> <i className="uil uil-location-pin-alt"></i> </div>
-                                    </div>
-                                    <div>
-                                        <h5 className="mb-1">Address</h5>
-                                        <address>Moonshine St. 14/05 Light City, <br className="d-none d-md-block" />London, United Kingdom</address>
+                                        <h5 className="mb-1">Judul</h5>
+                                        <p>{eduDetail ? eduDetail.title : ''}</p>
                                     </div>
                                 </div>
                                 <div className="d-flex flex-row">
                                     <div>
-                                        <div className="icon text-primary fs-28 me-6 mt-n1"> <i className="uil uil-phone-volume"></i> </div>
-                                    </div>
-                                    <div>
-                                        <h5 className="mb-1">Phone</h5>
-                                        <p>00 (123) 456 78 90</p>
+                                        <h5 className="mb-1">Kategori Program</h5>
+                                        <p>{eduDetail ? eduDetail.workshopType.description : ''}</p>
                                     </div>
                                 </div>
                                 <div className="d-flex flex-row">
