@@ -73,7 +73,7 @@ const AddEduProgram = ({ history }) => {
             <section className="wrapper">
                 {
                     newData && (
-                        <AlertStyle variant= 'success' icons= {AlertEnum.DANGER} show={true}>Program berhasil ditambahkan !</AlertStyle>
+                        <AlertStyle variant= 'success' icons= {AlertEnum.SUCCESS} show={true}>Program berhasil ditambahkan !</AlertStyle>
                     )
                 }
                 <div className="container py-14 py-md-16">
@@ -149,18 +149,12 @@ const AddEduProgram = ({ history }) => {
                                             <input type="submit" className="btn btn-primary rounded-pill btn-send mb-3" value="Buat Baru" />
                                             <p className="text-muted"><strong>*</strong> These fields are required.</p>
                                         </div>
-
                                     </form>
-
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </section>
 
         </>

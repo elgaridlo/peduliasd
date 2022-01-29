@@ -1,6 +1,6 @@
 import axios from "axios"
 import { ADD_USER_FAIL, ADD_USER_REMOVE, ADD_USER_REQUEST, ADD_USER_SUCCESS } from "../constants/authConstants"
-import { USER_BY_ID_REMOVE, USER_BY_ID_REQUEST, USER_BY_ID_SUCCESS, USER_LIST_FAIL, USER_LIST_REQUEST, USER_LIST_SUCCESS } from "../constants/userConstants"
+import { UPDATE_USER_FAIL, UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, USER_BY_ID_FAIL, USER_BY_ID_REQUEST, USER_BY_ID_SUCCESS, USER_LIST_FAIL, USER_LIST_REQUEST, USER_LIST_SUCCESS } from "../constants/userConstants"
 
 export const addUser = (payload) => async (dispatch) => {
     try {
@@ -73,21 +73,21 @@ export const userListAction = (id) => async (dispatch) => {
     }
 }
 
-export const userByIdAction = (id) => async (dispatch) => {
+export const userByIdAction = (id) => async (dispatch,getState) => {
     try {
         dispatch({
             type: USER_BY_ID_REQUEST
         })
 
+        const { userLogin: {userInfo} } = getState()
         const config = {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`
             }
         }
 
         const { data } = await axios.get(`/api/users/${id}`, config)
-
-        console.log('userbyid = ', data)
 
         dispatch({
             type: USER_BY_ID_SUCCESS,
@@ -96,7 +96,41 @@ export const userByIdAction = (id) => async (dispatch) => {
 
     } catch (error) {
         dispatch({
-            type: USER_BY_ID_REMOVE,
+            type: USER_BY_ID_FAIL,
+            payload:
+              error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message,
+          })
+    }
+}
+
+export const updateUserAction = (id, payload) => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: UPDATE_USER_REQUEST
+        })
+
+        const { userLogin: {userInfo} } = getState()
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`
+            }
+        }
+
+        const { data } = await axios.put(`/api/users/${id}`,payload, config)
+
+        console.log('data profile = ', data)
+
+        dispatch({
+            type: UPDATE_USER_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: UPDATE_USER_FAIL,
             payload:
               error.response && error.response.data.message
                 ? error.response.data.message

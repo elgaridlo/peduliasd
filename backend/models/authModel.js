@@ -31,6 +31,7 @@ const authSchema = mongoose.Schema({
         },
         select: false,
     },
+    passwordChangedAt: Date,
     userdetail: {
         type: mongoose.Schema.Types.ObjectId,
         ref:'User'
@@ -68,19 +69,16 @@ authSchema.methods.correctPassword = async function(
     candidatePassword,
     userPassword
 ) {
-    console.log('mokel = ', candidatePassword, userPassword)
     return await bycrpt.compare(candidatePassword, userPassword);
 };
 
 authSchema.methods.changedPasswordAfter = async function(JWTTimestamp) {
-    console.log('jwt = ', JWTTimestamp);
-    console.log(this.passwordChangedAt);
     if (this.passwordChangedAt) {
         const changesTimestamp = parseInt(
             this.passwordChangedAt.getTime() / 1000,
             10
         );
-        console.log(JWTTimestamp, changesTimestamp);
+        console.log('JWT TIMESTAPM = ',JWTTimestamp, changesTimestamp);
         return JWTTimestamp < changesTimestamp;
     }
     return false;

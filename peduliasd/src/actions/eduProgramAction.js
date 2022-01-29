@@ -100,9 +100,9 @@ export const deleteEduProgramAction = (id) => async (dispatch, getState) => {
         const { userLogin: {userInfo} } = getState()
 
         const config = {
-            // headers: {        
-            //     Authorization: `Bearer ${userInfo.token}`
-            // }
+            headers: {        
+                Authorization: `Bearer ${userInfo.token}`
+            }
         }
 
         await axios.delete(`/api/educationprogram/${id}`, config)

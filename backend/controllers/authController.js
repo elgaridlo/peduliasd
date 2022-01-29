@@ -7,6 +7,8 @@ const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const WorkShop = require('../models/workshopModel');
+const Authentication = require('../models/authModel');
+const factory = require('./handlerController');
 
 const signToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -151,7 +153,7 @@ const protect = catchAsync(async (req, res, next) => {
     // jwt.verify is the function that we want to call, and after that is the param that we want to pass
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
     // 3 ) Check if user still exists
-    const currentUser = await User.findById(decoded.id);
+    const currentUser = await Authentication.findById(decoded.id);
 
     if (!currentUser) {
         return next(
@@ -174,6 +176,55 @@ const protect = catchAsync(async (req, res, next) => {
     // GRANT ACCESS TO THE PROTECTED ROUTE
     next();
 });
+
+const updatePassword = catchAsync(async (req, res, next) => {
+    const { password, updatePassword, passwordConfirm } = req.body;
+    
+    // Get user from the collection
+    const user = await Authentication.findById(req.user.id).select('+password');
+  
+    // Check user password is correct
+  
+    if (!(await user.correctPassword(password, user.password))) {
+      return next(new AppError('Your current password is wrong.', 401));
+    }
+    // If the password is correct then update
+    user.password = updatePassword;
+    user.passwordConfirm = passwordConfirm;
+    await user.save();
+    // Log user in, send JWT
+    createSendToken(user, 201, res);
+  });
+
+  const updatePasswordById = catchAsync(async (req, res, next) => {
+    const { updatePassword, passwordConfirm } = req.body;
+    const { id } = req.params 
+    
+    // Get user from the collection
+    const user = await Authentication.find({userdetail: id}).select('+password');
+    const member = await Authentication.findById(user[0]._id).select('+password');
+    
+    if (!member) {
+        return next(new AppError('User is not found', 401));
+    }
+    
+    if (req.user.role !== 'admin') {
+        return next(new AppError('You are not an admin!', 401));
+    }
+
+    // Check user password is correct
+    // if (!(await member.correctPassword(password, member.password))) {
+    //   return next(new AppError('Your current password is wrong.', 401));
+    // }
+
+    // If the password is correct then update
+    member.password = updatePassword;
+    member.passwordConfirm = passwordConfirm;
+    await member.save();
+    // Log user in, send JWT
+    createSendToken(member, 201, res);
+  });
+
 
 // Only renders pages and will be no errors!
 const isLoggedIn = async (req, res, next) => {
@@ -203,6 +254,15 @@ const isLoggedIn = async (req, res, next) => {
     next();
 };
 
+const getAuthById = catchAsync (async(req, res, next) => {
+    const user = await Authentication.find({userdetail: req.params.id})
+
+    res.status(200).json({
+        status: 'Success',
+        data: {...user},
+    });
+})
+
 const restrictTo = (...roles) => (req, res, next) => {
     // roles['admin', 'lead-guide']. role='user'
     console.log('admin ? = ', req.user.role);
@@ -215,4 +275,4 @@ const restrictTo = (...roles) => (req, res, next) => {
     next();
   };
 
-module.exports = {signup, login, isLoggedIn, protect, logout, restrictTo}
+module.exports = {signup, login, isLoggedIn, protect, logout, restrictTo, updatePassword, updatePasswordById, getAuthById}

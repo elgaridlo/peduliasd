@@ -431,7 +431,7 @@ const AboutUsScreen = () => {
                     <div className="row gy-6 gy-lg-0">
                         <div className="col-md-4 col-lg-3">
                             <div className="widget">
-                                <img className="mb-4" src="./assets/img/logo-light.png" srcSet="./assets/img/logo-light@2x.png 2x" alt="" />
+                                <img className="mb-4" src="/assets/img/logo-light.png" srcSet="/assets/img/logo-light@2x.png 2x" alt="" />
                                 <p className="mb-4">© 2021 Sandbox.<br className="d-none d-lg-block" />All rights reserved.</p>
                                 <nav className="nav social social-white">
                                     <a href="/"><i className="uil uil-twitter"></i></a>

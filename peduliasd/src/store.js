@@ -6,11 +6,15 @@ import { userbyIdReducer, userlistReducer } from './reducers/userReducers'
 import { workshopStore } from './store/workshopStore'
 import { eduProgramStore } from './store/eduProgramStore'
 import { articleStore } from './store/articleStore'
+import { authStore } from './store/authStore'
+import { userStore } from './store/userStore'
 
 const reducer = combineReducers({
     ...workshopStore,
     ...eduProgramStore,
     ...articleStore,
+    ...authStore,
+    ...userStore,
     userLogin: userLoginReducer,
     userDetail: userProfileReducer,
     addNewUser: userCreated,

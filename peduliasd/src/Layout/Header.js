@@ -68,7 +68,7 @@ const Header = () => {
                 ></button>
               </div>
               <ul className="navbar-nav">
-                <li className="nav-item"><a className="nav-link" href="/beranda">Beranda</a></li>
+                <li className="nav-item"><a className="nav-link" href="/">Beranda</a></li>
                 <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="/">Tentang Kami</a>
                   <ul className="dropdown-menu">
                     <li className="nav-item"><a className="dropdown-item" href="/tentang-kami">Peduli ASD</a></li>

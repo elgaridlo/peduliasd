@@ -36,7 +36,12 @@ const userSchema = mongoose.Schema({
     kid: [{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Kid'
-    }]
+    }],
+    auth: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Authentication',
+        required: true
+    }
 }, {
     timestamps: true
 })

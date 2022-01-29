@@ -40374,3 +40374,10 @@ footer.bg-dark.angled.upper-start:before {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}

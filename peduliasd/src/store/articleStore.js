@@ -1,6 +1,7 @@
-import { articleCreatedReducer, articleListReducer } from "../reducers/articleReducers";
+import { articleByIdReducer, articleCreatedReducer, articleListReducer } from "../reducers/articleReducers";
 
 export const articleStore = {
     articleNew: articleCreatedReducer,
-    articleList: articleListReducer
+    articleList: articleListReducer,
+    articleDetail : articleByIdReducer
 }
