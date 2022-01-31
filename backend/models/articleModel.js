@@ -12,6 +12,10 @@ const articleSchema = mongoose.Schema({
     content: {
         type: String,
         required: true,
+    },
+    publish: {
+        type: Boolean,
+        default: false
     }
 }, {
     timestamps: true

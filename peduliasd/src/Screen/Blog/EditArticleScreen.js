@@ -1,20 +1,37 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { createArticleAction } from '../../../actions/articleAction'
-import RTE from '../../../utils/Summernote/Rte'
+import { useDispatch, useSelector } from 'react-redux'
+import { createArticleAction, getArticleByIdAction, updateArticleAction } from '../../actions/articleAction'
+import AlertStyle from '../../utils/Components/Alert'
+import { AlertEnum } from '../../utils/Enums/AlertEnum'
+import RTE from '../../utils/Summernote/Rte'
 
-const CreateArticle = ({ history }) => {
+const EditArticleScreen = ({ history, match }) => {
     const [title, setTitle] = useState('')
-    const [, setImage] = useState('')
+    const [image, setImage] = useState('')
     const [, setUploading] = useState(false)
     const [imageData, setImageData] = useState(null)
     const [content, setContent] = useState('')
 
     const dispatch = useDispatch()
 
+    const articleDetail = useSelector((state) => state.articleDetail)
+    const {loading, error, detail} = articleDetail
+
+    const updateArticle = useSelector((state) => state.updateArticle)
+    const {loading: loadingArticleUpdate, error: errorArticleUpdate, data: updateData} = updateArticle
+
     useEffect(() => {
-    }, [content])
+        dispatch(getArticleByIdAction(match.params.id))
+    }, [])
+
+    useEffect(() => {
+        if(detail) {
+            setTitle(detail.title)
+            setContent(detail.content)
+            setImage(detail.poster)
+        }
+    }, [detail])
 
     const addHandler = (input) => {
         setContent(input)
@@ -35,21 +52,27 @@ const CreateArticle = ({ history }) => {
     }
     const onSubmitHandler = async (e) => {
         e.preventDefault()
+        let payload = {}
         try {
-            const formData = new FormData()
-            const config = {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+
+            if (imageData) {
+                const formData = new FormData()
+                const config = {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
+                formData.append('image', imageData)
+                const { data } = await axios.post('/api/upload/article', formData, config)
+                payload = {
+                    title, poster: data, content
+                }
+            } else {
+                payload = {
+                    title, content
                 }
             }
-            formData.append('image', imageData)
-            const { data } = await axios.post('/api/upload/article', formData, config)
-            console.log('data = ', data)
-            const payload = {
-                title, poster: data, content
-            }
-            dispatch(createArticleAction(payload))
-
+            dispatch(updateArticleAction(match.params.id,payload))
         } catch (error) {
             console.error(error)
         }
@@ -59,8 +82,14 @@ const CreateArticle = ({ history }) => {
         <>
             <section className="wrapper">
                 <div className="container py-14 py-md-16">
+                    {error && (
+                        <AlertStyle variant='danger' icons={AlertEnum.DANGER} show={true}>{errorArticleUpdate}</AlertStyle>
+                    )}
+                    {updateData && (
+                        <AlertStyle variant='success' icons={AlertEnum.SUCCESS} show={true}>Artikel berhasil diperbarui!</AlertStyle>
+                    )}
                     <div>
-                        <h2 className="fs-15 text-uppercase text-line text-primary text-center mb-3">Buat Artikel</h2>
+                        <h2 className="fs-15 text-uppercase text-line text-primary text-center mb-3">Ubah Artikel</h2>
                     </div>
                     <div className="row">
                         <div className="col-xl-10 mx-auto">
@@ -99,7 +128,6 @@ const CreateArticle = ({ history }) => {
                                                         className="form-control"
                                                         accept="image/png, image/jpg, image/jpeg"
                                                         onChange={uploadHandler}
-                                                        required
                                                     />
                                                     <div className="valid-feedback">
                                                         Looks good!
@@ -119,7 +147,7 @@ const CreateArticle = ({ history }) => {
                                                     </div>
                                                     <div className="card-body">
                                                         <div className="summernote">
-                                                            <RTE dataSummernote={addHandler} />
+                                                            <RTE dataSummernote={addHandler} input={content} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -128,7 +156,7 @@ const CreateArticle = ({ history }) => {
 
                                         <div className="row gx-4 pt-3">
                                             <div className="col-12">
-                                                <input type="submit" className="btn btn-primary rounded-pill btn-send mb-3" value="Buat Artikel" />
+                                                <input type="submit" className="btn btn-primary rounded-pill btn-send mb-3" value="Ubah Artikel" />
                                                 <p className="text-muted"><strong>*</strong> These fields are required.</p>
                                             </div>
                                         </div>
@@ -149,4 +177,4 @@ const CreateArticle = ({ history }) => {
     )
 }
 
-export default CreateArticle
+export default EditArticleScreen

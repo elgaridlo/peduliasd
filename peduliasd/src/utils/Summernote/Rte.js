@@ -1,7 +1,7 @@
 import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
-const RTE = ({dataSummernote}) => {
+const RTE = ({dataSummernote, input}) => {
 
     const handleEditorChange = (content, editor) => {
         dataSummernote(content)
@@ -11,7 +11,8 @@ const RTE = ({dataSummernote}) => {
     return (
         <Editor
             apiKey="c8kzax1a706e1g2hh7aaw8q3ob2w6dax5n3njvg6s1ahgjyv"
-            initialValue="<p>Tulisan ini merupakan inisial pertama</p>"
+            value={input ? input : ''}
+            // initialValue= "<p>Tulisan ini merupakan inisial pertama</p>"
             init={{
                 height: 500,
                 menubar: false,

@@ -23,6 +23,7 @@ import EduProgramByIdScreen from './Screen/Admin/EduProgram/EduProgramByIdScreen
 import ArticleByIdScreen from './Screen/Blog/ArticleByIdScreen'
 import Footer from './Layout/Footer'
 import EditUserScreen from './Screen/Admin/User/EditUserScreen'
+import EditArticleScreen from './Screen/Blog/EditArticleScreen'
 
 export const RoleStatusContext = React.createContext()
 
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/program-edukasi/:id" component={EduProgramByIdScreen} exact />
                 <Route path="/artikel" component={BlogScreen} exact/>
                 <Route path="/artikel/:id" component={ArticleByIdScreen} exact />
+                <Route path="/artikel/:id/edit" component={EditArticleScreen} exact />
                 <Route path="/belanja" component={BelanjaScreen} />
                 <Route path="/skrining" component={SkriningScreen} />
                 <Route path="/add-user" component={AddUserScreen} exact />
