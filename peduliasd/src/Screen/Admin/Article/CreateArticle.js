@@ -14,6 +14,7 @@ const CreateArticle = ({ history }) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        console.log('content = ', content)
     }, [content])
 
     const addHandler = (input) => {

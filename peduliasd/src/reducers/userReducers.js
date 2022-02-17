@@ -1,4 +1,3 @@
-import { UPDATE_PASSWORD_ID_REQUEST } from "../constants/authConstants"
 import { UPDATE_USER_FAIL, UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, USER_BY_ID_FAIL, USER_BY_ID_REQUEST, USER_BY_ID_SUCCESS, USER_LIST_FAIL, USER_LIST_REMOVE, USER_LIST_REQUEST, USER_LIST_SUCCESS } from "../constants/userConstants"
 
 export const userlistReducer = (state = {}, action) => {

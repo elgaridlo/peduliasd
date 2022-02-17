@@ -23,7 +23,7 @@ const ListEduProgramScreen = ({ history }) => {
     return (
         <>
             <section className="wrapper">
-            <div class="table-responsive">
+            {/* <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <th>
@@ -42,7 +42,7 @@ const ListEduProgramScreen = ({ history }) => {
                         </td>
                     </tbody>
                 </table>
-            </div>
+            </div> */}
 
             </section>
 

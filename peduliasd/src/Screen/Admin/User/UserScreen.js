@@ -133,7 +133,7 @@ const UserListScreen = ({history}) => {
                                     }
                                 }
                             })}
-                            {loading && (<Loader />)}
+                            {loading && (<Loader/>)}
 
                         </div>
                     </div>

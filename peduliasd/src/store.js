@@ -8,6 +8,7 @@ import { eduProgramStore } from './store/eduProgramStore'
 import { articleStore } from './store/articleStore'
 import { authStore } from './store/authStore'
 import { userStore } from './store/userStore'
+import { assesmentStore } from './store/assesmentStore'
 
 const reducer = combineReducers({
     ...workshopStore,
@@ -15,6 +16,7 @@ const reducer = combineReducers({
     ...articleStore,
     ...authStore,
     ...userStore,
+    ...assesmentStore,
     userLogin: userLoginReducer,
     userDetail: userProfileReducer,
     addNewUser: userCreated,

@@ -2,7 +2,7 @@ import React from 'react'
 import { Spinner } from 'react-bootstrap'
 
 const Loader = ({size}) => {
-  if(!size) size = 20
+  if(!size) size = 50
 
     return (
     <Spinner

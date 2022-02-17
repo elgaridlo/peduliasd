@@ -135,6 +135,8 @@ const logout = (req, res) => {
 const protect = catchAsync(async (req, res, next) => {
     let token;
     // 1) Gettitng token and check if its there
+    
+    console.log('check jwt = ', req.headers.authorization)
     if (
         req.headers.authorization &&
         req.headers.authorization.startsWith('Bearer')
@@ -143,6 +145,7 @@ const protect = catchAsync(async (req, res, next) => {
     } else if (req.cookies.jwt) {
         token = req.cookies.jwt;
     }
+    console.log('check jwt 2 = ', token)
     // 2 ) Verification token
     if (!token) {
         return next(
@@ -155,6 +158,8 @@ const protect = catchAsync(async (req, res, next) => {
     // 3 ) Check if user still exists
     const currentUser = await Authentication.findById(decoded.id);
 
+    console.log('currentUser pertama = ', currentUser)
+
     if (!currentUser) {
         return next(
             new AppError(
@@ -163,6 +168,9 @@ const protect = catchAsync(async (req, res, next) => {
             )
         );
     }
+
+    console.log('currentUser kedua = ', currentUser)
+
     // 4 ) Check if user changed password after the token was issued
     // console.log(currentUser.changedPasswordAfter(decoded.iat));
     if (await currentUser.changedPasswordAfter(decoded.iat)) {
@@ -171,6 +179,7 @@ const protect = catchAsync(async (req, res, next) => {
         );
     }
 
+    console.log('currentUser ketiga = ', currentUser)
     // Send the user to the other middleware only req that could accessed by the other middleware
     req.user = currentUser;
     // GRANT ACCESS TO THE PROTECTED ROUTE

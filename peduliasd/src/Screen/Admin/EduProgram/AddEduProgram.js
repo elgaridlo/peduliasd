@@ -1,37 +1,30 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { eduCreateProgramAction, removeEduProgramNewData } from '../../../actions/eduProgramAction'
+import { eduCreateProgramAction } from '../../../actions/eduProgramAction'
 import { listWorkshopction } from '../../../actions/workshopAction'
 import AlertStyle from '../../../utils/Components/Alert'
+import Loader from '../../../utils/Components/Loader'
 import { AlertEnum } from '../../../utils/Enums/AlertEnum'
 
 const AddEduProgram = ({ history }) => {
     const [title, setTitle] = useState('')
     const [workshopType, setWorkshopType] = useState('')
-    const [image, setImage] = useState('')
-    const [uploading, setUploading] = useState(false)
+    const [, setImage] = useState('')
+    const [, setUploading] = useState(false)
     const [imageData, setImageData] = useState(null)
-    const [alertShow, setAlertShow] = useState()
   
     const newEduProgram = useSelector((state) => state.newEduProgram)
     const { loading, error, newEduProgram: newData } = newEduProgram
 
     const workshopList = useSelector((state) => state.workshopList)
-    const { loading: loadingEdu, error: errorEdu, listWorkshopProgram } = workshopList
+    const { error: errorEdu, listWorkshopProgram } = workshopList
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(listWorkshopction())
     },[])
-
-    useEffect(() => {
-        // if (newData && newData.status === 'Success') {
-        //     // dispatch(removeEduProgramNewData())
-        //     // history.push('/user-list')
-        // }
-    }, [workshopType])
 
     const uploadHandler = async(e) => {
         setUploading(true)
@@ -76,6 +69,14 @@ const AddEduProgram = ({ history }) => {
                         <AlertStyle variant= 'success' icons= {AlertEnum.SUCCESS} show={true}>Program berhasil ditambahkan !</AlertStyle>
                     )
                 }
+                {
+                    error && (
+                        <AlertStyle variant='danger' icons={AlertEnum.DANGER} show={true}>{error}</AlertStyle>
+                )}
+                {
+                    errorEdu && (
+                        <AlertStyle variant='danger' icons={AlertEnum.DANGER} show={true}>{errorEdu}</AlertStyle>
+                )}
                 <div className="container py-14 py-md-16">
                     <div>
                         <h2 className="fs-15 text-uppercase text-line text-primary text-center mb-3">Buat Program Edukasi</h2>
@@ -146,7 +147,9 @@ const AddEduProgram = ({ history }) => {
                                         </div>
 
                                         <div className="col-12">
-                                            <input type="submit" className="btn btn-primary rounded-pill btn-send mb-3" value="Buat Baru" />
+                                            {loading ? (<Loader />) : (
+                                                <input type="submit" className="btn btn-primary rounded-pill btn-send mb-3" value="Buat Baru" />
+                                            )}
                                             <p className="text-muted"><strong>*</strong> These fields are required.</p>
                                         </div>
                                     </form>

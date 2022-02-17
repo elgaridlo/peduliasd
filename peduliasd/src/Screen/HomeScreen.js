@@ -54,7 +54,7 @@ const HomeScreen = () => {
             <div className="row mb-8 text-center">
               <div className="col-lg-8 col-xl-7 mx-auto">
                 <h2 className="fs-16 text-uppercase text-primary mb-3">
-                  What We Do
+                  Peduli ASD
                 </h2>
                 <h3 className="display-4">
                   We make your spending stress-free for you to have the perfect

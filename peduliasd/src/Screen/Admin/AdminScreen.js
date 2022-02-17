@@ -16,7 +16,7 @@ const AdminScreen = () => {
         if (!userlist) {
             dispatch(userListAction())
         }
-    }, [userlist, dispatch])
+    }, [userlist])
     // useEffect(() => {
     //     if(success && success.status === 'Success') {
     //         dispatch(removeUserNewData())

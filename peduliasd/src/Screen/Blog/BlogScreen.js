@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { listArticleAction } from '../../actions/articleAction'
+import Loader from '../../utils/Components/Loader'
 
 const BlogScreen = () => {
 
@@ -58,6 +59,9 @@ const BlogScreen = () => {
 
                             <div className="blog grid grid-view">
                                 <div className="row isotope gx-md-8 gy-8 mb-8">
+                                    {loading && (
+                                        <Loader  size={'50'}/>         
+                                    )}
                                     {listArticle && listArticle.map((item) => (
                                         <article key={item._id} className="item post col-md-6">
                                             <div className="card">
@@ -69,13 +73,13 @@ const BlogScreen = () => {
                                                 <div className="card-body">
                                                     <div className="post-header">
                                                         <div className="post-category text-line">
-                                                            <a href="/" className="hover" rel="category">Coding</a>
+                                                            <a href={`/artikel/${item._id}`} className="hover" rel="category">Coding</a>
                                                         </div>
 
-                                                        <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="/">{item.title}</a></h2>
+                                                        <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href={`/artikel/${item._id}`}>{item.title}</a></h2>
                                                     </div>
 
-                                                    <div className="post-content" dangerouslySetInnerHTML={{__html: item.content}}>
+                                                    <div className="post-content" dangerouslySetInnerHTML={{__html: `${item.content.substring(0, 150)}  <a href='/artikel/${item._id}'>...Read More</a> `}}>
                                                     </div>
 
                                                 </div>
@@ -90,110 +94,6 @@ const BlogScreen = () => {
 
                                         </article>
                                     ))}
-
-                                    <article className="item post col-md-6">
-                                        <div className="card">
-                                            <figure className="card-img-top overlay overlay1 hover-scale"><a href="/"> <img src="./assets/img/photos/b5.jpg" alt="" /></a>
-                                                <figcaption>
-                                                    <h5 className="from-top mb-0">Read More</h5>
-                                                </figcaption>
-                                            </figure>
-                                            <div className="card-body">
-                                                <div className="post-header">
-                                                    <div className="post-category text-line">
-                                                        <a href="/" className="hover" rel="category">Workspace</a>
-                                                    </div>
-
-                                                    <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="./blog-post.html">Nullam id dolor elit id nibh</a></h2>
-                                                </div>
-
-                                                <div className="post-content">
-                                                    <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor. Aenean lacinia bibendum nulla sed.</p>
-                                                </div>
-
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <ul className="post-meta d-flex mb-0">
-                                                    <li className="post-date"><i className="uil uil-calendar-alt"></i><span>29 Mar 2021</span></li>
-                                                    <li className="post-comments"><a href="/"><i className="uil uil-comment"></i>3</a></li>
-                                                    <li className="post-likes ms-auto"><a href="/"><i className="uil uil-heart-alt"></i>3</a></li>
-                                                </ul>
-
-                                            </div>
-
-                                        </div>
-
-                                    </article>
-
-                                    <article className="item post col-md-6">
-                                        <div className="card">
-                                            <figure className="card-img-top overlay overlay1 hover-scale"><a href="/"> <img src="./assets/img/photos/b6.jpg" alt="" /></a>
-                                                <figcaption>
-                                                    <h5 className="from-top mb-0">Read More</h5>
-                                                </figcaption>
-                                            </figure>
-                                            <div className="card-body">
-                                                <div className="post-header">
-                                                    <div className="post-category text-line">
-                                                        <a href="/" className="hover" rel="category">Meeting</a>
-                                                    </div>
-
-                                                    <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="./blog-post.html">Ultricies fusce porta elit</a></h2>
-                                                </div>
-
-                                                <div className="post-content">
-                                                    <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor. Aenean lacinia bibendum nulla sed.</p>
-                                                </div>
-
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <ul className="post-meta d-flex mb-0">
-                                                    <li className="post-date"><i className="uil uil-calendar-alt"></i><span>26 Feb 2021</span></li>
-                                                    <li className="post-comments"><a href="/"><i className="uil uil-comment"></i>6</a></li>
-                                                    <li className="post-likes ms-auto"><a href="/"><i className="uil uil-heart-alt"></i>3</a></li>
-                                                </ul>
-
-                                            </div>
-
-                                        </div>
-
-                                    </article>
-
-                                    <article className="item post col-md-6">
-                                        <div className="card">
-                                            <figure className="card-img-top overlay overlay1 hover-scale"><a href="/"> <img src="./assets/img/photos/b7.jpg" alt="" /></a>
-                                                <figcaption>
-                                                    <h5 className="from-top mb-0">Read More</h5>
-                                                </figcaption>
-                                            </figure>
-                                            <div className="card-body">
-                                                <div className="post-header">
-                                                    <div className="post-category text-line">
-                                                        <a href="/" className="hover" rel="category">Business Tips</a>
-                                                    </div>
-
-                                                    <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="./blog-post.html">Morbi leo risus porta eget</a></h2>
-                                                </div>
-                                                <div className="post-content">
-                                                    <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor. Aenean lacinia bibendum nulla sed.</p>
-                                                </div>
-
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <ul className="post-meta d-flex mb-0">
-                                                    <li className="post-date"><i className="uil uil-calendar-alt"></i><span>7 Jan 2021</span></li>
-                                                    <li className="post-comments"><a href="/"><i className="uil uil-comment"></i>2</a></li>
-                                                    <li className="post-likes ms-auto"><a href="/"><i className="uil uil-heart-alt"></i>5</a></li>
-                                                </ul>
-
-                                            </div>
-
-                                        </div>
-
-                                    </article>
 
                                 </div>
 

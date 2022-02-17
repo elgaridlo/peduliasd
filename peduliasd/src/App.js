@@ -24,6 +24,7 @@ import ArticleByIdScreen from './Screen/Blog/ArticleByIdScreen'
 import Footer from './Layout/Footer'
 import EditUserScreen from './Screen/Admin/User/EditUserScreen'
 import EditArticleScreen from './Screen/Blog/EditArticleScreen'
+import CreateSkriningScreen from './Screen/Skrining/CreateSkriningScreen'
 
 export const RoleStatusContext = React.createContext()
 
