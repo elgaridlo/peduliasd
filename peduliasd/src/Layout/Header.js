@@ -48,17 +48,7 @@ const Header = () => {
               </a>
             </div>
             <div className={`navbar-collapse offcanvas-nav ${showNav ? 'open': ''}`} >
-              <div className="offcanvas-header d-lg-none d-xl-none">
-                {/* <LinkContainer to="/" >
-                  <Navbar.Brand >
-                    <Image
-                      src={'logoasd.png'}
-                      srcSet="logoasd.png"
-                      alt=""
-                      width={"70px"}
-                    />
-                  </Navbar.Brand>
-                </LinkContainer> */}
+              <div className="offcanvas-header d-lg-none d-xl-none">                
                 <a href="/"><img src="/logoasd.png" srcSet="/logoasd.png" alt="" /></a>
                 <button
                   type="button"
@@ -68,18 +58,26 @@ const Header = () => {
                 ></button>
               </div>
               <ul className="navbar-nav">
-                <li className="nav-item"><a className="nav-link" href="/">Beranda</a></li>
-                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="/">Tentang Kami</a>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/">Beranda</a></li>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Tentang Kami</span></a>
                   <ul className="dropdown-menu">
+                    <li className="nav-item"><a className="dropdown-item" href="/visi-misi">Visi dan Misi</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/tentang-kami">Peduli ASD</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/tentang-asd">Tentang ASD</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/landasan-berdiri">Landasan Berdiri</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/user-list">User Data</a></li>
                   </ul>
                 </li>
-                <li className="nav-item"><a className="nav-link" href="/program-edukasi">Program</a></li>
-                <li className="nav-item"><a className="nav-link" href="/artikel">Artikel</a></li>
-                <li className="nav-item"><a className="nav-link" href="/skrining">Tes Skrining</a></li>
-                <li className="nav-item"><a className="nav-link" href="/belanja">Belanja</a></li>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Program</span></a>
+                  <ul className="dropdown-menu">
+                    <li className="nav-item"><a className="dropdown-item" href="/pep">Parents Education Programme</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/program-edukasi">Zoominar dan IG Live</a></li>                    
+                  </ul>
+                </li>
+                {/* <li className="nav-item"><a className="nav-link" href="/program-edukasi">Program</a></li> */}
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/artikel">Artikel</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/skrining">Skrining</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/belanja">Belanja</a></li>
               </ul>
               {/* <ul className="navbar-nav">
                 <li className="nav-item">

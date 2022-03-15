@@ -8,9 +8,6 @@ exports.getAll = catchAsync (async(req, res, next) => {
     const authAll = await Authentication.find()
     const userAll = await User.find()
 
-    // console.log('auth = ', authAll)
-    // console.log('user = ', userAll)
-
     for (let item of userAll ) {
         for (let x of authAll) {
             if (item._id.toString() === x.userdetail.toString()) {
@@ -47,9 +44,14 @@ exports.getProducts = catchAsync(async (req, res, next) => {
 
 
     const count = await User.countDocuments({...keyword}).exec()
-    const users = await User.find({ ...keyword }).populate('auth').limit(pageSize).skip(pageSize * (page-1)).exec()
+    const users = await User.find({ ...keyword }).populate({path: 'auth'}).limit(pageSize).skip(pageSize * (page-1)).exec()
 
-    res.json({users, page, pages: Math.ceil(count / pageSize)})
+
+    const result = [...users]
+
+    const finish = await result.filter(item => item.auth.role === 'member')
+
+    res.json({users: finish, page, pages: Math.ceil(count / pageSize)})
 })
 
 exports.getUserById = catchAsync (async(req, res, next) => {
@@ -82,3 +84,19 @@ exports.userUpdate = catchAsync (async(req, res, next) => {
     });
 })
 
+exports.updateProperty = catchAsync (async(req, res, next) => {
+    const data = await User.updateMany({kid: {
+        name: '',
+        birthDate: new Date(),
+        condition: '',
+        level: '',
+        therapyPlace: '',
+        firstTherapy: new Date(),
+        description: ''
+    }} )
+
+    res.status(200).json({
+        status: 'berhasil',
+        data
+    })
+})

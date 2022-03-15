@@ -17,17 +17,17 @@ const HomeScreen = () => {
             <div className="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
               <div className="col-lg-6">
                 <h1 className="display-1 fs-66 lh-xs mb-0">
-                  We bring rapid solutions for your business.
+                  Bangga Membersamai Individu Autistik
                 </h1>
               </div>
 
               <div className="col-lg-6">
                 <p className="lead fs-25 my-3">
-                  We are an award winning branding design agency that strongly
-                  believes in the power of creative ideas.
+                  Bantu mewujudkan tumbuhnya kelompok orang tua/keluarga anak ASD yang 
+                  mampu mengedukasi diri dan lingkungannya ... 
                 </p>
                 <a href="/" className="more hover">
-                  Learn More
+                  Lihat lebih
                 </a>
               </div>
             </div>
@@ -54,11 +54,10 @@ const HomeScreen = () => {
             <div className="row mb-8 text-center">
               <div className="col-lg-8 col-xl-7 mx-auto">
                 <h2 className="fs-16 text-uppercase text-primary mb-3">
-                  Peduli ASD
+                  Program Peduli ASD
                 </h2>
                 <h3 className="display-4">
-                  We make your spending stress-free for you to have the perfect
-                  control.
+                  Menjadi platform edukasi berbasis ilmu pengetahuan yang memiliki landasan ilmiah yang kuat
                 </h3>
               </div>
             </div>
@@ -80,13 +79,14 @@ const HomeScreen = () => {
               </div>
 
               <div className="col-lg-6">
-                <h3 className="display-6 mb-4">Package Design</h3>
-                <p className="mb-5">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis
-                  in, egestas eget quam. Praesent commodo cursus magna, vel
-                  scelerisque nisl consectetur et. Maecenas faucibus mollis
-                  interdum. Maecenas sed diam eget risus varius.
+                <h3 className="display-6 mb-4">Peduli ASD Parents Education Programme (PEP)</h3>
+                <p className="mb-5 text-justify">
+                  Program edukasi intensif seputar Autism Spectrum Disorder (ASD) yang berlangsung selama 1 semester (6 bulan). 
+                  Peserta dibatasi maksimal 10 orang per semester dan akan berjalan ketika peserta di atas 5 orang. Peserta berasal 
+                  dari orangtua individu autistik dan orang-orang yang berada dalam lingkungan yang bersentuhan langsung dengan 
+                  individu ASD, seperti : guru, terapis, pengasuh, keluarga, dan lainnya. Awal semester perdana berjalan per tanggal 
+                  1 Juli 2022 dan berakhir Desember 2022. Adapun materi kelas akan diberikan setiap akhir pekan (120 menit per pertemuan) 
+                  dengan penjabaran materi sebagai berikut <i>(...continue)</i>
                 </p>
                 <div className="row gy-3">
                   <div className="col-xl-6">
@@ -96,7 +96,7 @@ const HomeScreen = () => {
                           <i className="uil uil-check"></i>
                         </span>
                         <span>
-                          Aenean quam ornare curabitur blandit consectetur.
+                          Materi Pengantar tentang Autism Spectrum Diorder (1 kali pertemuan)
                         </span>
                       </li>
                       <li className="mt-3">
@@ -104,7 +104,7 @@ const HomeScreen = () => {
                           <i className="uil uil-check"></i>
                         </span>
                         <span>
-                          Nullam quis risus eget urna mollis ornare aenean leo.
+                          Materi Kemandirian Anak Autistik (6 kali Pertemuan)
                         </span>
                       </li>
                     </ul>
@@ -117,7 +117,7 @@ const HomeScreen = () => {
                           <i className="uil uil-check"></i>
                         </span>
                         <span>
-                          Etiam porta euismod malesuada mollis nisl ornare sem.
+                          Materi Persiapan Sekolah Anak Autistik (4 kali pertemuan)
                         </span>
                       </li>
                       <li className="mt-3">
@@ -125,7 +125,7 @@ const HomeScreen = () => {
                           <i className="uil uil-check"></i>
                         </span>
                         <span>
-                          Vivamus sagittis lacus augue rutrum maecenas.
+                          Materi Kesehatan Anak Autistik (7 kali pertemuan)
                         </span>
                       </li>
                     </ul>
@@ -133,10 +133,10 @@ const HomeScreen = () => {
                 </div>
 
                 <a
-                  href="/"
+                  href="/pep"
                   className="btn btn-soft-leaf rounded-pill mt-6 mb-0"
                 >
-                  More Details
+                  Baca detail
                 </a>
               </div>
             </div>
@@ -158,7 +158,7 @@ const HomeScreen = () => {
               </div>
 
               <div className="col-lg-6">
-                <h3 className="display-6 mb-4">Corporate Design</h3>
+                <h3 className="display-6 mb-4">Tentang Autism Spectrum Disorder</h3>
                 <p className="mb-5">
                   Cum sociis natoque penatibus et magnis dis parturient montes,
                   nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis
@@ -228,17 +228,17 @@ const HomeScreen = () => {
             <div className="row text-center">
               <div className="col-lg-11 col-xl-10 col-xxl-8 mx-auto">
                 <h2 className="fs-16 text-uppercase text-white mb-3">
-                  Join Our Community
+                  Bergabung Bersama Kami
                 </h2>
-                <h3 className="display-4 mb-6 text-white px-lg-5 px-xxl-0">
-                  We are trusted by over 5000+ clients. Join them by using our
-                  services and grow your business.
-                </h3>
+                <h4 className="display-5 mb-6 text-white px-lg-5 px-xxl-0">
+                  Mewujudkan masyarakat inklusif yang menerima utuh individu ASD dan keluarganya dan
+                  senantiasa mendukung mereka agar dapat terlibat dalam peran sosial di Indonesia
+                </h4>
                 <a
                   href="/"
                   className="btn btn-white rounded-pill mb-0 text-nowrap"
                 >
-                  Join Us
+                  Log In
                 </a>
               </div>
             </div>
@@ -250,11 +250,10 @@ const HomeScreen = () => {
             <div className="row mb-8 text-center">
               <div className="col-lg-9 col-xl-8 col-xxl-7 mx-auto">
                 <h2 className="fs-16 text-uppercase text-primary mb-3">
-                  Our Projects
+                  Belanja
                 </h2>
                 <h3 className="display-4">
-                  Check out some of our awesome projects with creative ideas and
-                  great design.
+                  Dukung Individu Autistik Berkarya dan Berdaya
                 </h3>
               </div>
             </div>
@@ -372,32 +371,13 @@ const HomeScreen = () => {
         <section className="wrapper bg-soft-primary">
           <div className="container py-14 pt-md-17 pb-md-19">
             <div className="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0 align-items-center">
-              <div className="col-lg-4">
+              <div className="col-lg-6">
                 <h2 className="fs-16 text-uppercase text-primary mb-3">
-                  Company Facts
+                  Testimoni
                 </h2>
                 <h3 className="display-4 mb-3 pe-xxl-15">
-                  We are proud of our projects
+                  Kesan Mereka Tentang Program Peduli ASD
                 </h3>
-              </div>
-
-              <div className="col-lg-8 mt-lg-2">
-                <div className="row align-items-center counter-wrapper gy-6 text-center">
-                  <div className="col-md-4">
-                    <h3 className="counter counter-lg">1000+</h3>
-                    <p>Completed Projects</p>
-                  </div>
-
-                  <div className="col-md-4">
-                    <h3 className="counter counter-lg">500+</h3>
-                    <p>Happy Clients</p>
-                  </div>
-
-                  <div className="col-md-4">
-                    <h3 className="counter counter-lg">150+</h3>
-                    <p>Awards Won</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -496,10 +476,10 @@ const HomeScreen = () => {
             <div className="row mb-8 text-center">
               <div className="col-lg-8 col-xl-7 col-xxl-6 mx-auto">
                 <h2 className="fs-16 text-uppercase text-primary mb-3">
-                  Company Strategy
+                  Skrining ASD
                 </h2>
                 <h3 className="display-4">
-                  Just sit and relax while we take care of your business needs.
+                  M-CHART-R (Modified Checklist for Autism in Toddlers, Revised)
                 </h3>
               </div>
               {/*  */}
@@ -522,7 +502,7 @@ const HomeScreen = () => {
               </div>
               {/*  */}
               <div className="col-lg-6 col-xxl-5">
-                <h3 className="display-6 mb-7">Our Working Process</h3>
+                <h3 className="display-6 mb-7">Tentang Instrumen M-CHART-R</h3>
                 <div className="d-flex flex-row mb-5">
                   <div>
                     <span className="icon btn btn-circle btn-soft-primary disabled me-5">
@@ -586,7 +566,7 @@ const HomeScreen = () => {
               </div>
               {/*  */}
               <div className="col-lg-6">
-                <h3 className="display-6 mb-4">Why Choose Us?</h3>
+                <h3 className="display-6 mb-4">Tentang Kami</h3>
                 <p className="mb-5">
                   Cum sociis natoque penatibus et magnis dis parturient montes,
                   nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis

@@ -5,6 +5,7 @@ import { updateUserAction, userByIdAction } from '../../../actions/userAction'
 import AlertStyle from '../../../utils/Components/Alert'
 import { AlertEnum } from '../../../utils/Enums/AlertEnum'
 import Loader from '../../../utils/Components/Loader'
+import KidsForm from '../../../component/form/KidsForm'
 
 const EditUserScreen = ({ history, match }) => {
     const id = match.params.id
@@ -17,6 +18,8 @@ const EditUserScreen = ({ history, match }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
     const [objCheckBox, setObjCheckBox] = useState([])
+
+    const [numberTab, setNumberTab] = useState('1')
 
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo: { user } } = userLogin
@@ -74,12 +77,12 @@ const EditUserScreen = ({ history, match }) => {
         setShowPassword(!showPassword)
     }
 
-    const changeCheckbox = async(e) => {
+    const changeCheckbox = async (e) => {
         const id = e.id
 
         // This is for updating checkbox 
         setObjCheckBox(objCheckBox.map((item) => {
-            if(id === item._id) {
+            if (id === item._id) {
                 item.join = !item.join
             }
             return item
@@ -87,7 +90,12 @@ const EditUserScreen = ({ history, match }) => {
     }
 
     const updateEduProgramHandler = () => {
-        dispatch(updateUserAction(id,{programEducation: objCheckBox}))
+        dispatch(updateUserAction(id, { programEducation: objCheckBox }))
+    }
+
+    const onKidFormHandler = (data) => {
+        console.log('data = ', data)
+        dispatch(updateUserAction(id, { kid: data }))
     }
 
     return (
@@ -100,27 +108,33 @@ const EditUserScreen = ({ history, match }) => {
                     <div className="row">
                         <ul className="nav nav-tabs nav-pills">
                             <li className="nav-item">
-                                <a className="nav-link active" data-bs-toggle="tab" href="#tab1-1">
+                                <button className={`nav-link ${ numberTab === '1' ? 'active': ''}`} onClick={() => setNumberTab('1')}>
                                     <i className="uil uil-phone-volume pe-1"></i>
                                     <span>Data Diri</span>
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" data-bs-toggle="tab" href="#tab1-2">
+                                <button className={`nav-link ${ numberTab === '2' ? 'active': ''}`} onClick={() => setNumberTab('2')}>
+                                    <i className="uil uil-phone-volume pe-1"></i>
+                                    <span>Data Anak</span>
+                                </button>
+                            </li>
+                            <li className="nav-item">
+                                <button className={`nav-link ${ numberTab === '3' ? 'active': ''}`}  onClick={() => setNumberTab('3')}>
                                     <i className="uil uil-shield-exclamation pe-1"></i>
                                     <span>Password</span>
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" data-bs-toggle="tab" href="#tab1-3">
+                                <button className={`nav-link ${ numberTab === '4' ? 'active': ''}`}  onClick={() => setNumberTab('4')}>
                                     <i className="uil uil-laptop-cloud pe-1"></i>
                                     <span>Edukasi Program</span>
-                                </a>
+                                </button>
                             </li>
                         </ul>
 
                         <div className="tab-content">
-                            <div className="tab-pane fade show active" id="tab1-1">
+                            <div className={`tab-pane fade ${numberTab === '1' ? 'show active': ''}`} id="tab1">
                                 <div className="card">
                                     <div className="card-body">
                                         <div className="col-xl-10 mx-auto">
@@ -207,7 +221,20 @@ const EditUserScreen = ({ history, match }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="tab-pane fade" id="tab1-2">
+                            <div className={`tab-pane fade ${numberTab === '2' ? 'show active': ''}`} id="tab2">
+                                {data && (
+                                    <KidsForm _name={data.kid.name}
+                                        _birthDate={data.kid.birthDate}
+                                        _condition={data.kid.condition}
+                                        _description={data.kid.description}
+                                        _firstTherapy={data.kid.firstTherapy}
+                                        _level={data.kid.level}
+                                        _therapyPlace={data.kid.therapyPlace}
+                                        onKidFormHandler={onKidFormHandler}
+                                    />
+                                )}
+                            </div>
+                            <div className={`tab-pane fade ${numberTab === '3' ? 'show active': ''}`} id="tab3">
                                 <div className="card">
                                     <div className="card-body">
                                         <div className="col-xl-10 mx-auto">
@@ -284,7 +311,7 @@ const EditUserScreen = ({ history, match }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="tab-pane fade" id="tab1-3">
+                            <div className={`tab-pane fade ${numberTab === '4' ? 'show active': ''}`} id="tab4">
                                 <div className="card">
                                     <div className="card-body">
                                         <div className="col-xl-10 mx-auto">

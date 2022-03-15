@@ -24,7 +24,10 @@ import ArticleByIdScreen from './Screen/Blog/ArticleByIdScreen'
 import Footer from './Layout/Footer'
 import EditUserScreen from './Screen/Admin/User/EditUserScreen'
 import EditArticleScreen from './Screen/Blog/EditArticleScreen'
-import CreateSkriningScreen from './Screen/Skrining/CreateSkriningScreen'
+import ProductScreen from './Screen/Belanja/ProductScreen'
+import LandasanScreen from './Screen/About/LandasanScreen'
+import VisiMisiScreen from './Screen/About/VisiMisiScreen'
+import PEPScreen from './Screen/EducationProgram/PEPScreen'
 
 export const RoleStatusContext = React.createContext()
 
@@ -42,6 +45,9 @@ function App() {
                 <Route path="/profil" component={ProfileScreen} exact />
                 <Route path="/tentang-kami" component={AboutUsScreen} exact />
                 <Route path="/tentang-asd" component={AboutASDScreen} exact />
+                <Route path="/landasan-berdiri" component={LandasanScreen} exact />
+                <Route path="/visi-misi" component={VisiMisiScreen} exact />
+                <Route path="/pep" component={PEPScreen} exact />
                 <Route path="/program-edukasi" component={EducationProgramScreen} exact />
                 <Route path="/program-edukasi/:id" component={EduProgramByIdScreen} exact />
                 <Route path="/artikel" component={BlogScreen} exact/>
@@ -50,6 +56,7 @@ function App() {
                 <Route path="/belanja" component={BelanjaScreen} />
                 <Route path="/skrining" component={SkriningScreen} />
                 <Route path="/add-user" component={AddUserScreen} exact />
+                <Route path="/product" component={ProductScreen} exact />
                 <PrivateRoute path="/admin" currentUser={userInfo ? userInfo.user : null} roles={'admin'} component={AdminScreen} exact />
                 <Route path="/user-list" component={UserListScreen} exact />
                 <Route path="/user-detail/:id" component={UserByIdScreen} exact/>

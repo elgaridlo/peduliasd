@@ -41,7 +41,7 @@ export const removeUserNewData = () => (dispatch) => {
     })
 }
 
-export const userListAction = (id) => async (dispatch) => {
+export const userListAction = () => async (dispatch) => {
     try {
         dispatch({
             type: USER_LIST_REQUEST
@@ -118,7 +118,8 @@ export const updateUserAction = (id, payload) => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-
+        
+        console.log('before request = ', payload)
         const { data } = await axios.put(`/api/users/${id}`,payload, config)
 
         console.log('data profile = ', data)
