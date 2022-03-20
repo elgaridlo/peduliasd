@@ -92,7 +92,9 @@ const UserListScreen = ({ history }) => {
             <section className="wrapper bg-light">
                 <div className="container py-16 py-md-17">
                     <div className="grid mb-14 mb-md-17">
-                        <div className="row isotope gy-6 mt-n19 mt-md-n22">
+                        <div className="row isotope gy-6 mt-n19 mt-md-n22" ref={element => {
+                            if (element) element.style.setProperty('height', 'auto', 'important');
+                        }}>
                             {userlist && userlist.users.map((item) => {
                                 return <div key={item._id} className="item col-md-6 col-xl-6">
                                     <div className="card shadow-lg">

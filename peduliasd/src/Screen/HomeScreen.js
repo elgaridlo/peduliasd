@@ -1,15 +1,6 @@
 import React, { useEffect } from 'react'
 
 const HomeScreen = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = '../assets/js/theme.js';
-    script.async = true;
-    document.body.appendChild(script);
-  return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
   return (
     <>
         <section className="wrapper bg-soft-primary">

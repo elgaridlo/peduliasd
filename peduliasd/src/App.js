@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -35,6 +35,16 @@ function App() {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
   
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '/assets/js/theme.js';
+    script.async = true;
+    document.body.appendChild(script);
+  return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+
   return (
     <div className="content-wrapper">
         <Router>

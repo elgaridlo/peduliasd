@@ -52,7 +52,8 @@ Author:		elemis
   --bs-navy-rgb: 52, 63, 82;
   --bs-ash-rgb: 148, 153, 163;
   --bs-white-rgb: 255, 255, 255;
-  --bs-light-rgb: 254, 254, 254;
+  --bs-light-rgb: #14bad3;
+  --bs-light-rgb-asli: 254, 254, 254;
   --bs-gray-rgb: 246, 247, 249;
   --bs-dark-rgb: 38, 43, 50;
   --bs-primary-rgb: 63, 120, 224;

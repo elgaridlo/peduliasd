@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/authActions'
+import { isBrowser, isMobile } from 'react-device-detect';
+
 
 const Header = () => {
   const [showLogin, setShowLogin] = useState(true)
@@ -58,7 +60,7 @@ const Header = () => {
                 ></button>
               </div>
               <ul className="navbar-nav">
-                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/">Beranda</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/">Beranda</a></li>
                 <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Tentang Kami</span></a>
                   <ul className="dropdown-menu">
                     <li className="nav-item"><a className="dropdown-item" href="/visi-misi">Visi dan Misi</a></li>
@@ -75,72 +77,10 @@ const Header = () => {
                   </ul>
                 </li>
                 {/* <li className="nav-item"><a className="nav-link" href="/program-edukasi">Program</a></li> */}
-                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/artikel">Artikel</a></li>
-                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/skrining">Skrining</a></li>
-                <li className="nav-item"><a className="nav-link" style={{paddingTop: '27px'}} href="/belanja">Belanja</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/artikel">Artikel</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/skrining">Skrining</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/belanja">Belanja</a></li>
               </ul>
-              {/* <ul className="navbar-nav">
-                <li className="nav-item">
-                  <LinkContainer to='/beranda' className='nav-link'>
-                    <Nav.Link>
-                      Beranda
-                    </Nav.Link>
-                  </LinkContainer>
-                </li>
-                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="/">Tentang Kami</a>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <LinkContainer to='/tentang-kami' >
-                        <Nav.Link className="dropdown-item">
-                          Peduli ASD
-                        </Nav.Link>
-                      </LinkContainer>
-                    </li>
-                    <li className="nav-item">
-                      <LinkContainer to='/tentang-asd' >
-                        <Nav.Link className="dropdown-item">
-                          Tentang ASD
-                        </Nav.Link>
-                      </LinkContainer>
-                    </li>
-                    <li className="nav-item">
-                      <LinkContainer to='/user-list' >
-                        <Nav.Link className="dropdown-item">
-                          User Data
-                        </Nav.Link>
-                      </LinkContainer>
-                    </li>
-                  </ul>
-                </li>
-                <li className="nav-item">
-                  <LinkContainer to='/program-edukasi' className='nav-link'>
-                    <Nav.Link>
-                      Program
-                    </Nav.Link>
-                  </LinkContainer>
-                </li>
-                <li className="nav-item">
-                  <LinkContainer to='/artikel' className='nav-link'>
-                    <Nav.Link>
-                      Artikel
-                    </Nav.Link>
-                  </LinkContainer>
-                </li>
-                <li className="nav-item">
-                  <LinkContainer to='/tests' className='nav-link'>
-                    <Nav.Link>
-                      Skrining ASD
-                    </Nav.Link>
-                  </LinkContainer>
-                </li>
-                <li className="nav-item">
-                  <LinkContainer to='/tests' className='nav-link'>
-                    <Nav.Link>
-                      Belanja
-                    </Nav.Link>
-                  </LinkContainer>
-                </li>
-              </ul> */}
             </div>
 
             <div className="navbar-other w-100 d-flex ms-auto">
@@ -158,13 +98,13 @@ const Header = () => {
                 
                   {
                     showLogin ? (
-                    <li className="nav-item d-none d-md-block">
+                    <li className="nav-item d-md-block">
                       <LinkContainer to="/login">
                         <button className="btn btn-primary rounded-pill mx-1 mb-2 mb-md-0" >Login</button>
                       </LinkContainer>
                     </li>
                     ) : (
-                      <li className="nav-item dropdown d-none d-md-block">
+                      <li className="nav-item dropdown language-select">
                         <a className="nav-link dropdown-item dropdown-toggle" href="/"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i className="uil uil-cog"></i>
                         </a>
