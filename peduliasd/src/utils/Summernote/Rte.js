@@ -10,7 +10,7 @@ const RTE = ({dataSummernote, input}) => {
 
     return (
         <Editor
-            apiKey="c8kzax1a706e1g2hh7aaw8q3ob2w6dax5n3njvg6s1ahgjyv"
+            apiKey="820gtvt7yqmulqcxtpzbja076dwspze9klex1yofkos8wbwj"
             value={input}
             // initialValue= "<p>Tulisan ini merupakan inisial pertama</p>"
             init={{

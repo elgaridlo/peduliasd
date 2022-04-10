@@ -22,7 +22,7 @@ const EditUserScreen = ({ history, match }) => {
     const [numberTab, setNumberTab] = useState('1')
 
     const userLogin = useSelector((state) => state.userLogin)
-    const { userInfo: { user } } = userLogin
+    const { userInfo} = userLogin
 
     const userById = useSelector((state) => state.userById)
     const { loading, error, data, auth } = userById
@@ -39,7 +39,11 @@ const EditUserScreen = ({ history, match }) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(userByIdAction(id))
+        if (userInfo) {
+            dispatch(userByIdAction(id))
+        } else {
+            history.push('/login')
+        }
     }, [id])
 
     useEffect(() => {

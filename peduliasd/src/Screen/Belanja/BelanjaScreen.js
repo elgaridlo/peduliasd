@@ -3,8 +3,8 @@ import React from 'react'
 const BelanjaScreen = () => {
     return (
         <>
-            <div class="content-wrapper">
-                <section className="wrapper bg-light">
+            <div className="content-wrapper">
+                {/* <section className="wrapper bg-light">
                     <div className="container py-14 py-md-17">
                         <div className="row mb-8 text-center">
                             <div className="col-lg-9 col-xl-8 col-xxl-7 mx-auto">
@@ -14,20 +14,12 @@ const BelanjaScreen = () => {
                             </div>
                         </div>
                     </div>
-                </section>
-
+                </section> */}
                 <section className="wrapper bg-light">
                     <div className="container py-14 py-md-16">
                         <div className="grid grid-view projects-masonry">
                             <div className="isotope-filter filter mb-10">
-                                <p>Filter:</p>
-                                <ul>
-                                    <li><a className="filter-item active" data-filter="*">All</a></li>
-                                    <li><a className="filter-item" data-filter=".concept">Concept</a></li>
-                                    <li><a className="filter-item" data-filter=".product">Product</a></li>
-                                    <li><a className="filter-item" data-filter=".workshop">Workshop</a></li>
-                                    <li><a className="filter-item" data-filter=".still-life">Still Life</a></li>
-                                </ul>
+                                <p>Karya anak autistik:</p>
                             </div>
                             <div className="row gx-md-10 gy-10 gy-md-13 isotope">
                                 <div className="project item col-md-6 product">

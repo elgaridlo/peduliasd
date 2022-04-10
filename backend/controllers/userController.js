@@ -33,7 +33,7 @@ exports.getAll = catchAsync (async(req, res, next) => {
 })
 
 exports.getProducts = catchAsync(async (req, res, next) => {
-    const pageSize = 10
+    const pageSize = 2
     const page = Number(req.query.pageNumber) || 1
 
     const keyword = req.query.query ?  {
@@ -51,7 +51,7 @@ exports.getProducts = catchAsync(async (req, res, next) => {
 
     const finish = await result.filter(item => item.auth.role === 'member')
 
-    res.json({users: finish, page, pages: Math.ceil(count / pageSize)})
+    res.json({users: finish, currentPage: page, totalPages: Math.ceil(count / pageSize)})
 })
 
 exports.getUserById = catchAsync (async(req, res, next) => {

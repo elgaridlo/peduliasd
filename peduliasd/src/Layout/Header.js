@@ -61,12 +61,12 @@ const Header = () => {
               </div>
               <ul className="navbar-nav">
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/">Beranda</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/tentang-asd">Tentang ASD</a></li>
                 <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Tentang Kami</span></a>
                   <ul className="dropdown-menu">
+                    <li className="nav-item"><a className="dropdown-item" href="/landasan-berdiri">Landasan Berdiri</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/visi-misi">Visi dan Misi</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/tentang-kami">Peduli ASD</a></li>
-                    <li className="nav-item"><a className="dropdown-item" href="/tentang-asd">Tentang ASD</a></li>
-                    <li className="nav-item"><a className="dropdown-item" href="/landasan-berdiri">Landasan Berdiri</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/user-list">User Data</a></li>
                   </ul>
                 </li>

@@ -41,7 +41,7 @@ export const removeUserNewData = () => (dispatch) => {
     })
 }
 
-export const userListAction = () => async (dispatch) => {
+export const userListAction = (payload) => async (dispatch) => {
     try {
         dispatch({
             type: USER_LIST_REQUEST
@@ -53,9 +53,7 @@ export const userListAction = () => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.get(`/api/users/`, config)
-
-        // console.log('data profile = ', data)
+        const { data } = await axios.get(`/api/users?query=${payload.query}&pageNumber=${payload.pageNumber}`, config)
 
         dispatch({
             type: USER_LIST_SUCCESS,

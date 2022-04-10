@@ -34,7 +34,7 @@ export const createArticleAction = (payload) => async (dispatch, getState) => {
     }
 }
 
-export const listArticleAction = () => async (dispatch) => {
+export const listArticleAction = (query) => async (dispatch) => {
     try {
         dispatch({
             type: LIST_ARTICLE_REQUEST
@@ -46,7 +46,7 @@ export const listArticleAction = () => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.get(`/api/article`, config)
+        const { data } = await axios.get(`/api/article`, query , config)
 
         dispatch({
             type: LIST_ARTICLE_SUCCESS,

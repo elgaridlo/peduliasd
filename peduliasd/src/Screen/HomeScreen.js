@@ -17,7 +17,7 @@ const HomeScreen = () => {
                   Bantu mewujudkan tumbuhnya kelompok orang tua/keluarga anak ASD yang 
                   mampu mengedukasi diri dan lingkungannya ... 
                 </p>
-                <a href="/" className="more hover">
+                <a href="/visi-misi" className="more hover">
                   Lihat lebih
                 </a>
               </div>
@@ -485,8 +485,8 @@ const HomeScreen = () => {
                 ></div>
                 <figure className="rounded">
                   <img
-                    src="./assets/img/photos/about20.jpg"
-                    srcSet="./assets/img/photos/about20@2x.jpg 2x"
+                    src="./assets/img/photos/about20.png"
+                    srcSet="./assets/img/photos/about20@2x.png 2x"
                     alt=""
                   />
                 </figure>
@@ -549,8 +549,8 @@ const HomeScreen = () => {
                 ></div>
                 <figure className="rounded">
                   <img
-                    src="./assets/img/photos/about19.jpg"
-                    srcSet="./assets/img/photos/about19@2x.jpg 2x"
+                    src="./assets/img/photos/about19.png"
+                    srcSet="./assets/img/photos/about19@2x.png 2x"
                     alt=""
                   />
                 </figure>

@@ -1,23 +1,21 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { Pagination } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
 import { userListAction } from '../../../actions/userAction'
+import PaginationForm from '../../../component/form/PaginationForm'
 import Loader from '../../../utils/Components/Loader'
-import SearchUser from '../../Search/SearchUser'
 
-const UserListScreen = ({ history }) => {
+const UserListScreen = ({ history, match }) => {
 
     const [query, setQuery] = useState('')
-    const [pageNumber, setPageNumber] = useState(1)
+    const [pageNumber, setPageNumber] = useState(
+        // match.location.search.rep
+    )
+
+    console.log('match = ', match.location.search.split('?pageNumber='))
+    console.log('hist = ', history)
 
     const dispatch = useDispatch()
-
-    // const {
-    //     users,
-    //     hasMore,
-    //     // loading,
-    //     error
-    // } = SearchUser(query, pageNumber)
 
     const userList = useSelector(state => state.userList)
     const { err, loading, userlist } = userList
@@ -27,7 +25,15 @@ const UserListScreen = ({ history }) => {
     }, [])
 
     useEffect(() => {
-        console.log('user list= ', userlist)
+        setPageNumber(1)
+        const payload = {
+            query,
+            pageNumber
+        }
+        dispatch(userListAction(payload))
+    }, [query])
+
+    useEffect(() => {
     }, [userlist])
 
     // const observer = useRef()
@@ -47,6 +53,10 @@ const UserListScreen = ({ history }) => {
         setPageNumber(1)
     }
 
+    const directPageFunction = (futurePage) => {
+        console.log('futurepage = ', futurePage)
+        history.push(`/user-list?pageNumber=${futurePage}`)
+    }
     const previewHandler = (id) => {
         history.push(`/user-detail/${id}`)
     }
@@ -78,7 +88,7 @@ const UserListScreen = ({ history }) => {
                                 <aside className="col-md-8 sidebar">
                                     <form className="search-form">
                                         <div className="form-floating mb-0">
-                                            <input id="search-form" type="text" className="form-control" placeholder="Search" value={query} onChange={handleSearch} />
+                                            <input id="search-form" type="text" className="form-control" placeholder="Search" value={query} onChange={(e) => setQuery(e.target.value)} />
                                             <label htmlFor="search-form">Search</label>
                                         </div>
                                     </form>
@@ -92,86 +102,61 @@ const UserListScreen = ({ history }) => {
             <section className="wrapper bg-light">
                 <div className="container py-16 py-md-17">
                     <div className="grid mb-14 mb-md-17">
-                        <div className="row isotope gy-6 mt-n19 mt-md-n22" ref={element => {
-                            if (element) element.style.setProperty('height', 'auto', 'important');
-                        }}>
-                            {userlist && userlist.users.map((item) => {
-                                return <div key={item._id} className="item col-md-6 col-xl-6">
+                        {loading && (<Loader />)}
+                        {
+                            userlist && (
+                                <div className="row isotope gy-6 mt-n19 mt-md-n22" ref={element => {
+                                    if (element) element.style.setProperty('height', 'auto', 'important');
+                                }}>
                                     <div className="card shadow-lg">
                                         <div className="card-body">
-                                            <blockquote className="icon mb-0">
-                                                <p>
-                                                    {item.address}
-                                                </p>
-                                                <div className="blockquote-details">
-                                                    <div className="info ps-0">
-                                                        <h5 className="mb-1">{item.fullname}</h5>
-                                                        <p className="mb-0">{item.phone}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="row">
-                                                    <button className="btn btn-info mt-1" onClick={() => previewHandler(item._id)}>Preview</button>
-                                                    <button className="btn btn-outline-primary mt-1" onClick={() => editHandler(item._id)}>Edit</button>
-                                                </div>
-                                            </blockquote>
+                                            <div className="table-responsive">
+                                                <table className="table table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nama</th>
+                                                            <th>No Ponsel</th>
+                                                            <th>Tanggal Lahir</th>
+                                                            <th>Nama Anak</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {userlist && userlist.users.map((item) => (
+                                                            // console.log('muncul lah item = ', item)
+                                                            <tr key={item._id}>
+                                                                <td style={{textAlign:'left'}}>{item.fullname}</td>
+                                                                <td>{item.phone}</td>
+                                                                <td>{''}</td>
+                                                                <td>{item.kid.name}</td>
+                                                                <td>
+                                                                    <a href={`/user-detail/${item._id}`}><i className="uil uil-external-link-alt"></i><span> Preview</span></a>
+                                                                    {' '}
+                                                                    <a href={`/user/edit/${item._id}`}><i className="uil uil-file-edit-alt"></i><span> Edit</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        ))}
+                                                        {userlist && userlist.users.length === 0 && (
+                                                            <tr>
+                                                                <td style={{width:'100%'}} colSpan='5'>
+                                                                    <p className='center'><i>user tidak ditemukan</i></p>
+                                                                </td>
+                                                            </tr>
+                                                        )}
+
+                                                    </tbody>
+                                                </table>
+                                                <PaginationForm currentPage={userlist ? userlist.currentPage : 1} totalPages={userlist ? userlist.totalPages : 1} directPageFunction={directPageFunction} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                // if (userlist.users.length === index + 1 && item.auth.role === 'member') {
-                                //        return <div key={item._id} className="item col-md-6 col-xl-6" ref={lastUserElementRef}>
-                                //             <div className="card shadow-lg">
-                                //                 <div className="card-body">
-                                //                     <blockquote className="icon mb-0">
-                                //                         <p>
-                                //                             {item.address}
-                                //                         </p>
-                                //                         <div className="blockquote-details">
-                                //                             <div className="info ps-0">
-                                //                                 <h5 className="mb-1">{item.fullname}</h5>
-                                //                                 <p className="mb-0">{item.phone}</p>
-                                //                             </div>
-                                //                         </div>
-                                //                         <div className="row">
-                                //                             <button className="btn btn-info mt-1" onClick={() => previewHandler(item._id)}>Preview</button>
-                                //                             <button className="btn btn-outline-primary mt-1" onClick={() => editHandler(item._id)}>Edit</button>
-                                //                         </div>
-                                //                     </blockquote>
-                                //                 </div>
-                                //             </div>
-                                //         </div>
-                                // } else {
-                                //     if (item.auth.role === 'member') {
-                                //        return <div key={item._id} className="item col-md-6 col-xl-6">
-                                //             <div className="card shadow-lg">
-                                //                 <div className="card-body">
-                                //                     <blockquote className="icon mb-0">
-                                //                         <p>
-                                //                             {item.address}
-                                //                         </p>
-                                //                         <div className="blockquote-details">
-                                //                             <div className="info ps-0">
-                                //                                 <h5 className="mb-1">{item.fullname}</h5>
-                                //                                 <p className="mb-0">{item.phone}</p>
-                                //                             </div>
-                                //                         </div>
-                                //                         <div className="row">
-                                //                             <button className="btn btn-info mt-1" onClick={() => previewHandler(item._id)}>Preview</button>
-                                //                             <button className="btn btn-outline-primary mt-1" onClick={() => editHandler(item._id)}>Edit</button>
-                                //                         </div>
-                                //                     </blockquote>
-                                //                 </div>
-                                //             </div>
-                                //         </div>
-                                //     }
-                                // }
-                            })}
-                            {loading && (<Loader />)}
+                            )
+                        }
 
-                        </div>
                     </div>
                 </div>
             </section>
-
         </>
     )
 }

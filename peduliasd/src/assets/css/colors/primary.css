@@ -220,7 +220,7 @@ blockquote,
 }
 
 .bg-soft-primary {
-  background-color: #c6f9ffd9 !important;
+  background-color: #daf9fda6 !important;
 }
 
 .bg-pale-primary {
@@ -228,21 +228,21 @@ blockquote,
 }
 
 .bg-gradient-primary {
-  background: linear-gradient(180deg, #c6f9ffd9, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, #daf9fda6, rgba(255, 255, 255, 0) 100%);
 }
 
 .bg-gradient-reverse-primary {
-  background: linear-gradient(0deg, #c6f9ffd9, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, #daf9fda6, rgba(255, 255, 255, 0) 100%);
 }
 
 .wrapper.bg-soft-primary.angled.lower-start:after,
 .wrapper.bg-soft-primary.angled.upper-start:before {
-  border-left-color: #c6f9ffd9;
+  border-left-color: #daf9fda6;
 }
 
 .wrapper.bg-soft-primary.angled.lower-end:after,
 .wrapper.bg-soft-primary.angled.upper-end:before {
-  border-right-color: #c6f9ffd9;
+  border-right-color: #daf9fda6;
 }
 
 .wrapper.bg-pale-primary.angled.lower-start:after,
@@ -307,7 +307,7 @@ form.dark-fields .form-control:focus {
 
 .btn-soft-primary.btn-circle.ripple::after,
 .btn-soft-primary.btn-circle.ripple::before {
-  background-color: #c6f9ffd9;
+  background-color: #daf9fda6;
 }
 
 .bg-dot.primary {
