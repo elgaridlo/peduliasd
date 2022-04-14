@@ -8,12 +8,7 @@ import Loader from '../../../utils/Components/Loader'
 const UserListScreen = ({ history, match }) => {
 
     const [query, setQuery] = useState('')
-    const [pageNumber, setPageNumber] = useState(
-        // match.location.search.rep
-    )
-
-    console.log('match = ', match.location.search.split('?pageNumber='))
-    console.log('hist = ', history)
+    const [pageNumber, setPageNumber] = useState(1)
 
     const dispatch = useDispatch()
 
@@ -25,45 +20,23 @@ const UserListScreen = ({ history, match }) => {
     }, [])
 
     useEffect(() => {
-        setPageNumber(1)
+        // setPageNumber(1)
         const payload = {
             query,
             pageNumber
         }
         dispatch(userListAction(payload))
-    }, [query])
+    }, [query, pageNumber])
 
     useEffect(() => {
     }, [userlist])
 
-    // const observer = useRef()
-    // const lastUserElementRef = useCallback(node => {
-    //     if (loading) return
-    //     if (observer.current) observer.current.disconnect()
-    //     observer.current = new IntersectionObserver(entries => {
-    //         if (entries[0].isIntersecting && hasMore) {
-    //             setPageNumber(prevPageNumber => prevPageNumber + 1)
-    //         }
-    //     })
-    //     if (node) observer.current.observe(node)
-    // }, [loading, hasMore])
-
-    function handleSearch(e) {
-        setQuery(e.target.value)
-        setPageNumber(1)
-    }
-
     const directPageFunction = (futurePage) => {
-        console.log('futurepage = ', futurePage)
-        history.push(`/user-list?pageNumber=${futurePage}`)
-    }
-    const previewHandler = (id) => {
-        history.push(`/user-detail/${id}`)
+        // console.log('futurepage = ', futurePage)
+        setPageNumber(futurePage)
+        // history.push(`/user-list?pageNumber=${futurePage}`)
     }
 
-    const editHandler = (id) => {
-        history.push(`/user/edit/${id}`)
-    }
 
     return (
         <>
@@ -146,7 +119,10 @@ const UserListScreen = ({ history, match }) => {
 
                                                     </tbody>
                                                 </table>
-                                                <PaginationForm currentPage={userlist ? userlist.currentPage : 1} totalPages={userlist ? userlist.totalPages : 1} directPageFunction={directPageFunction} />
+                                                <PaginationForm 
+                                                    currentPage={userlist ? userlist.currentPage : 1} 
+                                                    totalPages={userlist ? userlist.totalPages : 1} 
+                                                    directPageFunction={directPageFunction} />
                                             </div>
                                         </div>
                                     </div>

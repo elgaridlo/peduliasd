@@ -4,6 +4,7 @@ import { userListAction } from '../../actions/userAction'
 import CreateArticle from './Article/CreateArticle'
 import AddEduProgram from './EduProgram/AddEduProgram'
 import ListEduProgramScreen from './EduProgram/ListEduProgramScreen'
+import CreateShop from './Shop/CreateShop'
 import AddWorkshop from './Workshop/AddWorkshop'
 
 const AdminScreen = () => {
@@ -43,9 +44,9 @@ const AdminScreen = () => {
             </section>
 
             <section className="wrapper bg-light">
-                <div className="container py-16 py-md-17">
+                <div className="container pt-16 pt-md-17">
                     <div className="grid mb-14 mb-md-17">
-                        <div className="isotope gy-6 mt-n19 mt-md-n22" style={{ height: 'auto !important' }} ref={element => {
+                        <div className=" gt-6 mt-n19 mt-md-n22" ref={element => {
                             if (element) element.style.setProperty('height', 'auto', 'important');
                         }}>
                             <div>
@@ -98,7 +99,7 @@ const AdminScreen = () => {
                                         <CreateArticle />
                                     </div>
                                     <div className="tab-pane fade" id="tab1-4">
-                                        <ListEduProgramScreen />
+                                        <CreateShop />
                                     </div>
                                     <div className="tab-pane fade" id="tab1-5">
                                         <CreateArticle />

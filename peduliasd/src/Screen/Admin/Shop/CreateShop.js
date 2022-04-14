@@ -2,23 +2,26 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createArticleAction } from '../../../actions/articleAction'
+import { createProductAction } from '../../../actions/productAction'
 import RTE from '../../../utils/Summernote/Rte'
 
 const CreateShop = () => {
-    const [title, setTitle] = useState('')
+    const [product_name, setProduct_name] = useState('')
+    const [creator, setCreator] = useState('')
+    const [webLink, setWebLink] = useState('')
     const [, setImage] = useState('')
     const [, setUploading] = useState(false)
     const [imageData, setImageData] = useState(null)
-    const [content, setContent] = useState('')
+    const [description, setDescription] = useState('')
+    const [err, setErr] = useState('')
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log('content = ', content)
-    }, [content])
+    }, [description])
 
     const addHandler = (input) => {
-        setContent(input)
+        setDescription(input)
     }
 
     const uploadHandler = async (e) => {
@@ -31,6 +34,7 @@ const CreateShop = () => {
             setUploading(false)
         } catch (error) {
             console.error(error)
+            setErr(error)
             setUploading(false)
         }
     }
@@ -40,19 +44,19 @@ const CreateShop = () => {
             const formData = new FormData()
             const config = {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Description-Type': 'multipart/form-data'
                 }
             }
             formData.append('image', imageData)
-            const { data } = await axios.post('/api/upload/article', formData, config)
-            console.log('data = ', data)
+            const { data } = await axios.post('/api/upload/product', formData, config)
             const payload = {
-                title, poster: data, content
+                product_name, photo: data, description, creator, webLink
             }
-            dispatch(createArticleAction(payload))
+            dispatch(createProductAction(payload))
 
         } catch (error) {
             console.error(error)
+            setErr(error)
         }
     }
 
@@ -61,7 +65,7 @@ const CreateShop = () => {
             <section className="wrapper">
                 <div className="container py-14 py-md-16">
                     <div>
-                        <h2 className="fs-15 text-uppercase text-line text-primary text-center mb-3">Buat Artikel</h2>
+                        <h2 className="fs-15 text-uppercase text-line text-primary text-center mb-3">Buat Produk</h2>
                     </div>
                     <div className="row">
                         <div className="col-xl-10 mx-auto">
@@ -76,16 +80,57 @@ const CreateShop = () => {
                                                         type="text"
                                                         name="name"
                                                         className="form-control"
-                                                        placeholder="Jane"
                                                         required
-                                                        value={title}
-                                                        onChange={(e) => setTitle(e.target.value)} />
-                                                    <label htmlFor="form_name">Judul *</label>
+                                                        value={product_name}
+                                                        onChange={(e) => setProduct_name(e.target.value)} />
+                                                    <label htmlFor="form_name">Nama Produk *</label>
                                                     <div className="valid-feedback">
                                                         Looks good!
                                                     </div>
                                                     <div className="invalid-feedback">
-                                                        Tolong beri judul.
+                                                        Tolong beri nama produk.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="row gx-4">
+                                            <div className="col-md-12">
+                                                <div className="form-floating mb-4">
+                                                    <input id="form_name"
+                                                        type="text"
+                                                        name="creator"
+                                                        className="form-control"
+                                                        required
+                                                        value={creator}
+                                                        onChange={(e) => setCreator(e.target.value)} />
+                                                    <label htmlFor="form_name">Nama Creator *</label>
+                                                    <div className="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                    <div className="invalid-feedback">
+                                                        Tolong beri nama creator.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="row gx-4">
+                                            <div className="col-md-12">
+                                                <div className="form-floating mb-4">
+                                                    <input id="form_name"
+                                                        type="text"
+                                                        name="webLink"
+                                                        className="form-control"
+                                                        required
+                                                        value={webLink}
+                                                        onChange={(e) => setWebLink(e.target.value)} />
+                                                    <label htmlFor="form_name">Link Web *</label>
+                                                    <div className="valid-feedback">
+                                                        Looks good!
+                                                    </div>
+                                                    <div className="invalid-feedback">
+                                                        Tolong beri link web.
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,7 +161,7 @@ const CreateShop = () => {
                                             <div className="col-xl-12 col-xxl-12">
                                                 <div className="card">
                                                     <div className="card-header">
-                                                        <h4 className="card-title">Summernote Editor</h4>
+                                                        <h4 className="card-product_name">Summernote Editor</h4>
                                                     </div>
                                                     <div className="card-body">
                                                         <div className="summernote">

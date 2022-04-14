@@ -79,7 +79,7 @@ const Header = () => {
                 {/* <li className="nav-item"><a className="nav-link" href="/program-edukasi">Program</a></li> */}
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/artikel">Artikel</a></li>
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/skrining">Skrining</a></li>
-                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/belanja">Belanja</a></li>
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/product">Belanja</a></li>
               </ul>
             </div>
 

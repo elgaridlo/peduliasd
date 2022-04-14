@@ -63,10 +63,10 @@ function App() {
                 <Route path="/artikel" component={BlogScreen} exact/>
                 <Route path="/artikel/:id" component={ArticleByIdScreen} exact />
                 <Route path="/artikel/:id/edit" component={EditArticleScreen} exact />
-                <Route path="/belanja" component={BelanjaScreen} />
+                <Route path="/product" component={BelanjaScreen} exact/>
                 <Route path="/skrining" component={SkriningScreen} />
                 <Route path="/add-user" component={AddUserScreen} exact />
-                <Route path="/product" component={ProductScreen} exact />
+                <Route path="/product/:id" component={ProductScreen} exact />
                 <PrivateRoute path="/admin" currentUser={userInfo ? userInfo.user : null} roles={'admin'} component={AdminScreen} exact />
                 <Route path="/user-list" component={UserListScreen} exact />
                 <Route path="/user-detail/:id" component={UserByIdScreen} exact/>

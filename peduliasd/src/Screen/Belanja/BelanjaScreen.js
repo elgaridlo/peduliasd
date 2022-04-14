@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProductAction } from '../../actions/productAction'
 
 const BelanjaScreen = () => {
+    const dispatch = useDispatch()
+
+    const products = useSelector(state => state.products)
+    const {error, loading, listProduct} = products
+
+    useEffect(() => {
+        if(!listProduct) {
+            dispatch(listProductAction())    
+        }
+        console.log('listProduct = ', listProduct)
+    },[listProduct])
     return (
         <>
             <div className="content-wrapper">
@@ -21,97 +34,18 @@ const BelanjaScreen = () => {
                             <div className="isotope-filter filter mb-10">
                                 <p>Karya anak autistik:</p>
                             </div>
-                            <div className="row gx-md-10 gy-10 gy-md-13 isotope">
-                                <div className="project item col-md-6 product">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs16.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-purple">Cosmetic</div>
-                                            <h3 className="post-title">Cras Fermentum Sem</h3>
+                            <div className="row gx-md-10 gy-10 gy-md-13">
+                                {listProduct && listProduct.map(item => (
+                                    <div key={item._id} className="project item col-md-6 workshop">
+                                        <figure className="lift rounded mb-6"><a href={`/product/${item._id}`}> <img src={item.photo} alt="" /></a></figure>
+                                        <div className="project-details d-flex justify-content-center flex-column">
+                                            <div className="post-header">
+                                                <div className="post-category text-line mb-3 text-leaf">Ayya</div>
+                                                <h3 className="post-title">{item.product_name}</h3>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="project item col-md-6 workshop">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs17.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-leaf">Coffee</div>
-                                            <h3 className="post-title">Mollis Ipsum Mattis</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 still-life">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs18.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-violet">Still Life</div>
-                                            <h3 className="post-title">Ipsum Ultricies Cursus</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 product">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs19.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-yellow">Product</div>
-                                            <h3 className="post-title">Sollicitudin Ornare Porta</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 product">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs20.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-orange">Product</div>
-                                            <h3 className="post-title">Inceptos Euismod Egestas</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 workshop">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs21.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-green">Workshop</div>
-                                            <h3 className="post-title">Ipsum Mollis Vulputate</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 concept">
-                                    <figure className="lift rounded mb-6"><a href="./single-project.html"> <img src="./assets/img/photos/cs22.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-red">Concept</div>
-                                            <h3 className="post-title">Porta Ornare Cras</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 concept still-life">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs23.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-aqua">Concept</div>
-                                            <h3 className="post-title">Vulputate Sollicitudin</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 product">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs24.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-purple">Product</div>
-                                            <h3 className="post-title">Magna Tristique Inceptos</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project item col-md-6 product">
-                                    <figure className="lift rounded mb-6"><a href="/product"> <img src="./assets/img/photos/cs25.jpg" alt="" /></a></figure>
-                                    <div className="project-details d-flex justify-content-center flex-column">
-                                        <div className="post-header">
-                                            <div className="post-category text-line mb-3 text-pink">Product</div>
-                                            <h3 className="post-title">Ridiculus Elit</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>

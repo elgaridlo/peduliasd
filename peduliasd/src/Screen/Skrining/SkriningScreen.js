@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAssesmentByIdAction } from '../../actions/assesmentAction';
+import { skriningTes } from './ObjectSkrining/skriningTest';
 
 const SkriningScreen = () => {
-  const [pertanyaan, setPertanyaan] = useState([])
+  const [pertanyaan, setPertanyaan] = useState(skriningTes)
   const dispatch = useDispatch()
 
   const getAssesmentId = useSelector((state) => state.getAssesmentId)
   const { detail } = getAssesmentId
 
   useEffect(() => {
-    if (!detail) {
-      dispatch(getAssesmentByIdAction('61fb822affa16c452f0a06c6'))
-    } else {
-      setPertanyaan(detail.assesment)
-      console.log('pertanyaan = ', pertanyaan)
-    }
+    // if (!detail) {
+    //   dispatch(getAssesmentByIdAction('61fb822affa16c452f0a06c6'))
+    // } else {
+    //   // setPertanyaan(detail.assesment)
+    //   console.log('pertanyaan = ', pertanyaan)
+    // }
   }, [detail])
 
   // useEffect(() => {
@@ -49,9 +50,9 @@ const SkriningScreen = () => {
               <AlertStyle variant='success' icons={AlertEnum.SUCCESS} show={true}>Password berhasil diubah!</AlertStyle>
             )} */}
 
-        {detail && pertanyaan.map((item, index) => (
+        {pertanyaan.map((item, index) => (
           <div key={index} className="container py-4 py-md-4">
-            <div className="row mb-8 text-center">
+            <div className="row mb-8">
               <div className="card">
                 <div className="card-body">
                   <div className="col-xl-10 mx-auto">

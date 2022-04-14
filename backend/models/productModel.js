@@ -1,9 +1,17 @@
 const mongoose = require('mongoose')
 
-const shopSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
     product_name: {
         type: String,
         required: true
+    },
+    creator: {
+        type: String,
+        required: true,
+    },
+    webLink: {
+        type: String,
+        required: true,
     },
     photo: {
         type: String,
@@ -18,6 +26,6 @@ const shopSchema = mongoose.Schema({
 })
 
 
-const Shop = mongoose.model('shop', shopSchema)
+const Product = mongoose.model('product', productSchema)
 
-module.exports = Shop
+module.exports = Product

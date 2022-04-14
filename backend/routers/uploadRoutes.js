@@ -42,7 +42,7 @@ router.post('/article', upload.single('image'), (req, res) => {
     res.send(`/${req.file.path}`)
 })
 
-router.post('/shop', upload.single('image'), (req, res) => {
+router.post('/product', upload.single('image'), (req, res) => {
     res.send(`/${req.file.path}`)
 })
 

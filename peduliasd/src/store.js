@@ -9,6 +9,7 @@ import { articleStore } from './store/articleStore'
 import { authStore } from './store/authStore'
 import { userStore } from './store/userStore'
 import { assesmentStore } from './store/assesmentStore'
+import { productStore } from './store/productStore'
 
 const reducer = combineReducers({
     ...workshopStore,
@@ -17,6 +18,7 @@ const reducer = combineReducers({
     ...authStore,
     ...userStore,
     ...assesmentStore,
+    ...productStore,
     userLogin: userLoginReducer,
     userDetail: userProfileReducer,
     addNewUser: userCreated,
