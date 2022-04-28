@@ -2,32 +2,56 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAssesmentByIdAction } from '../../actions/assesmentAction';
 import { skriningTes } from './ObjectSkrining/skriningTest';
+import './style.css'
 
-const SkriningScreen = () => {
+const SkriningScreen = ({history}) => {
   const [pertanyaan, setPertanyaan] = useState(skriningTes)
-  const dispatch = useDispatch()
+  const [hasil, setHasil] = useState([])
+  const [nomerDiisi, setNomerDiisi] = useState([])
+  const [show, setShow] = useState(false)
 
   const getAssesmentId = useSelector((state) => state.getAssesmentId)
   const { detail } = getAssesmentId
 
   useEffect(() => {
-    // if (!detail) {
-    //   dispatch(getAssesmentByIdAction('61fb822affa16c452f0a06c6'))
-    // } else {
-    //   // setPertanyaan(detail.assesment)
-    //   console.log('pertanyaan = ', pertanyaan)
-    // }
-  }, [detail])
+    console.log('hasil = ', hasil)
+    if(nomerDiisi.length === 20) {
+      let score = 0
 
-  // useEffect(() => {
-  //   if (detail) {
-  //     setPertanyaan(detail.assesment)
-  //     console.log('pertanyaan = ', pertanyaan)
-  //   }
-  // }, [detail])
+      for(let i=0; i < hasil.length; i++) {
+        score += Number(hasil[i].score)
+      }
+      console.log('scorenya = ', score)
+      history.push({
+        pathname: '/score',
+        search: `?nilai=${score}`,
+      })
+    }
+  }, [hasil,nomerDiisi])
 
-  const handleRadioChange = e => {
-    const index = e.id;
+  const handleRadioChange = async (e, index) => {
+    await setHasil(() => {
+      const data = [...hasil]
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].index == index) {
+          data.splice(i,1)
+        }
+      }
+
+      return [...data,{score:e, index}]
+    })
+  }
+
+  const checkHasil = () => {
+    setNomerDiisi(() => {
+      const indexManipulate = []
+      for (let i = 0; i < hasil.length; i++) {
+        indexManipulate.push(hasil[i].index)
+      }
+      return [...indexManipulate]
+    })
+    setShow(true)
   }
 
   return (
@@ -43,17 +67,10 @@ const SkriningScreen = () => {
           </div>
         </div>
 
-        {/* {uppdateError && (
-              <AlertStyle variant='danger' icons={AlertEnum.DANGER} show={true}>{uppdateError}</AlertStyle>
-            )}
-            {update && update.status && (
-              <AlertStyle variant='success' icons={AlertEnum.SUCCESS} show={true}>Password berhasil diubah!</AlertStyle>
-            )} */}
-
         {pertanyaan.map((item, index) => (
           <div key={index} className="container py-4 py-md-4">
             <div className="row mb-8">
-              <div className="card">
+              <div className={`card ${show ? nomerDiisi.includes(index) ? '' : 'red-box-pertanyaan' : ''}`} id={`box-pertanyaan-${index}`}>
                 <div className="card-body">
                   <div className="col-xl-10 mx-auto">
                     <div className="row gy-10 gx-lg-8 gx-xl-12">
@@ -67,11 +84,11 @@ const SkriningScreen = () => {
                           </div>
 
                           <div className="row gx-4">
-                            {item.multichoice.map((jawaban) => (
-                              <div className="col-6">
+                            {item.multichoice.map((jawaban, indexABC) => (
+                              <div key={`jawaban-${indexABC}`} className="col-6">
                                 <div className="mb-4 text-start">
                                   <div className="form-check">
-                                    <input className="form-check-input" type="radio" name={`flexRadio-${index}`} value={jawaban.score} onChange={(e) => handleRadioChange(e.target)} id={index} />
+                                    <input className="form-check-input" type="radio" name={`flexRadio-${index}`} value={jawaban.score} onChange={(e) => handleRadioChange(e.target.value , index)} id={index} />
                                     <label className="form-check-label" htmlFor="flexRadioDefault1"> {jawaban.answer} </label>
                                   </div>
                                 </div>
@@ -90,7 +107,7 @@ const SkriningScreen = () => {
 
         <div className="container py-4 py-md-4">
           <div className="row py-2 text-center">
-            <button className="btn btn-outline-success"> Check Score</button>
+            <button className="btn btn-outline-success" onClick={(e) => checkHasil()}> Lihat hasil</button>
           </div>
         </div>
 

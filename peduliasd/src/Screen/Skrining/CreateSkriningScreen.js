@@ -105,14 +105,7 @@ const CreateSkriningScreen = () => {
             </div>
           </div>
         </div>
-
-        {/* {uppdateError && (
-              <AlertStyle variant='danger' icons={AlertEnum.DANGER} show={true}>{uppdateError}</AlertStyle>
-            )}
-            {update && update.status && (
-              <AlertStyle variant='success' icons={AlertEnum.SUCCESS} show={true}>Password berhasil diubah!</AlertStyle>
-            )} */}
-
+        
         {arr.map((item, index) => (
         <div key={index} className="container py-4 py-md-4">
           <div className="row mb-8 text-center">

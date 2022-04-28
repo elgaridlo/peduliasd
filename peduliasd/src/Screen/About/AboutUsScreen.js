@@ -40,7 +40,7 @@ const AboutUsScreen = () => {
             </section>
 
             <section className="wrapper bg-light angled upper-end lower-end">
-                <div className="container py-14 py-md-16">
+                <div className="container py-6 py-md-6">
                     <div className="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
                         {/* <div className="col-lg-6 position-relative order-lg-2">
                             <div className="shape bg-dot primary rellax w-16 h-20" data-rellax-speed="1" style={{top: "3rem",left:"5.5rem"}}></div>
@@ -56,8 +56,7 @@ const AboutUsScreen = () => {
 
                         <div className="col-lg-12">
                             <img src="./assets/img/icons/megaphone.svg" className="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-                            <h2 className="display-4 mb-3">Who Are We?</h2>
-                            <p className="lead fs-lg">We are a digital and branding company that believes in the power of creative strategy and along with great design.</p>
+                            <h2 className="display-4 mb-3">Siapa Kami?</h2>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
                                 &emsp;&ensp;Autism Spectrum Disorder (ASD) adalah diagnosis resmi yang dikeluarkan oleh APA pada tahun 2013 yang memiliki kriteria-kriteria khusus untuk mengelompokkan anak-anak dengan gangguan autistik ke dalam satu payung yang sama. Sebelum istilah ASD diperbaharui, masyarakat masih menggunakan istilah autisme atau autis pada anak-anak yang memiliki gangguan perkembangan dan memenuhi kriteria khas autistik. Setelah istilah ini digunakan lebih dari 8 tahun, masyarakat mulai menggunakan “ASD” sebagai penyebutan yang umum terhadap anak-anak yang terdiagnosis dan tumbuh dengan kondisi autistik. Namun, tidak semua lapisan masyarakat memahami terkait pergantian istilah ASD. Sehingga dengan istilah “autis” stigma terhadap kelompok dengan kondisi ASD masih sangat sering ditemui di dunia. Penggunaan istilah yang tepat dan edukasi secara ilmiah kepada masyakarat tentu dapat menjadi salah satu cara untuk mengurangi stigma masyarakat yang dapat menurunkan kualitas kehidupan keluarga yang mengasuh anak dengan kondisi autistik.
                             </p>
@@ -87,74 +86,6 @@ const AboutUsScreen = () => {
                         </div>
 
                     </div>
-
-                    <div className="row mb-5">
-                        <div className="col-md-10 col-xl-8 col-xxl-7 mx-auto text-center">
-                            <img src="./assets/img/icons/list.svg" className="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-                            <h2 className="display-4 mb-4 px-lg-14">Here are 3 working steps to organize our business projects.</h2>
-                        </div>
-
-                    </div>
-
-                    <div className="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-                        <div className="col-lg-6 order-lg-2">
-                            <div className="card me-lg-6">
-                                <div className="card-body p-6">
-                                    <div className="d-flex flex-row">
-                                        <div>
-                                            <span className="icon btn btn-circle btn-lg btn-soft-primary disabled me-4"><span className="number">01</span></span>
-                                        </div>
-                                        <div>
-                                            <h4 className="mb-1">Collect Ideas</h4>
-                                            <p className="mb-0">Nulla vitae elit libero pharetra augue dapibus.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className="card ms-lg-13 mt-6">
-                                <div className="card-body p-6">
-                                    <div className="d-flex flex-row">
-                                        <div>
-                                            <span className="icon btn btn-circle btn-lg btn-soft-primary disabled me-4"><span className="number">02</span></span>
-                                        </div>
-                                        <div>
-                                            <h4 className="mb-1">Data Analysis</h4>
-                                            <p className="mb-0">Vivamus sagittis lacus vel augue laoreet.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className="card mx-lg-6 mt-6">
-                                <div className="card-body p-6">
-                                    <div className="d-flex flex-row">
-                                        <div>
-                                            <span className="icon btn btn-circle btn-lg btn-soft-primary disabled me-4"><span className="number">03</span></span>
-                                        </div>
-                                        <div>
-                                            <h4 className="mb-1">Finalize Product</h4>
-                                            <p className="mb-0">Cras mattis consectetur purus sit amet.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div className="col-lg-6">
-                            <h2 className="display-6 mb-3">How It Works?</h2>
-                            <p className="lead fs-lg pe-lg-5">Find out everything you need to know and more about how we create our business process models.</p>
-                            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare.</p>
-                            <p className="mb-6">Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis.</p>
-                            <a href="/" className="btn btn-primary rounded-pill mb-0">Learn More</a>
-                        </div>
-
-                    </div>
-
                 </div>
 
             </section>
@@ -192,7 +123,7 @@ const AboutUsScreen = () => {
                                 <div className="item-inner">
                                     <div className="card">
                                         <div className="card-body">
-                                            <img className="rounded-circle w-15 mb-4" src="./assets/img/avatars/te2.jpg" srcSet="./assets/img/avatars/te2@2x.jpg 2x" alt="" />
+                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/santi.png" srcSet="/assets/img/gambar/team/santi.png" alt="" />
                                             <h4 className="mb-1">Nur Endah Santi</h4>
                                             <div className="meta mb-2">CFO (Chief Financial Officer)</div>
                                             {/* <p className="mb-2">Akuntansi, FEB UNPAD (07) </p> */}
@@ -226,7 +157,7 @@ const AboutUsScreen = () => {
                                 <div className="item-inner">
                                     <div className="card">
                                         <div className="card-body">
-                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/profile-team.png" srcSet="/assets/img/gambar/team/profile-team.png" alt="" />
+                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/habil.png" srcSet="/assets/img/gambar/team/habil.png" alt="" />
                                             <h4 className="mb-1">Isfan Azhabil</h4>
                                             <div className="meta mb-2">CIO (Chief Information Officer)</div>
                                             {/* <p className="mb-2">Elektronika dan Instrumentasi, FMIPA UGM (13)</p> */}
@@ -243,7 +174,7 @@ const AboutUsScreen = () => {
                                 <div className="item-inner">
                                     <div className="card">
                                         <div className="card-body">
-                                            <img className="rounded-circle w-15 mb-4" src="./assets/img/avatars/te5.jpg" srcSet="./assets/img/avatars/te5@2x.jpg 2x" alt="" />
+                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/tia.png" srcSet="/assets/img/gambar/team/tia.png" alt="" />
                                             <h4 className="mb-1">Tia Wida Ekaputri HZ</h4>
                                             <div className="meta mb-2">CCO (Chief Communications Officer)</div>
                                             {/* <p className="mb-2">Biologi, FMIPA UNILA (09) ; Ilmu Kedokteran Dasar dan Biomedis, FK-KMK UGM (14)</p> */}
@@ -274,8 +205,6 @@ const AboutUsScreen = () => {
                                 </div>
                             </div>
                         </Carousel>
-                        
-                        
                     </div>
                 </div>
             </section>

@@ -67,13 +67,15 @@ const Header = () => {
                     <li className="nav-item"><a className="dropdown-item" href="/landasan-berdiri">Landasan Berdiri</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/visi-misi">Visi dan Misi</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/tentang-kami">Peduli ASD</a></li>
-                    <li className="nav-item"><a className="dropdown-item" href="/user-list">User Data</a></li>
+                    {userInfo && userInfo.user.role === 'admin' && (<li className="nav-item"><a className="dropdown-item" href="/user-list">User Data</a></li>)}
                   </ul>
                 </li>
                 <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Program</span></a>
                   <ul className="dropdown-menu">
-                    <li className="nav-item"><a className="dropdown-item" href="/pep">Parents Education Programme</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/program-edukasi">Zoominar dan IG Live</a></li>                    
+                    <li className="nav-item"><a className="dropdown-item" href="/program-edukasi">Gerakan Masyarakat Inklusif (GERMASIF)</a></li>                    
+                    <li className="nav-item"><a className="dropdown-item" href="/pep">ASD Telehealth</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/pep">Parents Education Programme</a></li>
                   </ul>
                 </li>
                 {/* <li className="nav-item"><a className="nav-link" href="/program-edukasi">Program</a></li> */}

@@ -28,12 +28,12 @@ const HomeScreen = () => {
             </div>
 
             <div className="col-lg-6">
-              <p className="lead fs-25 my-3">
+              <p className="lead fs-25 my-3 text-justify">
                 Bantu mewujudkan tumbuhnya kelompok orang tua/keluarga anak ASD
                 yang mampu mengedukasi diri dan lingkungannya ...
               </p>
               <a href="/visi-misi" className="more hover">
-                Lihat lebih
+                Baca selengkapnya
               </a>
             </div>
           </div>
@@ -46,8 +46,8 @@ const HomeScreen = () => {
             ></div>
             <figure className="rounded mb-md-n20">
               <img
-                src="./assets/img/photos/about18.jpg"
-                srcSet="./assets/img/photos/about18@2x.jpg 2x"
+                src="./assets/img/photos/about18.png"
+                srcSet="./assets/img/photos/about18.png"
                 alt=""
               />
             </figure>
@@ -63,8 +63,7 @@ const HomeScreen = () => {
                 Program Peduli ASD
               </h2>
               <h3 className="display-4">
-                Menjadi platform edukasi berbasis ilmu pengetahuan yang memiliki
-                landasan ilmiah yang kuat
+                Menjadi platform edukasi berbasis sains dengan landasan ilmiah yang kuat
               </h3>
             </div>
           </div>
@@ -78,8 +77,8 @@ const HomeScreen = () => {
               ></div>
               <figure className="rounded mb-0">
                 <img
-                  src="./assets/img/photos/se3.jpg"
-                  srcSet="./assets/img/photos/se3@2x.jpg 2x"
+                  src="./assets/img/photos/se3.png"
+                  srcSet="./assets/img/photos/se3.png"
                   alt=""
                 />
               </figure>
@@ -90,17 +89,15 @@ const HomeScreen = () => {
                 Peduli ASD Parents Education Programme (PEP)
               </h3>
               <p className="mb-5 text-justify">
-                Program edukasi intensif seputar Autism Spectrum Disorder (ASD)
+                Program edukasi intensif seputar <span className="fst-italic"> Autism Spectrum Disorder (ASD) </span>
                 yang berlangsung selama 1 semester (6 bulan). Peserta dibatasi
                 maksimal 10 orang per semester dan akan berjalan ketika peserta
                 di atas 5 orang. Peserta berasal dari orangtua individu autistik
-                dan orang-orang yang berada dalam lingkungan yang bersentuhan
-                langsung dengan individu ASD, seperti : guru, terapis, pengasuh,
-                keluarga, dan lainnya. Awal semester perdana berjalan per
+                dan orang-orang yang terlibat dalam pengasuhan individu autistik.
+                Awal semester perdana berjalan per
                 tanggal 1 Juli 2022 dan berakhir Desember 2022. Adapun materi
                 kelas akan diberikan setiap akhir pekan (120 menit per
                 pertemuan) dengan penjabaran materi sebagai berikut{' '}
-                <i>(...continue)</i>
               </p>
               <div className="row gy-3">
                 <div className="col-xl-6">
@@ -110,7 +107,7 @@ const HomeScreen = () => {
                         <i className="uil uil-check"></i>
                       </span>
                       <span>
-                        Materi Pengantar tentang Autism Spectrum Diorder (1 kali
+                        Materi Pengantar tentang <span className="fst-italic"> Autism Spectrum Disorder (ASD) </span> (1 kali
                         pertemuan)
                       </span>
                     </li>
@@ -152,7 +149,7 @@ const HomeScreen = () => {
                 href="/pep"
                 className="btn btn-soft-leaf rounded-pill mt-6 mb-0"
               >
-                Baca detail
+                Baca selengkapnya
               </a>
             </div>
           </div>
@@ -166,8 +163,8 @@ const HomeScreen = () => {
               ></div>
               <figure className="rounded mb-0">
                 <img
-                  src="./assets/img/photos/se4.jpg"
-                  srcSet="./assets/img/photos/se4@2x.jpg 2x"
+                  src="./assets/img/photos/se4.png"
+                  srcSet="./assets/img/photos/se4.png"
                   alt=""
                 />
               </figure>
@@ -175,17 +172,61 @@ const HomeScreen = () => {
 
             <div className="col-lg-6">
               <h3 className="display-6 mb-4">
-                Tentang Autism Spectrum Disorder
+                Tentang <span className="fst-italic"> Autism Spectrum Disorder </span>
               </h3>
               <p className="mb-5 text-justify">
-              Istilah “autism” diciptakan pertama kali pada tahun 1911 oleh psikiater 
-              asal Jerman bernama Eugen Bleuler untuk menggambarkan salah satu gejala 
-              kasus skizofrenia yaitu menyendiri. Menurut Bleuler, “autism” yang muncul 
-              pada kasus skizofrenia ditandai adanya keinginan yang kekanak-kanakan untuk 
-              menghindari kenyataan yang tidak memuaskan dan menggantinya dengan fantasi dan halusinasi. 
+                <span className="fst-italic">Autism Spectrum Disorder (ASD)</span> adalah gangguan perkembangan yang ditandai 
+                dengan munculnya gangguan sosial dan komunikasi, keterbatasan minat dan kemampuan, 
+                serta perilaku berulang yang cenderung kaku dan tidak fleksibel. 
               </p>
-              <a href="/" className="btn btn-soft-leaf rounded-pill mt-6 mb-0">
-                More Details
+              <div className="row gy-3">
+                <div className="col-xl-6">
+                  <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
+                    <li>
+                      <span>
+                        <i className="uil uil-check"></i>
+                      </span>
+                      <span>
+                        Studi pertama tentang prevalensi ASD muncul pada tahun1960-an dan 1970-an.
+                      </span>
+                    </li>
+                    <li className="mt-3">
+                      <span>
+                        <i className="uil uil-check"></i>
+                      </span>
+                      <span>
+                        Diagnosis klinis spektrum autisme pertama kali pada tahun 1980 diatur oleh 
+                        <span className="fst-italic">American Psychiatric Association (APA)</span> dalam 
+                        <span className="fst-italic">Diagnostic and Statistical Manual of Mental Disorders (DSM)</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="col-xl-6">
+                  <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
+                  <li>
+                      <span>
+                        <i className="uil uil-check"></i>
+                      </span>
+                      <span>
+                        Studi-studi ini melaporkan bahwa prevalensi ASD saat itu sekitar 4-5 kasus per 10.000 anak. 
+                      </span>
+                    </li>
+                    <li className="mt-3">
+                      <span>
+                        <i className="uil uil-check"></i>
+                      </span>
+                      <span>
+                        Pada DSM V (2013), beragam jenis gangguan yang masih dalam satu spektrum digabungkan dalam istilah 
+                        <span className="fst-italic">Autism Spectrum Disorder (ASD).</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <a href="/tentang-asd" className="btn btn-soft-leaf rounded-pill mt-6 mb-0">
+                Baca selengkapnya
               </a>
             </div>
           </div>
@@ -194,7 +235,7 @@ const HomeScreen = () => {
 
       <section
         className="wrapper image-wrapper bg-image bg-overlay"
-        data-image-src="./assets/img/photos/bg10.jpg"
+        data-image-src="./assets/img/photos/bg10.png"
       >
         <div className="container py-18">
           <div className="row text-center">
@@ -203,9 +244,8 @@ const HomeScreen = () => {
                 Bergabung Bersama Kami
               </h2>
               <h4 className="display-5 mb-6 text-white px-lg-5 px-xxl-0">
-                Mewujudkan masyarakat inklusif yang menerima utuh individu ASD
-                dan keluarganya dan senantiasa mendukung mereka agar dapat
-                terlibat dalam peran sosial di Indonesia
+                Mewujudkan lingkungan inklusif yang menerima dan mendukung 
+                individu autistik beserta keluarganya agar dapat menjalankan peran sosial dalam masyarakat
               </h4>
               <a
                 href={socialMedia.whatsappAdmin}
@@ -236,16 +276,22 @@ const HomeScreen = () => {
             <Row>
               <Col lg={4}>
                 <div className="project ">
-                  <figure className="lift rounded mb-6">
-                    <a href="./single-project.html">
+                  <figure className="rounded mb-6">
+                    <a href="/product">
                       {' '}
-                      <img src="./assets/img/photos/pd1.jpg" alt="" />
+                      <img src="/assets/img/home/section_product_ceritayya.jpeg" alt="" />
                     </a>
                   </figure>
                   <div className="project-details d-flex justify-content-center flex-column">
                     <div className="post-header">
-                      <div className="post-category mb-2 text-yellow">Coffee</div>
-                      <h2 className="post-title h3">Cras Fermentum Sem</h2>
+                      <div className="post-category mb-2 text-yellow">Ceritayya</div>
+                      <p className="text-justify">
+                        Seorang Anak Perempuan Autistik yang memiliki bakat menggambar. 
+                        Ia secara aktif memperjual-belikan karyanya dalam bentuk merchandise yang unik dan khas Autistik.
+                      </p>
+                      <a href="/product" className="more hover">
+                        Yuk kenalan yuk!
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -420,10 +466,8 @@ const HomeScreen = () => {
                   </span>
                 </div>
                 <div>
-                  <h4 className="mb-1">Collect Ideas</h4>
-                  <p className="mb-0">
-                    Nulla vitae elit libero pharetra augue dapibus. Praesent
-                    commodo cursus. Sed posuere consectetur.
+                  <p className="mb-0 text-justify">
+                    Instrumen M-CHAT-R umumnya digunakan untuk pemeriksaan awal anak yang memiliki ciri dan perilaku mengarah kepada ASD. 
                   </p>
                 </div>
               </div>
@@ -434,10 +478,8 @@ const HomeScreen = () => {
                   </span>
                 </div>
                 <div>
-                  <h4 className="mb-1">Data Analysis</h4>
-                  <p className="mb-0">
-                    Vivamus sagittis lacus vel augue laoreet. Etiam porta sem
-                    malesuada magna est at lobortis nulla auctor.
+                  <p className="mb-0 text-justify">
+                    Instrumen ini dapat diisi langsung oleh orangtua baik secara offline dan online.
                   </p>
                 </div>
               </div>
@@ -448,13 +490,17 @@ const HomeScreen = () => {
                   </span>
                 </div>
                 <div>
-                  <h4 className="mb-1">Finalize Product</h4>
-                  <p className="mb-0">
-                    Cras mattis consectetur purus sit amet. Aenean lacinia
-                    bibendum nulla sed. Donec ullamcorper metus.
+                  <p className="mb-0 text-justify">
+                    Tujuan utama M-CHAT-R ini adalah untuk memaksimalkan sensitifitas, yaitu mendeteksi sebanyak mungkin kasus ASD
                   </p>
                 </div>
               </div>
+              <a
+                  href="/skrining"
+                  className="btn btn-soft-primary rounded-pill mt-6 mb-0"
+                >
+                  Lakukan Skrining
+                </a>
             </div>
             {/*  */}
           </div>
@@ -477,12 +523,10 @@ const HomeScreen = () => {
             {/*  */}
             <div className="col-lg-6">
               <h3 className="display-6 mb-4">Tentang Kami</h3>
-              <p className="mb-5">
-                Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis
-                in, egestas eget quam. Praesent commodo cursus magna, vel
-                scelerisque nisl consectetur et. Maecenas faucibus mollis
-                interdum. Maecenas sed diam eget risus varius.
+              <p className="mb-5 text-justify">
+                Terbentuknya tim Peduli ASD berawal dari kesamaan visi dan misi untuk mempopulerkan tagar 
+                <span className="fw-bold"> #banggamembersamaiindividuautistik </span>dan keinginan yang konsisten dalam menyajikan edukasi berbasis sains. 
+                Kami memiliki fokus kerja dalam 4 bidang utama :
               </p>
               <div className="row gy-3">
                 <div className="col-xl-6">
@@ -492,7 +536,7 @@ const HomeScreen = () => {
                         <i className="uil uil-check"></i>
                       </span>
                       <span>
-                        Aenean quam ornare curabitur blandit consectetur.
+                        Edukasi berbasis Sains 
                       </span>
                     </li>
                     <li className="mt-3">
@@ -500,7 +544,7 @@ const HomeScreen = () => {
                         <i className="uil uil-check"></i>
                       </span>
                       <span>
-                        Nullam quis risus eget urna mollis ornare aenean leo.
+                        Pengembangan teknologi
                       </span>
                     </li>
                   </ul>
@@ -513,14 +557,16 @@ const HomeScreen = () => {
                         <i className="uil uil-check"></i>
                       </span>
                       <span>
-                        Etiam porta euismod malesuada mollis nisl ornare sem.
+                        Pengadaan media edukasi
                       </span>
                     </li>
                     <li className="mt-3">
                       <span>
                         <i className="uil uil-check"></i>
                       </span>
-                      <span>Vivamus sagittis lacus augue rutrum maecenas.</span>
+                      <span>
+                        Pengelolaan media sosial
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -528,10 +574,10 @@ const HomeScreen = () => {
               </div>
               {/*  */}
               <a
-                href="/"
+                href="/visi-misi"
                 className="btn btn-soft-primary rounded-pill mt-6 mb-0"
               >
-                More Details
+                Baca selengkapnya
               </a>
             </div>
             {/*  */}

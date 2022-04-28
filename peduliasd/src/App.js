@@ -28,6 +28,7 @@ import ProductScreen from './Screen/Belanja/ProductScreen'
 import LandasanScreen from './Screen/About/LandasanScreen'
 import VisiMisiScreen from './Screen/About/VisiMisiScreen'
 import PEPScreen from './Screen/EducationProgram/PEPScreen'
+import ScoreScreen from './Screen/Skrining/ScoreScreen'
 
 export const RoleStatusContext = React.createContext()
 
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/user-list" component={UserListScreen} exact />
                 <Route path="/user-detail/:id" component={UserByIdScreen} exact/>
                 <Route path="/user/edit/:id" component={EditUserScreen} exact/>
+                <Route path="/score" component={ScoreScreen} exact/>
                 <Route path="/" component={HomeScreen} exact />
               </Switch>
               <div className="progress-wrap">

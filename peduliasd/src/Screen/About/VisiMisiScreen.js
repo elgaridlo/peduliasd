@@ -102,7 +102,7 @@ const VisiMisiScreen = () => {
                                 <div className="item-inner">
                                     <div className="card">
                                         <div className="card-body">
-                                            <img className="rounded-circle w-15 mb-4" src="./assets/img/avatars/te2.jpg" srcSet="./assets/img/avatars/te2@2x.jpg 2x" alt="" />
+                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/santi.png" srcSet="/assets/img/gambar/team/santi.png" alt="" />
                                             <h4 className="mb-1">Nur Endah Santi</h4>
                                             <div className="meta mb-2">CFO (Chief Financial Officer)</div>
                                             {/* <p className="mb-2">Akuntansi, FEB UNPAD (07) </p> */}
@@ -136,7 +136,7 @@ const VisiMisiScreen = () => {
                                 <div className="item-inner">
                                     <div className="card">
                                         <div className="card-body">
-                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/profile-team.png" srcSet="/assets/img/gambar/team/profile-team.png" alt="" />
+                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/habil.png" srcSet="/assets/img/gambar/team/habil.png" alt="" />
                                             <h4 className="mb-1">Isfan Azhabil</h4>
                                             <div className="meta mb-2">CIO (Chief Information Officer)</div>
                                             {/* <p className="mb-2">Elektronika dan Instrumentasi, FMIPA UGM (13)</p> */}
@@ -153,7 +153,7 @@ const VisiMisiScreen = () => {
                                 <div className="item-inner">
                                     <div className="card">
                                         <div className="card-body">
-                                            <img className="rounded-circle w-15 mb-4" src="./assets/img/avatars/te5.jpg" srcSet="./assets/img/avatars/te5@2x.jpg 2x" alt="" />
+                                            <img className="rounded-circle w-15 mb-4" src="/assets/img/gambar/team/tia.png" srcSet="/assets/img/gambar/team/tia.png" alt="" />
                                             <h4 className="mb-1">Tia Wida Ekaputri HZ</h4>
                                             <div className="meta mb-2">CCO (Chief Communications Officer)</div>
                                             {/* <p className="mb-2">Biologi, FMIPA UNILA (09) ; Ilmu Kedokteran Dasar dan Biomedis, FK-KMK UGM (14)</p> */}
