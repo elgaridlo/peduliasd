@@ -10,10 +10,10 @@ const PEPScreen = () => {
                             <div className="shape bg-dot primary rellax w-16 h-20" data-rellax-speed="1" style={{ top: '3rem', left: '5.5rem' }}></div>
                             <div className="overlap-grid overlap-grid-2">
                                 <div className="item">
-                                    <figure className="rounded shadow"><img src="./assets/img/photos/about2.jpg" srcSet="/assets/img/photos/about2@2x.jpg 2x" alt=""></img></figure>
+                                    <figure className="rounded shadow"><img src="/assets/img/photos/about2.png" srcSet="/assets/img/photos/about2.png" alt=""></img></figure>
                                 </div>
                                 <div className="item">
-                                    <figure className="rounded shadow"><img src="./assets/img/photos/about3.jpg" srcSet="/assets/img/photos/about3@2x.jpg 2x" alt=""></img></figure>
+                                    <figure className="rounded shadow"><img src="/assets/img/photos/about3.png" srcSet="/assets/img/photos/about3.png" alt=""></img></figure>
                                 </div>
                             </div>
                         </div>
@@ -22,8 +22,8 @@ const PEPScreen = () => {
                             <h2 className="display-5 mb-3">Parents Education Programme</h2>
                             <p className="mb-6 text-justify">
                                 Program edukasi intensif seputar Autism Spectrum Disorder (ASD) yang berlangsung selama 1 semester (6 bulan). Peserta dibatasi maksimal 10 orang per semester
-                                dan akan berjalan ketika peserta di atas 5 orang. Peserta berasal dari orangtua individu autistik dan orang-orang yang berada dalam lingkungan yang bersentuhan
-                                langsung dengan individu ASD, seperti : guru, terapis, pengasuh, keluarga, dan lainnya. Awal semester perdana berjalan per tanggal 1 Juli 2022 dan berakhir Desember 2022.
+                                dan akan berjalan saat peserta di atas 5 orang. Peserta berasal dari orangtua individu autistik dan orang-orang yang berada dalam lingkungan yang bersentuhan
+                                langsung dengan individu ASD. Awal semester perdana berjalan per tanggal 1 Juli 2022 dan berakhir Desember 2022.
                                 Adapun materi kelas akan diberikan setiap akhir pekan (120 menit per pertemuan) dengan penjabaran materi sebagai berikut :
                             </p>
                             <div className="row gy-3 gx-xl-8">
@@ -60,11 +60,9 @@ const PEPScreen = () => {
                     </div>
                     <div className="row gx-lg-8 gx-xl-12 gy-10 mb-14 align-items-center">
                         <p className="mb-6 text-justify">
-                            Total pertemuan sebanyak 18 pertemuan selama 6 bulan dengan durasi pertemuan 3-4 kali per bulan. Jadwal intensi kelas 
-                            dapat berubah sesuai kesepakatan peserta. Program ini hanya dibuka 1 kelas (maksimal 10 peserta) setiap bulannya dengan 
-                            biaya sebesar Rp. 1.000.000,- yang dibayarkan di awal semester. Adapun fasilitas Program Kelas Edukasi ini berupa sertifikat, 
+                            Total pertemuan sebanyak 18 pertemuan selama 6 bulan dengan durasi pertemuan 3-4 kali per bulan. Jadwal intensif kelas 
+                            dapat berubah sesuai kesepakatan peserta. Program ini hanya dibuka 1 kelas (maksimal 10 peserta). Adapun fasilitas Program Kelas Edukasi ini berupa sertifikat, 
                             materi edukasi, rekaman zoom meeting setiap pertemuan, dan ilmu serta tambahan skill yang bermanfaat dalam mendampingi anak autistik. 
-                            Program ini diisi oleh peneliti seputar ASD, terapis, psikolog klinis anak, dan tenaga kesehatan lainnya yang ahli di bidangnya masing-masing.
                         </p>
                     </div>
                 </div>

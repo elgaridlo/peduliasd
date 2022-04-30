@@ -28,7 +28,7 @@ const HomeScreen = () => {
             </div>
 
             <div className="col-lg-6">
-              <p className="lead fs-25 my-3 text-justify">
+              <p className="lead fs-25 my-3 ">
                 Bantu mewujudkan tumbuhnya kelompok orang tua/keluarga anak ASD
                 yang mampu mengedukasi diri dan lingkungannya ...
               </p>
@@ -88,7 +88,7 @@ const HomeScreen = () => {
               <h3 className="display-6 mb-4">
                 Peduli ASD Parents Education Programme (PEP)
               </h3>
-              <p className="mb-5 text-justify">
+              <p className="mb-5 ">
                 Program edukasi intensif seputar <span className="fst-italic"> Autism Spectrum Disorder (ASD) </span>
                 yang berlangsung selama 1 semester (6 bulan). Peserta dibatasi
                 maksimal 10 orang per semester dan akan berjalan ketika peserta
@@ -174,7 +174,7 @@ const HomeScreen = () => {
               <h3 className="display-6 mb-4">
                 Tentang <span className="fst-italic"> Autism Spectrum Disorder </span>
               </h3>
-              <p className="mb-5 text-justify">
+              <p className="mb-5">
                 <span className="fst-italic">Autism Spectrum Disorder (ASD)</span> adalah gangguan perkembangan yang ditandai 
                 dengan munculnya gangguan sosial dan komunikasi, keterbatasan minat dan kemampuan, 
                 serta perilaku berulang yang cenderung kaku dan tidak fleksibel. 
@@ -523,7 +523,7 @@ const HomeScreen = () => {
             {/*  */}
             <div className="col-lg-6">
               <h3 className="display-6 mb-4">Tentang Kami</h3>
-              <p className="mb-5 text-justify">
+              <p className="mb-5">
                 Terbentuknya tim Peduli ASD berawal dari kesamaan visi dan misi untuk mempopulerkan tagar 
                 <span className="fw-bold"> #banggamembersamaiindividuautistik </span>dan keinginan yang konsisten dalam menyajikan edukasi berbasis sains. 
                 Kami memiliki fokus kerja dalam 4 bidang utama :

@@ -10,9 +10,10 @@ return (
               <div className="widget text-justify">
                 <img
                   className="mb-4"
-                  src="/assets/logoasd.png"
-                  srcSet="/assets/logoasd.png 2x"
+                  src="/logoasd.png"
+                  srcSet="/logoasd.png 2x"
                   alt=""
+                  style={{height: '80px'}}
                 />
                 <nav className="nav social social-white">
                   <a href="/">

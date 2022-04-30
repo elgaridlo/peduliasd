@@ -20,21 +20,21 @@ const AboutASDScreen = () => {
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
                                 &emsp;&ensp;<span className="fst-italic">Autism Spectrum Disorder (ASD) </span> adalah gangguan perkembangan yang ditandai dengan munculnya 
                                 gangguan sosial dan komunikasi, keterbatasan minat dan kemampuan, serta perilaku berulang yang cenderung 
-                                kaku dan tidak fleksibel. Studi pertama tentang prevalensi spektrum autisme muncul pada tahun1960-an dan 1970-an. 
-                                Saat itu autisme dianggap sebagai kondisi yang sangat parah  dan disertai dengan kecacatan intelektual. 
-                                Studi-studi ini melaporkan bahwa prevalensi spektrum autisme saat itu sekitar 4-5 kasus per 10.000 anak. 
-                                Diagnosis klinis spektrum autisme pertama kali pada tahun 1980 diatur oleh <span className="fst-italic"> American Psychiatric Association (APA) </span> 
-                                dalam <span className="fst-italic"> Diagnostic and Statistical Manual of Mental Disorders (DSM) III </span>. Pada tahun 1994, <span className="fst-italic"> Diagnostic and Statistical 
-                                Manual of Mental Disorders (DSM) IV </span> merevisi kriteria diagnostik spektrum autisme. Terdapat lima subtipe spektrum 
+                                kaku dan tidak fleksibel. Studi pertama tentang prevalensi spektrum autistik muncul pada tahun 1960-an dan 1970-an. 
+                                Saat itu autistik dianggap sebagai kondisi yang sangat parah  dan disertai dengan kecacatan intelektual. 
+                                Studi-studi ini melaporkan bahwa prevalensi spektrum autistik saat itu sekitar 4-5 kasus per 10.000 anak. 
+                                Diagnosis klinis spektrum autistik pertama kali pada tahun 1980 diatur oleh <span className="fst-italic"> American Psychiatric Association (APA) </span> 
+                                dalam <span className="fst-italic"> Diagnostic and Statistical Manual of Mental Disorders (DSM) III</span>. Pada tahun 1994, <span className="fst-italic"> Diagnostic and Statistical 
+                                Manual of Mental Disorders (DSM) IV </span> merevisi kriteria diagnostik spektrum autistik. Terdapat lima subtipe spektrum 
                                 yaitu <span className="fst-italic"> autistic disorder, asperger disorder, pervasive developmental disorder–not otherwise specified (PDD-NOS), 
-                                childhood disintegrative disorder, </span> dan <span className="fst-italic"> Rett’s disorder</span>. Terakhir, pada tahun 2013, APA kembali mengeluarkan DSM terbaru, 
-                                yaitu edisi kelima. Dalam DSM V, spektrum autisme didefinisikan sebagai gangguan tunggal yang diberi nama <span className="fst-italic"> Autism Spectrum 
+                                childhood disintegrative disorder, </span> dan <span className="fst-italic"> Rett’s disorder</span> yang digabungkan dalam diagnosis bersama Pervasive Developmental Disorder (PDD). Terakhir, pada tahun 2013, APA kembali mengeluarkan DSM terbaru, 
+                                yaitu edisi kelima. Dalam DSM V, spektrum autistik didefinisikan sebagai gangguan perkembangan yang memiliki spektrum luas dengan penyebab multifaktorial, sehingga diberi nama<span className="fst-italic"> Autism Spectrum 
                                 Disorder (ASD)</span>. 
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;<span className="fst-italic">Short review </span> yang ditulis oleh Park, Lee, Moon, Lee, Kim, Kim, et al, disebutkan bahwa ASD adalah gangguan yang disebabkan oleh 
+                                &emsp;&ensp;<span className="fst-italic">Short review </span> yang ditulis oleh Park, Lee, Moon, Lee, Kim, Kim, et al, menjelaskan bahwa ASD adalah gangguan yang disebabkan oleh 
                                 banyak faktor <span className="fst-italic">(multi-factorial disorder)</span>. Faktor penyebab ASD dapat berasal dari genetik, non genetik, dan interaksi keduanya. Faktor genetik 
-                                penyebab ASD umumnya berupa mutase gen dan gangguan kromosomal yang ditemukan 10-20% pada individu dengan ASD. Anak yang lahir dengan saudara 
+                                penyebab ASD umumnya berupa mutasi gen dan gangguan kromosomal yang ditemukan 10-20% pada individu dengan ASD. Anak yang lahir dengan saudara 
                                 kandung ASD memiliki risiko lebih besar mengalami ASD juga, ini ditunjukkan dengan ditemukannya 5-8% kasus di dunia. Faktor lain seperti non 
                                 genetik dapat berupa infeksi virus selama kehamilan ibu, lingkungan yang tidak sehat, dan banyak faktor lainnya yang sampai saat ini masih diteliti di dunia.
                             </p>
@@ -44,12 +44,12 @@ const AboutASDScreen = () => {
                                 terjadi kegagalan dalam melakukan komunikasi dua arah. Selain itu, penurunan perilaku komunikatif secara nonverbal juga terlihat pada anak yang diduga ASD.  Hal tersebut karena 
                                 kurang terintegrasinya antara komunikasi verbal dan nonverbal. Ciri utama yang lain dan mudah terlihat adalah ditemukannya kontak mata dan bahasa tubuh yang lemah, sehingga sulit 
                                 memahami dan menggunakan gerakan sesuai fungsinya, seperti sulit memberikan ekspresi wajah yang sesuai dalam komunikasi nonverbal. Penanda ASD yang juga menjadi ciri khas adalah 
-                                pola perilaku berulang yang dikenal sebagai <span className="fst-italic"> stimming </span>. Beberapa anak ASD melakukan gerakan motorik stereotip atau berulang seperti mengepakkan tangan dan memukul diri mereka berulang. 
-                                Beberapa cenderung kaku dalam hal penggunaan benda. Stereotip motorik sederhana lainnya seperti menyusun mainan, membolak-balikan benda, ekolali, dan menyebutkan kata hingga frasa yang mereka suka.
+                                pola perilaku berulang. Beberapa anak ASD melakukan gerakan motorik berulang seperti mengepakkan tangan dan memukul diri mereka berulang. 
+                                Stereotip motorik sederhana lainnya seperti menyusun mainan, membolak-balikan benda, ekolali, dan menyebutkan kata hingga frasa yang mereka suka.
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
                                 &emsp;&ensp;Hasil diagnosis ASD berdasarkan DSM V dibagi menjadi 3 kategori yaitu level 1 (ringan), level 2 (sedang), dan level 3 (berat). 
-                                Berdasarkan pemeriksaan yang merujuk pada kriteria DSM V, dari 990 anak yang melakukan pemeriksaan terdapat 16% anak dengan kasus ringan, 46% 
+                                Berdasarkan pemeriksaan yang dilakukan dalam sebuah penelitian yang merujuk pada kriteria DSM V, dari 990 anak yang melakukan pemeriksaan terdapat 16% anak dengan kasus ringan, 46% 
                                 dengan kasus sedang, dan 21% dengan kasus berat, serta 17% adalah kasus yang tidak murni ASD.  Selain itu, jenis kelamin anak yang terdiagnosis 
                                 ASD dalam penelitian ini juga terlihat dengan 77% laki-laki dan 23% perempuan. Gambaran penting lainnya adalah intelektual anak ASD, ditemukan 
                                 yang mengalami gangguan intelektual sebanyak 56% dan yang tidak mengalami gangguan 43%.

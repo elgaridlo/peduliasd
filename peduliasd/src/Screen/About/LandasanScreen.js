@@ -88,7 +88,7 @@ const LandasanScreen = () => {
                                 dapat mendorong orangtua anak ASD untuk tumbuh dan belajar
                                 bersama yang mana akan menjadi bekal untuk mereka menemani anak
                                 spesial yang sangat membutuhkan pertolongan keluarga dan
-                                orangtuanya
+                                orangtuanya.
                             </p>
                         </div>
                     </div>

@@ -29,6 +29,9 @@ import LandasanScreen from './Screen/About/LandasanScreen'
 import VisiMisiScreen from './Screen/About/VisiMisiScreen'
 import PEPScreen from './Screen/EducationProgram/PEPScreen'
 import ScoreScreen from './Screen/Skrining/ScoreScreen'
+import { FilosofiLogoScreen } from './Screen/About/FilosofiLogoScreen'
+import GermasifScreen from './Screen/EducationProgram/GermasifScreen'
+import ASDTeleHealthScreen from './Screen/EducationProgram/ASDTeleHealthScreen'
 
 export const RoleStatusContext = React.createContext()
 
@@ -57,8 +60,11 @@ function App() {
                 <Route path="/tentang-kami" component={AboutUsScreen} exact />
                 <Route path="/tentang-asd" component={AboutASDScreen} exact />
                 <Route path="/landasan-berdiri" component={LandasanScreen} exact />
+                <Route path="/filosofi-logo" component={FilosofiLogoScreen} exact />
                 <Route path="/visi-misi" component={VisiMisiScreen} exact />
                 <Route path="/pep" component={PEPScreen} exact />
+                <Route path="/germasif" component={GermasifScreen} exact />
+                <Route path="/asd-telehealth" component={ASDTeleHealthScreen} exact />
                 <Route path="/program-edukasi" component={EducationProgramScreen} exact />
                 <Route path="/program-edukasi/:id" component={EduProgramByIdScreen} exact />
                 <Route path="/artikel" component={BlogScreen} exact/>

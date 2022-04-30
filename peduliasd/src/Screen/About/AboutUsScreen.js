@@ -42,18 +42,7 @@ const AboutUsScreen = () => {
             <section className="wrapper bg-light angled upper-end lower-end">
                 <div className="container py-6 py-md-6">
                     <div className="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
-                        {/* <div className="col-lg-6 position-relative order-lg-2">
-                            <div className="shape bg-dot primary rellax w-16 h-20" data-rellax-speed="1" style={{top: "3rem",left:"5.5rem"}}></div>
-                            <div className="overlap-grid overlap-grid-2">
-                                <div className="item">
-                                    <figure className="rounded shadow"><img src="./assets/img/photos/about2.jpg" srcSet="./assets/img/photos/about2@2x.jpg 2x" alt=""></img></figure>
-                                </div>
-                                <div className="item">
-                                    <figure className="rounded shadow"><img src="./assets/img/photos/about3.jpg" srcSet="./assets/img/photos/about3@2x.jpg 2x" alt=""></img></figure>
-                                </div>
-                            </div>
-                        </div> */}
-
+                        
                         <div className="col-lg-12">
                             <img src="./assets/img/icons/megaphone.svg" className="svg-inject icon-svg icon-svg-md mb-4" alt="" />
                             <h2 className="display-4 mb-3">Siapa Kami?</h2>
@@ -64,24 +53,8 @@ const AboutUsScreen = () => {
                                 &emsp;&ensp;Banyaknya beredar informasi yang kurang ilmiah atau tergolong pseudoscience  di internet terkait ASD membuat orang-orang yang bersentuhan erat dengan individu ASD mengalami kebingungan saat memilih informasi mana yang layak dipercaya. Sebagian besar saran yang diberikan kadang bertolak belakang dengan ilmu pengetahuan yang telah ada. Hal inilah yang mendorong Isti Anindya (CEO Peduli ASD) membentuk platform edukasi Peduli ASD. Selain berperan sebagi CEO, beliau juga merupakan ibu dari anak autistik bernama Fayyaza yang tahun ini berusia 9 tahun. Berlatar belakang pendidikan di bidang biologi dan ilmu kedokteran dasar, beliau yang juga berprofesi sebagai seorang dosen ilmu biomedis di Universitas Indonesia Maju menjawab keresahannya terkait informasi seputar ASD yang seringkali tidak ilmiah dan memiliki landasan ilmu pengetahuan yang kuat melalui peduli ASD. Bagi beliau memberikan informasi yang valid dengan sumber yang dapat dipercaya serta tidak merekayasa informasi untuk membuat bingung para orangtua anak autistik adalah semangat yang pada akhirnya membawa peduli ASD berjalan baik sejauh ini.
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;Ide menciptakan Peduli ASD sebagai sarana edukasi tercetus pada tanggal 30 April 2020 yang mana tepat diakhir bulan peduli Autisme yang dirayakan seluruh dunia. Awalnya platform ini diciptakan sebagai media satu arah yang menyimpan informasi seputar ASD. Perlahan lambat laun berubah menjadi media edukasi dua arah karena foundernya mencoba menyembatani orangtua dengan orang-orang yang dapat memberikan informasi yang memiliki landasan ilmiah yang baik. Meskipun platform ini sempat tidak aktif setengah tahun di awal tahun 2021, peduli ASD kembali bangkit dengan wajah baru di bulan Juli 2021 sebagai platform edukasi berbayar yang menyediakan layanan edukasi yang melibatkan orangtua anak ASD. Besar harapannya peduli ASD dapat terus bertumbuh menjadi platform edukasi yang dapat memberikan informasi berimbang dan dapat dipertanggung jawabkan kebenarannya. Selain itu, semoga keberadaan peduli ASD juga dapat mendorong orangtua anak ASD untuk tumbuh dan belajar bersama yang mana akan menjadi bekal untuk mereka menemani anak spesial yang sangat membutuhkan pertolongan keluarga dan orangtuanya
+                                &emsp;&ensp;Ide menciptakan Peduli ASD sebagai sarana edukasi tercetus pada tanggal 30 April 2020 yang mana tepat diakhir bulan peduli Autisme yang dirayakan seluruh dunia. Awalnya platform ini diciptakan sebagai media satu arah yang menyimpan informasi seputar ASD. Perlahan lambat laun berubah menjadi media edukasi dua arah karena foundernya mencoba menyembatani orangtua dengan orang-orang yang dapat memberikan informasi yang memiliki landasan ilmiah yang baik. Meskipun platform ini sempat tidak aktif setengah tahun di awal tahun 2021, peduli ASD kembali bangkit dengan wajah baru di bulan Juli 2021 sebagai platform edukasi berbayar yang menyediakan layanan edukasi yang melibatkan orangtua anak ASD. Besar harapannya peduli ASD dapat terus bertumbuh menjadi platform edukasi yang dapat memberikan informasi berimbang dan dapat dipertanggung jawabkan kebenarannya. Selain itu, semoga keberadaan peduli ASD juga dapat mendorong orangtua anak ASD untuk tumbuh dan belajar bersama yang mana akan menjadi bekal untuk mereka menemani anak spesial yang sangat membutuhkan pertolongan keluarga dan orangtuanya.
                             </p>
-                            {/* <div className="row gy-3 gx-xl-8">
-                                <div className="col-xl-6">
-                                    <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
-                                        <li><span><i className="uil uil-check"></i></span><span>Aenean eu leo quam ornare curabitur blandit tempus.</span></li>
-                                        <li className="mt-3"><span><i className="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare donec elit.</span></li>
-                                    </ul>
-                                </div>
-
-                                <div className="col-xl-6">
-                                    <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
-                                        <li><span><i className="uil uil-check"></i></span><span>Etiam porta sem malesuada magna mollis euismod.</span></li>
-                                        <li className="mt-3"><span><i className="uil uil-check"></i></span><span>Fermentum massa vivamus faucibus amet euismod.</span></li>
-                                    </ul>
-                                </div>
-
-                            </div> */}
 
                         </div>
 
