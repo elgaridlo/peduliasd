@@ -136,7 +136,6 @@ const protect = catchAsync(async (req, res, next) => {
     let token;
     // 1) Gettitng token and check if its there
     
-    console.log('check jwt = ', req.headers.authorization)
     if (
         req.headers.authorization &&
         req.headers.authorization.startsWith('Bearer')
@@ -145,7 +144,7 @@ const protect = catchAsync(async (req, res, next) => {
     } else if (req.cookies.jwt) {
         token = req.cookies.jwt;
     }
-    console.log('check jwt 2 = ', token)
+    
     // 2 ) Verification token
     if (!token) {
         return next(
@@ -155,6 +154,7 @@ const protect = catchAsync(async (req, res, next) => {
     // Build in promisify node, it is the same as await. It is es6 destructuring
     // jwt.verify is the function that we want to call, and after that is the param that we want to pass
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+    console.log('decoded = ', decoded)
     // 3 ) Check if user still exists
     const currentUser = await Authentication.findById(decoded.id);
 

@@ -45,7 +45,7 @@ const VisiMisiScreen = () => {
                                     Membantu mewujudkan tumbuhnya kelompok orangtua/keluarga anak ASD yang mampu mengedukasi diri dan lingkungannya guna berjuang bersama melawan stigma negatif masyarakat
                                 </li>
                                 <li>
-                                    Mewujudukan masyarakat inklusif yang menerima utuh individu ASD dan keluarganya dan senantiasa mendukung mereka agar dapat terlibat dalam peran sosial di Indonesia
+                                    Mewujudkan masyarakat inklusif yang menerima utuh individu ASD dan keluarganya dan senantiasa mendukung mereka agar dapat terlibat dalam peran sosial di Indonesia
                                 </li>
                             </ol>
                         </div>
@@ -62,7 +62,7 @@ const VisiMisiScreen = () => {
                                     Membentuk gerakan masyarakat inklusif peduli ASD agar dapat perlahan menghapuskan stigma negatif terhadap individu autistik dan keluarganya
                                 </li>
                                 <li>
-                                    Mendorong orangtua/keluarga anak autistik untuk berani menyuarakan aspirasinya dan bangga mengakui bahwa mereka adalah lapisan terdepan yang bersiap membantu individu autistic untuk bertumbuh
+                                    Mendorong orangtua/keluarga anak autistik untuk berani menyuarakan aspirasinya dan bangga mengakui bahwa mereka adalah lapisan terdepan yang bersiap membantu individu autistik untuk bertumbuh
                                 </li>
                             </ol>
                         </div>

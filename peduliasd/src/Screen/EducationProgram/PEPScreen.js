@@ -40,12 +40,12 @@ const PEPScreen = () => {
                                 </div>
                                 <div className="col-xl-12">
                                     <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
-                                        <li><span><i>3</i></span><span className="fw-bolder">Etiam porta sem malesuada magna mollis euismod.</span></li>
+                                        <li><span><i>3</i></span><span className="fw-bolder">Materi Persiapan Sekolah Anak Autistik (4 kali pertemuan)</span></li>
                                         <ul className="unordered-list bullet-primary" style={{ paddingLeft: '1rem' }}>
                                             <li>Persiapan Sekolah Anak Autistik  1 kali pertemuan</li>
                                             <li>Workshop Mengajarkan Anak Autistik Calistung 3 kali pertemuan</li>
                                         </ul>
-                                        <li className="mt-3"><span><i>4</i></span><span className="fw-bolder">Fermentum massa vivamus faucibus amet euismod.</span></li>
+                                        <li className="mt-3"><span><i>4</i></span><span className="fw-bolder">Materi Kesehatan Anak Autistik (7 kali pertemuan)</span></li>
                                         <ul className="unordered-list bullet-primary" style={{ paddingLeft: '1rem' }}>
                                             <li>Masalah Kesehatan Individu Autistik 1 kali pertemuan</li>
                                             <li>Persiapan Pubertas Anak Autistik 2 kali pertemuan </li>

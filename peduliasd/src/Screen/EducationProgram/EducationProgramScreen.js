@@ -71,7 +71,7 @@ const EducationProgramScreen = ({ history, match }) => {
                                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div className="card-body">
                                             <p className="text-justify">
-                                                Menggunakan aplikasi Instagram, program ini merupakan kegiatan Peduli ASD yang memanfaat fitur live Instagram dengan mengundang narasumber yang berasal dari berbagai kalangan. Pada program ini tim Peduli ASD dan narasumber akan berinteraksi langsung dengan followers Instagram @peduliasd dan membuka kolom tanya jawab guna memfasilitasi kebutuhan followers Instagram Peduli ASD.
+                                                Menggunakan aplikasi Instagram, program ini merupakan kegiatan Peduli ASD yang memanfaatkan fitur live Instagram dengan mengundang narasumber yang berasal dari berbagai kalangan. Pada program ini tim Peduli ASD dan narasumber akan berinteraksi langsung dengan followers Instagram @peduliasd dan membuka kolom tanya jawab guna memfasilitasi kebutuhan followers Instagram Peduli ASD.
                                             </p>
                                         </div>
                                     </div>
