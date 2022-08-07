@@ -16,8 +16,6 @@ export const addUser = (payload) => async (dispatch) => {
 
         const { data } = await axios.post(`/api/users/signup`,payload, config)
 
-        console.log('data profile = ', data)
-
         dispatch({
             type: ADD_USER_SUCCESS,
             payload: data
@@ -117,10 +115,7 @@ export const updateUserAction = (id, payload) => async (dispatch, getState) => {
             }
         }
         
-        console.log('before request = ', payload)
         const { data } = await axios.put(`/api/users/${id}`,payload, config)
-
-        console.log('data profile = ', data)
 
         dispatch({
             type: UPDATE_USER_SUCCESS,

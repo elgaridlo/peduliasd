@@ -12,7 +12,6 @@ const BelanjaScreen = () => {
         if(!listProduct) {
             dispatch(listProductAction())    
         }
-        console.log('listProduct = ', listProduct)
     },[listProduct])
     return (
         <>

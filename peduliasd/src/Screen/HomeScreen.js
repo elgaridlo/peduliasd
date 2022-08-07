@@ -86,10 +86,10 @@ const HomeScreen = () => {
 
             <div className="col-lg-6">
               <h3 className="display-6 mb-4">
-                Peduli ASD Parents Education Programme (PEP)
+                Peduli ASD <span className="fst-italic">Parents Education Programme (PEP) </span>
               </h3>
               <p className="mb-5 ">
-                Program edukasi intensif seputar <span className="fst-italic"> Autism Spectrum Disorder (ASD) </span>
+                Program edukasi intensif seputar <span className="fst-italic"> Autism Spectrum Disorder </span>(ASD) 
                 yang berlangsung selama 1 semester (6 bulan). Peserta dibatasi
                 maksimal 10 orang per semester dan akan berjalan ketika peserta
                 di atas 5 orang. Peserta berasal dari orangtua individu autistik
@@ -97,7 +97,7 @@ const HomeScreen = () => {
                 Awal semester perdana berjalan per
                 tanggal 1 Juli 2022 dan berakhir Desember 2022. Adapun materi
                 kelas akan diberikan setiap akhir pekan (120 menit per
-                pertemuan) dengan penjabaran materi sebagai berikut{' '}
+                pertemuan) dengan penjabaran materi sebagai berikut:{' '}
               </p>
               <div className="row gy-3">
                 <div className="col-xl-6">
@@ -187,7 +187,7 @@ const HomeScreen = () => {
                         <i className="uil uil-check"></i>
                       </span>
                       <span>
-                        Studi pertama tentang prevalensi ASD muncul pada tahun1960-an dan 1970-an.
+                        Studi pertama tentang prevalensi ASD muncul pada tahun 1960-an dan 1970-an.
                       </span>
                     </li>
                     <li className="mt-3">
@@ -195,9 +195,9 @@ const HomeScreen = () => {
                         <i className="uil uil-check"></i>
                       </span>
                       <span>
-                        Diagnosis klinis spektrum autisme pertama kali pada tahun 1980 diatur oleh 
-                        <span className="fst-italic">American Psychiatric Association (APA)</span> dalam 
-                        <span className="fst-italic">Diagnostic and Statistical Manual of Mental Disorders (DSM)</span>
+                        Diagnosis klinis spektrum autisme pertama kali pada tahun 1980 diatur oleh  
+                        <span className="fst-italic">American Psychiatric Association</span> (APA) dalam 
+                        <span className="fst-italic">Diagnostic and Statistical Manual of Mental Disorders</span> (DSM).
                       </span>
                     </li>
                   </ul>
@@ -267,7 +267,7 @@ const HomeScreen = () => {
                 Belanja
               </h2>
               <h3 className="display-4">
-                Dukung Individu Autistik Berkarya dan Berdaya
+                Dukung Individu Autistik <br/> Berkarya dan Berdaya
               </h3>
             </div>
           </div>
@@ -352,7 +352,7 @@ const HomeScreen = () => {
                     <span className="ratings five mb-3"></span>
                     <blockquote className="icon mb-0">
                       <p>
-                        “Melalui PeduliASD Saya Menjadi Lebih Memahami Pribadi Autistik 
+                        “Melalui Peduli ASD Saya Menjadi Lebih Memahami Pribadi Autistik 
                         dan Bangga Menjadi Orangtua dari Anak Autistik”
                       </p>
                       <div className="blockquote-details">
@@ -372,8 +372,8 @@ const HomeScreen = () => {
                     <span className="ratings five mb-3"></span>
                     <blockquote className="icon mb-0">
                       <p>
-                        “Selalu ketagihan ikutan webinar peduliASD, 
-                        materi yang disampaikan selalu based on science yg update.”
+                        “Selalu ketagihan ikutan webinar Peduli ASD, 
+                        materi yang disampaikan selalu <span className="fst-italic">based on science</span> yg <span className="fst-italic">update</span>.”
                       </p>
                       <div className="blockquote-details">
                         <div className="info ps-0">
@@ -392,7 +392,7 @@ const HomeScreen = () => {
                     <span className="ratings five mb-3"></span>
                     <blockquote className="icon mb-0">
                       <p>
-                        “Program2 peduliasd sangat relate dengan kebutuhan orangtua 
+                        “Program2 peduliasd sangat <span className="fst-italic">relate</span> dengan kebutuhan orangtua 
                         dalam membekali dan membersamai anak ASD, informasi mudah 
                         dipahami dan solutif.”
                       </p>
@@ -458,7 +458,7 @@ const HomeScreen = () => {
             </div>
             {/*  */}
             <div className="col-lg-6 col-xxl-5">
-              <h3 className="display-6 mb-7">Tentang Instrumen M-CHART-R</h3>
+              <h3 className="display-6 mb-7">Tentang Instrumen M-CHAT-R</h3>
               <div className="d-flex flex-row mb-5">
                 <div>
                   <span className="icon btn btn-circle btn-soft-primary disabled me-5">
@@ -491,7 +491,7 @@ const HomeScreen = () => {
                 </div>
                 <div>
                   <p className="mb-0 text-justify">
-                    Tujuan utama M-CHAT-R ini adalah untuk memaksimalkan sensitifitas, yaitu mendeteksi sebanyak mungkin kasus ASD
+                    Tujuan utama M-CHAT-R ini adalah untuk memaksimalkan sensitifitas, yaitu mendeteksi sebanyak mungkin kasus ASD.
                   </p>
                 </div>
               </div>

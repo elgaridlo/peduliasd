@@ -1,7 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { createArticleAction } from '../../../actions/articleAction'
+import AlertStyle from '../../../utils/Components/Alert'
+import Loader from '../../../utils/Components/Loader'
+import { AlertEnum } from '../../../utils/Enums/AlertEnum'
 import RTE from '../../../utils/Summernote/Rte'
 
 const CreateArticle = ({ history }) => {
@@ -10,11 +13,13 @@ const CreateArticle = ({ history }) => {
     const [, setUploading] = useState(false)
     const [imageData, setImageData] = useState(null)
     const [content, setContent] = useState('')
+    // const [buttonCreateEnable, setButtonCreateEnable] = useState(true)
 
+    const articleNew = useSelector(state => state.articleNew)
+    const { loading, error, newArticle } = articleNew
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log('content = ', content)
     }, [content])
 
     const addHandler = (input) => {
@@ -45,11 +50,12 @@ const CreateArticle = ({ history }) => {
             }
             formData.append('image', imageData)
             const { data } = await axios.post('/api/upload/article', formData, config)
-            console.log('data = ', data)
             const payload = {
-                title, poster: data, content
+                title, poster: data, content, urlTitle: (title).toLowerCase().replace(/[^a-z]+/g, ' ').replaceAll(' ', '-')
             }
-            dispatch(createArticleAction(payload))
+
+            console.log('payload = ', payload)
+            // dispatch(createArticleAction(payload))
 
         } catch (error) {
             console.error(error)
@@ -59,6 +65,12 @@ const CreateArticle = ({ history }) => {
     return (
         <>
             <section className="wrapper">
+                {newArticle && (
+                    <AlertStyle variant='success' icons={AlertEnum.SUCCESS} show={true}>Artikel berhasil dibuat!</AlertStyle>
+                )}
+                {error && (
+                    <AlertStyle variant='danger' icons={AlertEnum.DANGER} show={true}>{error}</AlertStyle>
+                )}
                 <div className="container py-14 py-md-16">
                     <div>
                         <h2 className="fs-15 text-uppercase text-line text-primary text-center mb-3">Buat Artikel</h2>
@@ -129,7 +141,11 @@ const CreateArticle = ({ history }) => {
 
                                         <div className="row gx-4 pt-3">
                                             <div className="col-12">
-                                                <input type="submit" className="btn btn-primary rounded-pill btn-send mb-3" value="Buat Artikel" />
+                                                {loading ? (
+                                                    <Loader />
+                                                ): (
+                                                    <input type="submit" className="btn btn-primary rounded-pill btn-send mb-3" value="Buat Artikel" disabled={loading} />
+                                                )}
                                                 <p className="text-muted"><strong>*</strong> These fields are required.</p>
                                             </div>
                                         </div>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getArticleByIdAction, deleteArticleAction } from '../../actions/articleAction'
 import AlertStyle from '../../utils/Components/Alert'
+import Loader from '../../utils/Components/Loader'
 import { AlertEnum } from '../../utils/Enums/AlertEnum'
 import formatDate from '../../utils/FunctionHelp/FormatDate'
 
@@ -10,6 +11,9 @@ const ArticleByIdScreen = ({ match, history }) => {
     const { loading, error, detail } = articleDetail
 
     const dispatch = useDispatch()
+
+    const userLogin = useSelector((state) => state.userLogin)
+    const { userInfo } = userLogin  
 
     const deleteArticle = useSelector(state => state.deleteArticle)
     const {success, error: errorDelete} = deleteArticle
@@ -25,13 +29,15 @@ const ArticleByIdScreen = ({ match, history }) => {
     }, [success])
 
     const deleteHandler = () => {
-        dispatch(deleteArticleAction(match.params.id))
+        dispatch(deleteArticleAction(detail._id))
     }
     return (
         <>
             {errorDelete && (
                 <AlertStyle variant='danger' icons={AlertEnum.DANGER} show={true}>{errorDelete}</AlertStyle>
             )}
+
+
             <section className="wrapper bg-soft-primary">
                 <div className="container pt-10 pb-19 pt-md-14 pb-md-20 text-center">
                     <div className="row">
@@ -39,7 +45,7 @@ const ArticleByIdScreen = ({ match, history }) => {
                             <div className="post-header">
                                 <div className="post-category text-line">
                                     <a href="/#" className="hover" rel="category">
-                                        Teamwork
+                                        Artikel
                                     </a>
                                 </div>
                                 <h1 className="display-1 mb-4">{detail && detail.title}</h1>
@@ -53,31 +59,36 @@ const ArticleByIdScreen = ({ match, history }) => {
                                     <li className="post-author">
                                         <a href="">
                                             <i className="uil uil-user"></i>
-                                            <span>By Sandbox</span>
+                                            <span>By PeduliASD</span>
                                         </a>
                                     </li>
-                                    <li className="post-likes">
-                                        <a href={`${match.url}/edit`}>
-                                            <i className="uil uil-file-edit-alt"></i>
-                                            <span> Edit</span>
-                                        </a>
-                                    </li>
-                                    <li className="post-likes">
-                                        <a href="#"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#modal-02">
-                                            <i
-                                                className="uil uil-trash"
-                                            ></i>
-                                            <span> Hapus</span>
-                                        </a>
-                                    </li>
+                                    {userInfo && userInfo.user.role == 'admin' && (
+                                        <>
+                                        <li className="post-likes">
+                                            <a href={`${match.url}/edit`}>
+                                                <i className="uil uil-file-edit-alt"></i>
+                                                <span> Edit</span>
+                                            </a>
+                                        </li>
+                                        <li className="post-likes">
+                                            <a href="#"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modal-02">
+                                                <i
+                                                    className="uil uil-trash"
+                                                ></i>
+                                                <span> Hapus</span>
+                                            </a>
+                                        </li>
+                                        </>
+                                    )}
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section className="wrapper bg-light">
                 <div className="container pb-14 pb-md-16">
                     <div className="row">
@@ -88,6 +99,9 @@ const ArticleByIdScreen = ({ match, history }) => {
                                         <img src={detail && detail.poster} alt="" />
                                     </figure>
                                     <div className="card-body">
+                                    {loading && (
+                                        <Loader />
+                                    )}
                                         <div className="classic-view">
                                             {detail && (
                                                 <article
@@ -96,170 +110,7 @@ const ArticleByIdScreen = ({ match, history }) => {
                                                 ></article>
                                             )}
                                         </div>
-                                        <hr />
-                                        <h3 className="mb-6">You Might Also Like</h3>
-                                        <div
-                                            className="carousel owl-carousel blog grid-view mb-16"
-                                            data-margin="30"
-                                            data-dots="true"
-                                            data-autoplay="false"
-                                            data-autoplay-timeout="5000"
-                                            data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "2"}}'
-                                        >
-                                            <div className="item">
-                                                <article>
-                                                    <figure className="overlay overlay1 hover-scale rounded mb-5">
-                                                        <a href="/#">
-                                                            {' '}
-                                                            <img src="/assets/img/photos/b4.jpg" alt="" />
-                                                        </a>
-                                                        <figcaption>
-                                                            <h5 className="from-top mb-0">Read More</h5>
-                                                        </figcaption>
-                                                    </figure>
-                                                    <div className="post-header">
-                                                        <div className="post-category text-line">
-                                                            <a href="/#" className="hover" rel="category">
-                                                                Coding
-                                                            </a>
-                                                        </div>
-                                                        <h2 className="post-title h3 mt-1 mb-3">
-                                                            <a className="link-dark" href="/blog-post.html">
-                                                                Ligula tristique quis risus
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-                                                    <div className="post-footer">
-                                                        <ul className="post-meta mb-0">
-                                                            <li className="post-date">
-                                                                <i className="uil uil-calendar-alt"></i>
-                                                                <span>14 Apr 2021</span>
-                                                            </li>
-                                                            <li className="post-comments">
-                                                                <a href="/#">
-                                                                    <i className="uil uil-comment"></i>4
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                            <div className="item">
-                                                <article>
-                                                    <figure className="overlay overlay1 hover-scale rounded mb-5">
-                                                        <a href="/#">
-                                                            {' '}
-                                                            <img src="/assets/img/photos/b5.jpg" alt="" />
-                                                        </a>
-                                                        <figcaption>
-                                                            <h5 className="from-top mb-0">Read More</h5>
-                                                        </figcaption>
-                                                    </figure>
-                                                    <div className="post-header">
-                                                        <div className="post-category text-line">
-                                                            <a href="/#" className="hover" rel="category">
-                                                                Workspace
-                                                            </a>
-                                                        </div>
-                                                        <h2 className="post-title h3 mt-1 mb-3">
-                                                            <a className="link-dark" href="/blog-post.html">
-                                                                Nullam id dolor elit id nibh
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-                                                    <div className="post-footer">
-                                                        <ul className="post-meta mb-0">
-                                                            <li className="post-date">
-                                                                <i className="uil uil-calendar-alt"></i>
-                                                                <span>29 Mar 2021</span>
-                                                            </li>
-                                                            <li className="post-comments">
-                                                                <a href="/#">
-                                                                    <i className="uil uil-comment"></i>3
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                            <div className="item">
-                                                <article>
-                                                    <figure className="overlay overlay1 hover-scale rounded mb-5">
-                                                        <a href="/#">
-                                                            {' '}
-                                                            <img src="/assets/img/photos/b6.jpg" alt="" />
-                                                        </a>
-                                                        <figcaption>
-                                                            <h5 className="from-top mb-0">Read More</h5>
-                                                        </figcaption>
-                                                    </figure>
-                                                    <div className="post-header">
-                                                        <div className="post-category text-line">
-                                                            <a href="/#" className="hover" rel="category">
-                                                                Meeting
-                                                            </a>
-                                                        </div>
-                                                        <h2 className="post-title h3 mt-1 mb-3">
-                                                            <a className="link-dark" href="/blog-post.html">
-                                                                Ultricies fusce porta elit
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-                                                    <div className="post-footer">
-                                                        <ul className="post-meta mb-0">
-                                                            <li className="post-date">
-                                                                <i className="uil uil-calendar-alt"></i>
-                                                                <span>26 Feb 2021</span>
-                                                            </li>
-                                                            <li className="post-comments">
-                                                                <a href="/#">
-                                                                    <i className="uil uil-comment"></i>6
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                            <div className="item">
-                                                <article>
-                                                    <figure className="overlay overlay1 hover-scale rounded mb-5">
-                                                        <a href="/#">
-                                                            {' '}
-                                                            <img src="/assets/img/photos/b7.jpg" alt="" />
-                                                        </a>
-                                                        <figcaption>
-                                                            <h5 className="from-top mb-0">Read More</h5>
-                                                        </figcaption>
-                                                    </figure>
-                                                    <div className="post-header">
-                                                        <div className="post-category text-line">
-                                                            <a href="/#" className="hover" rel="category">
-                                                                Business Tips
-                                                            </a>
-                                                        </div>
-                                                        <h2 className="post-title h3 mt-1 mb-3">
-                                                            <a className="link-dark" href="/blog-post.html">
-                                                                Morbi leo risus porta eget
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-                                                    <div className="post-footer">
-                                                        <ul className="post-meta mb-0">
-                                                            <li className="post-date">
-                                                                <i className="uil uil-calendar-alt"></i>
-                                                                <span>7 Jan 2021</span>
-                                                            </li>
-                                                            <li className="post-comments">
-                                                                <a href="/#">
-                                                                    <i className="uil uil-comment"></i>2
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                        </div>
-                                        <hr />
+                                        {/* <hr /> */}
                                     </div>
                                 </div>
                             </div>

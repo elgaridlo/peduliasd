@@ -50,7 +50,6 @@ const AddEduProgram = ({ history }) => {
             }
             formData.append('image', imageData)
             const {data} = await axios.post('/api/upload/eduProgram', formData, config)
-            console.log('data = ', data)
             const payload = {
                 workshopType, title, image: data
             }

@@ -14,7 +14,6 @@ export const createWorkshopAction = (payload) => async (dispatch) => {
         }
 
         const { data } = await axios.post(`/api/workshop`,payload, config)
-        console.log('data - ', data)
 
         dispatch({
             type: CREATE_WORKSHOP_SUCCESS,

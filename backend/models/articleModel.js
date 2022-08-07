@@ -16,11 +16,15 @@ const articleSchema = mongoose.Schema({
     publish: {
         type: Boolean,
         default: false
+    },
+    urlTitle: {
+        type: String,
+        required: true,
+        unique: true
     }
 }, {
     timestamps: true
 })
-
 
 const Article = mongoose.model('article', articleSchema)
 

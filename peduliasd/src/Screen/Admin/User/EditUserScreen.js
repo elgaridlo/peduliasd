@@ -98,7 +98,6 @@ const EditUserScreen = ({ history, match }) => {
     }
 
     const onKidFormHandler = (data) => {
-        console.log('data = ', data)
         dispatch(updateUserAction(id, { kid: data }))
     }
 

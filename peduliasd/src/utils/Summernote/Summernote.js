@@ -5,12 +5,10 @@ const Summernote = () => {
     const [isidata, setIsiData] = useState('')
 
     useEffect(() => {
-        console.log('isi data = ', isidata)
     },[isidata])
 
     const addHandler = (input) => {
-        console.log('input data = ', input)
-
+   
     }
     return (
        <div className="h-80">

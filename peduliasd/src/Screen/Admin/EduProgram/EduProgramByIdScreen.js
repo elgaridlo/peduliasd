@@ -50,8 +50,6 @@ const EduProgramByIdScreen = ({ match }) => {
             console.error(error)
             setUploading(false)
         }
-        console.log('image = ', image)
-        console.log('imageData - ', imageData)
     } 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
@@ -64,7 +62,6 @@ const EduProgramByIdScreen = ({ match }) => {
             }
             formData.append('image', imageData)
             const {data} = await axios.post('/api/upload/eduProgram', formData, config)
-            console.log('data = ', data)
             const payload = {
                 workshopType, title, image: data
             }

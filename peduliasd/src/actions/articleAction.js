@@ -16,7 +16,6 @@ export const createArticleAction = (payload) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post(`/api/article`,payload, config)
-        console.log('data - ', data)
 
         dispatch({
             type: CREATE_ARTICLE_SUCCESS,

@@ -11,7 +11,6 @@ const ProductScreen = ({match}) => {
 	const {error, loading, detail} = detailProduct
 	
 	const dispatch = useDispatch()
-	console.log('match = ', match.params)
 	useEffect(() => {
 		if(!detail) {
 			dispatch(getProductByIdAction(match.params.id))

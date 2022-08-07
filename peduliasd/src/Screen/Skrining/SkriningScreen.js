@@ -4,7 +4,7 @@ import { getAssesmentByIdAction } from '../../actions/assesmentAction';
 import { skriningTes } from './ObjectSkrining/skriningTest';
 import './style.css'
 
-const SkriningScreen = ({history}) => {
+const SkriningScreen = ({ history }) => {
   const [pertanyaan, setPertanyaan] = useState(skriningTes)
   const [hasil, setHasil] = useState([])
   const [nomerDiisi, setNomerDiisi] = useState([])
@@ -14,20 +14,18 @@ const SkriningScreen = ({history}) => {
   const { detail } = getAssesmentId
 
   useEffect(() => {
-    console.log('hasil = ', hasil)
-    if(nomerDiisi.length === 20) {
+    if (nomerDiisi.length === 20) {
       let score = 0
 
-      for(let i=0; i < hasil.length; i++) {
+      for (let i = 0; i < hasil.length; i++) {
         score += Number(hasil[i].score)
       }
-      console.log('scorenya = ', score)
       history.push({
         pathname: '/score',
         search: `?nilai=${score}`,
       })
     }
-  }, [hasil,nomerDiisi])
+  }, [hasil, nomerDiisi])
 
   const handleRadioChange = async (e, index) => {
     await setHasil(() => {
@@ -35,11 +33,11 @@ const SkriningScreen = ({history}) => {
 
       for (let i = 0; i < data.length; i++) {
         if (data[i].index == index) {
-          data.splice(i,1)
+          data.splice(i, 1)
         }
       }
 
-      return [...data,{score:e, index}]
+      return [...data, { score: e, index }]
     })
   }
 
@@ -56,16 +54,22 @@ const SkriningScreen = ({history}) => {
 
   return (
     <>
-      <section className="wrapper bg-light">
-        <div className="container py-14 py-md-17">
-          <div className="row mb-8 text-center">
-            <div className="col-lg-9 col-xl-8 col-xxl-7 mx-auto">
-              <h2 className="fs-16 text-uppercase text-primary mb-3">
-                Tes Skrining belum di develop
-              </h2>
+      <section className="wrapper bg-soft-primary">
+        <div className="container pt-10 pb-12 pt-md-14 pb-md-16 text-center">
+          <div className="row">
+            <div className="col-md-12 col-lg-12 col-xl-12 mx-auto">
+              <h1 className="display-1 mb-3">Tes Skrining</h1>
+              <p className="lead px-lg-5 px-xxl-8">
+                Mohon jawab pertanyaan berikut ini tentang anak anda. Pikirkan bagaimana perilaku anak anda biasanya. Jika
+                pernah melihat anak anda melakukan tindakan itu beberapa kali, namun dia tidak selalu melakukannya, maka
+                jawab tidak. Tolong lingkari ya atau tidak pada setiap pertanyaan. Terima Kasih.
+              </p>
             </div>
           </div>
         </div>
+      </section>
+      
+      <section className="wrapper bg-light">
 
         {pertanyaan.map((item, index) => (
           <div key={index} className="container py-4 py-md-4">
@@ -88,7 +92,7 @@ const SkriningScreen = ({history}) => {
                               <div key={`jawaban-${indexABC}`} className="col-6">
                                 <div className="mb-4 text-start">
                                   <div className="form-check">
-                                    <input className="form-check-input" type="radio" name={`flexRadio-${index}`} value={jawaban.score} onChange={(e) => handleRadioChange(e.target.value , index)} id={index} />
+                                    <input className="form-check-input" type="radio" name={`flexRadio-${index}`} value={jawaban.score} onChange={(e) => handleRadioChange(e.target.value, index)} id={index} />
                                     <label className="form-check-label" htmlFor="flexRadioDefault1"> {jawaban.answer} </label>
                                   </div>
                                 </div>
@@ -109,6 +113,12 @@ const SkriningScreen = ({history}) => {
           <div className="row py-2 text-center">
             <button className="btn btn-outline-success" onClick={(e) => checkHasil()}> Lihat hasil</button>
           </div>
+        </div>
+
+        <div className="container py-4 py-md-4">
+          <div className="fs-16">Source:</div>
+          <div className="fs-14">@ 2009 Diana Robins, Deborah Fein, &amp; Marianne Barton</div>
+          <div className="fs-14">M-CHAT-R/F ini diterjemahkan oleh Soetjiningsih, Trisna Windiani, Sugitha Adnyana, &amp; Apik Lestari, 2014</div>
         </div>
 
       </section>

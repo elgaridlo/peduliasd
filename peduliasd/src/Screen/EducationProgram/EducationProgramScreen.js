@@ -21,11 +21,9 @@ const EducationProgramScreen = ({ history, match }) => {
 
     useEffect(() => {
         dispatch(eduListProgramAction())
-        console.log('cek')
     }, [dispatch, success])
 
     const deleteHandler = (id) => {
-        // console.log('logggin = ', id)
         dispatch(deleteEduProgramAction(id))
     }
 
@@ -34,7 +32,6 @@ const EducationProgramScreen = ({ history, match }) => {
     }
 
     const editHandler = (id) => {
-        console.log('history = ', match)
         history.push(`${match.path}/${id}`)
     }
     return (

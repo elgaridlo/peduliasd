@@ -1,4 +1,5 @@
 import React from 'react'
+import { socialMedia } from '../../model/SocialMediaModel'
 
 const ASDTeleHealthScreen = () => {
     return (
@@ -54,6 +55,7 @@ const ASDTeleHealthScreen = () => {
                                 melakukan terapi jarak jauh, namun lebih ke deteksi dini, saran
                                 medis, dan konsultasi.
                             </p>
+                            <a href={socialMedia.telehealthAccess} target="_blank" className="btn btn-primary rounded-pill mx-1 mb-2 mb-md-0" >Akses Layanan</a>
                         </div>
                     </div>
                 </div>

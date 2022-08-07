@@ -16,7 +16,6 @@ export const createProductAction = (payload) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post(`/api/product`,payload, config)
-        console.log('product data ', data)
 
         dispatch({
             type: CREATE_PRODUCT_SUCCESS,
@@ -47,7 +46,6 @@ export const listProductAction = () => async (dispatch) => {
         }
 
         const { data } = await axios.get(`/api/product`, config)
-        console.log('list product = ', data)
 
         dispatch({
             type: LIST_PRODUCT_SUCCESS,

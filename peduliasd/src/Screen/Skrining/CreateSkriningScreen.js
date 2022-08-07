@@ -52,7 +52,6 @@ const CreateSkriningScreen = () => {
 
       return newArr;
     });
-    console.log('index = ', arr)
   };
 
   const handleRadioChange = e => {
@@ -83,7 +82,6 @@ const CreateSkriningScreen = () => {
   }
 
   const saveHandler = () => {
-    console.log('arr = ', arr)
     const data = {
         title: 'M-CHAT ASSESMENT',
         publish: false,

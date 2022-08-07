@@ -13,6 +13,7 @@ const Loader = ({size}) => {
         height: `${size}px`,
         margin: 'auto',
         display: 'block',
+        zIndex: '99999'
       }}
     >
     </Spinner>

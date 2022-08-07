@@ -7,12 +7,27 @@ const unlinkAsync = promisify(fs.unlink)
 
 exports.createArticle = factory.createOne(Article)
 exports.getAllArticle = factory.getAll(Article)
-exports.getArticleById = factory.getOne(Article)
+
+exports.getArticleById = catchAsync (async(req, res, next) => {
+    const article = await Article.findOne({urlTitle: req.params.id}).exec()
+
+    if (!article) {
+        return next(new AppError('Artikel tidak ditemukan', 404));
+    }
+
+    res.status(200).json({
+        status: 'Success',
+        data: article,
+    });
+})
 exports.updateArticle = factory.updateOne(Article)
 
 exports.deleteArticle = catchAsync (async(req, res, next) => {
     const article = await Article.findById(req.params.id)
-    await unlinkAsync(article.poster.substring(1, article.poster.length))
+
+    if(fs.existsSync(article.poster)){
+        await unlinkAsync(article.poster.substring(1, article.poster.length))
+    }
 
     if(!article) {
         return next(new AppError(`Program Edukasi tidak ditemukan!`, 404));

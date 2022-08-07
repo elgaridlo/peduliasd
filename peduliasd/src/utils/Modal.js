@@ -21,7 +21,6 @@ const Modal = ({props, history, show}) => {
         dispatch(login(username, password))
         // document.getElementById("modal-03").classList.remove("show");
     }
-    console.log('show === ', show)
     return (
         <div className={`modal fade ${show ? 'show': ''}`}>
             <div className="modal-dialog modal-dialog-centered modal-sm">

@@ -16,19 +16,10 @@ return (
                   style={{height: '80px'}}
                 />
                 <nav className="nav social social-white">
-                  <a href="/">
-                    <i className="uil uil-twitter"></i>
-                  </a>
-                  <a href="/">
-                    <i className="uil uil-facebook-f"></i>
-                  </a>
-                  <a href="/">
-                    <i className="uil uil-dribbble"></i>
-                  </a>
                   <a href={socialMedia.instagramPeduliASD} target="_blank">
                     <i className="uil uil-instagram"></i>
                   </a>
-                  <a href="/">
+                  <a href={socialMedia.youtubePeduliASD} target="_blank">
                     <i className="uil uil-youtube"></i>
                   </a>
                 </nav>

@@ -32,7 +32,6 @@ const UserListScreen = ({ history, match }) => {
     }, [userlist])
 
     const directPageFunction = (futurePage) => {
-        // console.log('futurepage = ', futurePage)
         setPageNumber(futurePage)
         // history.push(`/user-list?pageNumber=${futurePage}`)
     }
@@ -96,7 +95,6 @@ const UserListScreen = ({ history, match }) => {
                                                     </thead>
                                                     <tbody>
                                                         {userlist && userlist.users.map((item) => (
-                                                            // console.log('muncul lah item = ', item)
                                                             <tr key={item._id}>
                                                                 <td style={{textAlign:'left'}}>{item.fullname}</td>
                                                                 <td>{item.phone}</td>

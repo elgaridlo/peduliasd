@@ -33,7 +33,7 @@ const LoginScreen = ({ location, history }) => {
         <div className="container py-14 py-md-16 text-center">
           <div className="row">
             <div className="col-md-9 col-lg-7 col-xl-7 mx-auto text-center">
-              <h3 className="mb-4">Login to Sandbox</h3>
+              <h3 className="mb-4">Login to Peduli ASD</h3>
               <form className="text-start mb-3" onSubmit={loginButton}>
                 <div className="form-floating mb-4">
                   <input

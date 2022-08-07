@@ -18,7 +18,7 @@ const AboutASDScreen = () => {
                         <div className="col-lg-12">
                             <img src="./assets/img/icons/megaphone.svg" className="svg-inject icon-svg icon-svg-md mb-4" alt="" />
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;<span className="fst-italic">Autism Spectrum Disorder (ASD) </span> adalah gangguan perkembangan yang ditandai dengan munculnya 
+                                <span className="fst-italic">Autism Spectrum Disorder (ASD) </span> adalah gangguan perkembangan yang ditandai dengan munculnya 
                                 gangguan sosial dan komunikasi, keterbatasan minat dan kemampuan, serta perilaku berulang yang cenderung 
                                 kaku dan tidak fleksibel. Studi pertama tentang prevalensi spektrum autistik muncul pada tahun 1960-an dan 1970-an. 
                                 Saat itu autistik dianggap sebagai kondisi yang sangat parah  dan disertai dengan kecacatan intelektual. 
@@ -32,14 +32,14 @@ const AboutASDScreen = () => {
                                 Disorder (ASD)</span>. 
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;<span className="fst-italic">Short review </span> yang ditulis oleh Park, Lee, Moon, Lee, Kim, Kim, et al, menjelaskan bahwa ASD adalah gangguan yang disebabkan oleh 
+                                <span className="fst-italic">Short review </span> yang ditulis oleh Park, Lee, Moon, Lee, Kim, Kim, et al, menjelaskan bahwa ASD adalah gangguan yang disebabkan oleh 
                                 banyak faktor <span className="fst-italic">(multi-factorial disorder)</span>. Faktor penyebab ASD dapat berasal dari genetik, non genetik, dan interaksi keduanya. Faktor genetik 
                                 penyebab ASD umumnya berupa mutasi gen dan gangguan kromosomal yang ditemukan 10-20% pada individu dengan ASD. Anak yang lahir dengan saudara 
                                 kandung ASD memiliki risiko lebih besar mengalami ASD juga, ini ditunjukkan dengan ditemukannya 5-8% kasus di dunia. Faktor lain seperti non 
                                 genetik dapat berupa infeksi virus selama kehamilan ibu, lingkungan yang tidak sehat, dan banyak faktor lainnya yang sampai saat ini masih diteliti di dunia.
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;Berdasarkan DSM V, diagnosis ASD didasari oleh beberapa ciri utama yang terlihat pada anak. Ciri ASD yang paling utama terlihat adalah penurunan kemampuan bahasa 
+                                Berdasarkan DSM V, diagnosis ASD didasari oleh beberapa ciri utama yang terlihat pada anak. Ciri ASD yang paling utama terlihat adalah penurunan kemampuan bahasa 
                                 dan komunikasi sosial secara terus menerus.  Hal ini ditandai dengan tidak normalnya interaksi dan pendekatan sosial yang terjadi antara anak ASD dan lingkungan, sehingga sering 
                                 terjadi kegagalan dalam melakukan komunikasi dua arah. Selain itu, penurunan perilaku komunikatif secara nonverbal juga terlihat pada anak yang diduga ASD.  Hal tersebut karena 
                                 kurang terintegrasinya antara komunikasi verbal dan nonverbal. Ciri utama yang lain dan mudah terlihat adalah ditemukannya kontak mata dan bahasa tubuh yang lemah, sehingga sulit 
@@ -48,7 +48,7 @@ const AboutASDScreen = () => {
                                 Stereotip motorik sederhana lainnya seperti menyusun mainan, membolak-balikan benda, ekolali, dan menyebutkan kata hingga frasa yang mereka suka.
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;Hasil diagnosis ASD berdasarkan DSM V dibagi menjadi 3 kategori yaitu level 1 (ringan), level 2 (sedang), dan level 3 (berat). 
+                                Hasil diagnosis ASD berdasarkan DSM V dibagi menjadi 3 kategori yaitu level 1 (ringan), level 2 (sedang), dan level 3 (berat). 
                                 Berdasarkan pemeriksaan yang dilakukan dalam sebuah penelitian yang merujuk pada kriteria DSM V, dari 990 anak yang melakukan pemeriksaan terdapat 16% anak dengan kasus ringan, 46% 
                                 dengan kasus sedang, dan 21% dengan kasus berat, serta 17% adalah kasus yang tidak murni ASD.  Selain itu, jenis kelamin anak yang terdiagnosis 
                                 ASD dalam penelitian ini juga terlihat dengan 77% laki-laki dan 23% perempuan. Gambaran penting lainnya adalah intelektual anak ASD, ditemukan 
