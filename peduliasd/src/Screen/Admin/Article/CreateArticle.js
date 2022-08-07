@@ -20,7 +20,7 @@ const CreateArticle = ({ history }) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-    }, [content])
+    }, [articleNew])
 
     const addHandler = (input) => {
         setContent(input)
@@ -54,8 +54,8 @@ const CreateArticle = ({ history }) => {
                 title, poster: data, content, urlTitle: (title).toLowerCase().replace(/[^a-z]+/g, ' ').replaceAll(' ', '-')
             }
 
-            console.log('payload = ', payload)
-            // dispatch(createArticleAction(payload))
+            // console.log('payload = ', payload)
+            dispatch(createArticleAction(payload))
 
         } catch (error) {
             console.error(error)

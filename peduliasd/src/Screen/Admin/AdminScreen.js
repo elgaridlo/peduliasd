@@ -18,13 +18,6 @@ const AdminScreen = () => {
             dispatch(userListAction())
         }
     }, [userlist])
-    // useEffect(() => {
-    //     if(success && success.status === 'Success') {
-    //         dispatch(removeUserNewData())
-    //         history.push('/user-list')
-    //     }
-    //     setPassword(`${(firstname+lastname).trim().slice(0,4)}1234`)
-    // },[firstname, lastname, success])
     return (
         <>
             <section className="wrapper bg-soft-primary">
