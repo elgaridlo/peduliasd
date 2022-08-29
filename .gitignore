@@ -2,9 +2,11 @@
 
 # dependencies
 node_modules
-/node_modules
+uploads
+
 /.pnp
 .pnp.js
+
 
 # testing
 /coverage
@@ -25,5 +27,3 @@ yarn-debug.log*
 yarn-error.log*
 
 *.zip
-
-/uploads
