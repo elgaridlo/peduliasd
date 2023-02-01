@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "this is the backend file",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app",
-    "server": "nodemon app",
+    "start": "node server",
+    "server": "nodemon server",
     "client": "npm start --prefix peduliasd",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix peduliasd && npm run build --prefix peduliasd"

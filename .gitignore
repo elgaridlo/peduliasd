@@ -27,3 +27,10 @@ yarn-debug.log*
 yarn-error.log*
 
 *.zip
+
+# deploy file fly.io
+Dockerfile
+fly.toml
+.dockerignore
+
+peduliasd/node_modules
