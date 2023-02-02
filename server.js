@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const path = require('path')
 
 const connectDB = require('./backend/config/db')
+const healthRoute = require('./backend/routers/healthRoutes')
 const userRoute = require('./backend/routers/userRoutes')
 const kidRoute = require('./backend/routers/kidRoutes')
 const workshopRoute = require('./backend/routers/workshopRoutes')
@@ -23,6 +24,7 @@ const app = express()
 
 app.use(express.json())
 
+app.use('/api/checker', healthRoute)
 app.use('/api/users', userRoute)
 app.use('/api/kid', kidRoute)
 app.use('/api/workshop', workshopRoute)
@@ -34,7 +36,7 @@ app.use('/api/upload', uploadRoute)
 
 app.use('/uploads', express.static(path.join(process.cwd(), '/uploads')))
 // const __dirname = path.resolve()
-if(process.env.NODE_ENV ==='production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(process.cwd(), '/peduliasd/build')))
 
     app.get('*', (req, res) => res.sendFile(path.resolve(process.cwd(), 'peduliasd', 'build', 'index.html')))
