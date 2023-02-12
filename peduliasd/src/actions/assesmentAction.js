@@ -17,7 +17,6 @@ export const createAssesmentAction = (payload) => async (dispatch, getState) => 
 
         const { data } = await axios.post(`/api/assesment`, payload, config)
 
-        console.log('data = ', data)
         dispatch({
             type: CREATE_ASSESMENT_SUCCESS,
             payload: data

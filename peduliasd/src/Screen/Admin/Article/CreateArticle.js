@@ -23,7 +23,6 @@ const CreateArticle = ({ history }) => {
     }, [articleNew])
 
     const addHandler = (input) => {
-        console.log('input', input)
         setContent(input)
     }
 
@@ -55,7 +54,6 @@ const CreateArticle = ({ history }) => {
                 title, poster: data, content, urlTitle: (title).toLowerCase().replace(/[^a-z]+/g, ' ').replaceAll(' ', '-')
             }
 
-            // console.log('payload = ', payload)
             dispatch(createArticleAction(payload))
 
         } catch (error) {

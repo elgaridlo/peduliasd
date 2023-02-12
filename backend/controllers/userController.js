@@ -11,7 +11,6 @@ exports.getAll = catchAsync (async(req, res, next) => {
     for (let item of userAll ) {
         for (let x of authAll) {
             if (item._id.toString() === x.userdetail.toString()) {
-                console.log('item = ', item.fullname, ' and email = ', x.email)
                 await User.findByIdAndUpdate(item._id, {auth: x._id})
             }
         }

@@ -61,7 +61,6 @@ const BlogScreen = () => {
                       placeholder="Search"
                       value={search}
                       onChange={(e) => {
-                        console.log('check in= ', e.target.value)
                        return setSearch(e.target.value)
                     }}
                     />
