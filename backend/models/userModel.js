@@ -42,7 +42,7 @@ const userSchema = mongoose.Schema({
     auth: {
         type: mongoose.Schema.Types.ObjectId,
         ref:'Authentication',
-        required: true
+        // required: true
     },
     motherDetail: {
         name: {

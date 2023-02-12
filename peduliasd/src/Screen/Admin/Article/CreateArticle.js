@@ -23,6 +23,7 @@ const CreateArticle = ({ history }) => {
     }, [articleNew])
 
     const addHandler = (input) => {
+        console.log('input', input)
         setContent(input)
     }
 

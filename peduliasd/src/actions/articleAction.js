@@ -62,7 +62,7 @@ export const listArticleAction = (query) => async (dispatch) => {
       },
     }
 
-    const { data } = await axios.get(`/api/article`, query, config)
+    const { data } = await axios.get(`/api/article`, {params: query}, config)
 
     dispatch({
       type: LIST_ARTICLE_SUCCESS,

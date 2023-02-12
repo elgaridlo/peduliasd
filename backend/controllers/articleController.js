@@ -6,7 +6,34 @@ const factory = require('./handlerController')
 const unlinkAsync = promisify(fs.unlink)
 
 exports.createArticle = factory.createOne(Article)
-exports.getAllArticle = factory.getAll(Article)
+// exports.getAllArticle = factory.getAll(Article)
+exports.getAllArticle = catchAsync(async (req, res, next) => {
+
+  const page = req.query.page * 1 || 1; // || 1 mean the default is 1
+  const size = req.query.size * 1 || 100;
+  const skip = (page - 1) * size;
+
+  let filter = {}
+  
+  if(req.query.title) {
+    filter = { title: { $regex: `.*${req.query.title}*.` } }
+  }
+
+  const articles = await Article.find(filter)
+    .limit(size)
+    .skip(skip)
+    .sort('-createdAt')
+
+  res.status(200).json({
+    status: 'Success',
+    data: articles,
+    page: {
+      rows: articles.length,
+      size,
+      page:skip
+    }
+  })
+})
 
 exports.getArticleById = catchAsync(async (req, res, next) => {
   const article = await Article.findOne({ urlTitle: req.params.id }).exec()
