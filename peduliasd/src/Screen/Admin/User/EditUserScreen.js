@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { authByIdAction, updatePasswordByIdAction } from '../../../actions/authActions'
+import { updatePasswordByIdAction } from '../../../actions/authActions'
 import { updateUserAction, userByIdAction } from '../../../actions/userAction'
 import AlertStyle from '../../../utils/Components/Alert'
 import { AlertEnum } from '../../../utils/Enums/AlertEnum'
@@ -25,10 +25,10 @@ const EditUserScreen = ({ history, match }) => {
     const { userInfo} = userLogin
 
     const userById = useSelector((state) => state.userById)
-    const { loading, error, data, auth } = userById
+    const { error, data, auth } = userById
 
-    const authById = useSelector((state) => state.authById)
-    const { loading: authLoading, error: authError } = authById
+    // const authById = useSelector((state) => state.authById)
+    // const { loading: authLoading, error: authError } = authById
 
     const updatePassword = useSelector((state) => state.updatePassword)
     const { loading: updateLoading, error: uppdateError, update } = updatePassword
@@ -86,7 +86,7 @@ const EditUserScreen = ({ history, match }) => {
 
         // This is for updating checkbox 
         setObjCheckBox(objCheckBox.map((item) => {
-            if (id === item._id) {
+            if (id === item.id) {
                 item.join = !item.join
             }
             return item
@@ -333,7 +333,7 @@ const EditUserScreen = ({ history, match }) => {
                                                             {objCheckBox && objCheckBox.map((item, index) => (
                                                                 <div key={index} className="col-12">
                                                                     <div className="form-check mb-4">
-                                                                        <input className="form-check-input" id={item._id} type="checkbox" name={item._id} value={item.join} checked={item.join} onChange={(e) => changeCheckbox(e.target)} ></input>
+                                                                        <input className="form-check-input" id={item.id} type="checkbox" name={item.id} value={item.join} checked={item.join} onChange={(e) => changeCheckbox(e.target)} ></input>
                                                                         <label className="form-check-label"> {item.workshops.description} </label>
                                                                     </div>
                                                                 </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
 import { deleteEduProgramAction, eduListProgramAction } from '../../actions/eduProgramAction'
 import Loader from '../../utils/Components/Loader'
 import Message from '../../utils/Components/Message'
@@ -31,9 +30,6 @@ const EducationProgramScreen = ({ history, match }) => {
         setShowAdmin(check)
     }
 
-    const editHandler = (id) => {
-        history.push(`${match.path}/${id}`)
-    }
     return (
         <>
             <section className="wrapper bg-light">
@@ -103,27 +99,26 @@ const EducationProgramScreen = ({ history, match }) => {
                                 <Message variant='danger'>{error}</Message>
                             ) :
                                 listEduProgram && listEduProgram.map((item) => (
-                                    <div key={item._id} className="project item col-md-6 col-xl-4 product">
+                                    <div key={item.id} className="project item col-md-6 col-xl-4 product">
                                         <figure className="lift rounded mb-6">
                                             <img src={item.image} alt="" />
 
 
                                             {userInfo && userInfo.user.role === 'admin' && showAdmin ? (
                                                 <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                                                    {/* <button className="btn btn-outline-primary" onClick={() => editHandler(item._id)}>Edit {' '}</button> {' '} */}
-                                                    <button className="btn btn-outline-danger" onClick={() => deleteHandler(item._id)}>Delete</button>
+                                                    <button className="btn btn-outline-danger" onClick={() => deleteHandler(item.id)}>Delete</button>
                                                 </div>
                                             ) : (
                                                 <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                                                    <a href={`https://wa.me/6282242633375?text=Saya%20tertarik%20untuk%20mengikuti%20${item.workshopType.description}`}
-                                                        target="_blank" className="btn btn-outline-success">Contact Us</a>
+                                                    <a href={`https://wa.me/6282242633375?text=Saya%20tertarik%20untuk%20mengikuti%20${item.workshopType}`}
+                                                        target="_blank" className="btn btn-outline-success" rel="noreferrer">Contact Us</a>
                                                 </div>
                                             )}
                                         </figure>
                                         <div className="project-details d-flex justify-content-center flex-column">
                                             <div className="post-header">
                                                 <div className="post-category mb-2 text-yellow">
-                                                    {item.workshopType.description}
+                                                    {item.workshopType}
                                                 </div>
                                                 <h2 className="post-title h3">{item.title}</h2>
                                             </div>

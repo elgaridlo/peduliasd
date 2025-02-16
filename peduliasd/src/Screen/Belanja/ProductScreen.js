@@ -42,8 +42,9 @@ const ProductScreen = ({match}) => {
 											</div>
 										</div>
 									</div>
-									<a className="btn btn-primary" href={socialMedia.whatsappShopAdmin} target="_blank" style={{ display: 'inline-block' }}>Beli WA</a>{'  '}
-									<a className="btn btn-warning" href={`https://${detail.webLink}`} target="_blank" style={{ display: 'inline-block' }} rel="noopener noreferrer external">Beli E-commerce</a>
+									<a className="btn btn-primary" href={socialMedia.whatsappShopAdmin} target="_blank" style={{ display: 'inline-block' }} rel="noreferrer">Beli WA</a>{'  '}
+									{/* <a className="btn btn-warning" href={`https://${detail.webLink}`} target="_blank" style={{ display: 'inline-block' }} rel="noopener noreferrer external">Beli E-commerce</a> */}
+									<a className="btn btn-warning" href={`https://${detail.weblink}`} target="_blank" style={{ display: 'inline-block' }} rel="noopener noreferrer external">Beli E-commerce</a>
 									{/* </div> */}
 								</Col>
 							</Row>

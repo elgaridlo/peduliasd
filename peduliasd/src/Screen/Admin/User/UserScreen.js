@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { Pagination } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { userListAction } from '../../../actions/userAction'
 import PaginationForm from '../../../component/form/PaginationForm'
@@ -13,7 +12,7 @@ const UserListScreen = ({ history, match }) => {
     const dispatch = useDispatch()
 
     const userList = useSelector(state => state.userList)
-    const { err, loading, userlist } = userList
+    const { loading, userlist } = userList
 
     useEffect(() => {
         dispatch(userListAction())
@@ -95,15 +94,15 @@ const UserListScreen = ({ history, match }) => {
                                                     </thead>
                                                     <tbody>
                                                         {userlist && userlist.users.map((item) => (
-                                                            <tr key={item._id}>
+                                                            <tr key={item.id}>
                                                                 <td style={{textAlign:'left'}}>{item.fullname}</td>
                                                                 <td>{item.phone}</td>
                                                                 <td>{''}</td>
                                                                 <td>{item.kid.name}</td>
                                                                 <td>
-                                                                    <a href={`/user-detail/${item._id}`}><i className="uil uil-external-link-alt"></i><span> Preview</span></a>
+                                                                    <a href={`/user-detail/${item.id}`}><i className="uil uil-external-link-alt"></i><span> Preview</span></a>
                                                                     {' '}
-                                                                    <a href={`/user/edit/${item._id}`}><i className="uil uil-file-edit-alt"></i><span> Edit</span></a>
+                                                                    <a href={`/user/edit/${item.id}`}><i className="uil uil-file-edit-alt"></i><span> Edit</span></a>
                                                                 </td>
                                                             </tr>
                                                         ))}

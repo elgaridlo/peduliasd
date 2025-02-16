@@ -93,7 +93,7 @@ const AddEduProgram = ({ history }) => {
                                                     <select className="form-select" onChange={(e) => setWorkshopType(e.target.value)}>
                                                         <option defaultValue>Pilih Kategori *</option>
                                                         {listWorkshopProgram && listWorkshopProgram.map((item) => (
-                                                            <option key={item._id} value={item._id}>{item.description}</option>
+                                                            <option key={item.id} value={item.id}>{item.description}</option>
                                                         ))}
                                                     </select>
                                                 </div>

@@ -3,23 +3,20 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { eduCreateProgramAction, getEduProgramByIdAction } from '../../../actions/eduProgramAction'
 import { listWorkshopction } from '../../../actions/workshopAction'
-import AlertStyle from '../../../utils/Components/Alert'
-import { AlertEnum } from '../../../utils/Enums/AlertEnum'
 
 const EduProgramByIdScreen = ({ match }) => {
 
     const [title, setTitle] = useState('')
     const [workshopType, setWorkshopType] = useState('')
-    const [image, setImage] = useState('')
-    const [uploading, setUploading] = useState(false)
+    const [, setImage] = useState('')
+    const [, setUploading] = useState(false)
     const [imageData, setImageData] = useState(null)
-    const [alertShow, setAlertShow] = useState()
   
-    const newEduProgram = useSelector((state) => state.newEduProgram)
-    const { loading, error, newEduProgram: newData } = newEduProgram
+    // const newEduProgram = useSelector((state) => state.newEduProgram)
+    // const { newEduProgram: newData } = newEduProgram
 
     const workshopList = useSelector((state) => state.workshopList)
-    const { loading: loadingEdu, error: errorEdu, listWorkshopProgram } = workshopList
+    const { listWorkshopProgram } = workshopList
 
     const dispatch = useDispatch()
 
@@ -91,7 +88,7 @@ const EduProgramByIdScreen = ({ match }) => {
                                                 <div className="form-select-wrapper">
                                                     <select className="form-select" onChange={(e) => setWorkshopType(e.target.value)}>                                                        
                                                         {listWorkshopProgram && listWorkshopProgram.map((item) => (
-                                                            <option key={item._id} value={item._id}>{item.description}</option>
+                                                            <option key={item.id} value={item.id}>{item.description}</option>
                                                         ))}
                                                     </select>
                                                 </div>

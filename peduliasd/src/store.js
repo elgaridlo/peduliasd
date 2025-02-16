@@ -10,6 +10,7 @@ import { authStore } from './store/authStore'
 import { userStore } from './store/userStore'
 import { assesmentStore } from './store/assesmentStore'
 import { productStore } from './store/productStore'
+import { casdiStore } from './store/casdiStore'
 
 const reducer = combineReducers({
     ...workshopStore,
@@ -19,6 +20,7 @@ const reducer = combineReducers({
     ...userStore,
     ...assesmentStore,
     ...productStore,
+    ...casdiStore,
     userLogin: userLoginReducer,
     userDetail: userProfileReducer,
     addNewUser: userCreated,

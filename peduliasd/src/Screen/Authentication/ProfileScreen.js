@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const ProfileScreen = ({ location, history }) => {
 
     const userLogin = useSelector((state) => state.userLogin)
-    const { loading, error, userInfo } = userLogin
+    const { userInfo } = userLogin
 
     const userDetail = useSelector((state) => state.userDetail)
-    const { loading: loading2, error:error2 , data} = userDetail
+    const { data} = userDetail
 
     useEffect(() => {
         if (!userInfo|| !userDetail) {
@@ -39,7 +39,7 @@ const ProfileScreen = ({ location, history }) => {
                                                     <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
                                                     {
                                                         data && data.programEducation.map(item => (
-                                                            <div key={item._id}>
+                                                            <div key={item.id}>
                                                             {item.workshops.workshopType === 'workshopClass' ? (
                                                                 <li className="my-3"><span><i className={`uil ${item.join ? 'uil-check': 'uil-times'}`}></i></span><span>{item.workshops.description}</span></li>
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/authActions'
-import { isBrowser, isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 
 const Header = () => {
@@ -79,10 +79,18 @@ const Header = () => {
                     <li className="nav-item"><a className="dropdown-item" href="/pep">Parents Education Programme</a></li>
                   </ul>
                 </li>
-                {/* <li className="nav-item"><a className="nav-link" href="/program-edukasi">Program</a></li> */}
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/artikel">Artikel</a></li>
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/skrining">Skrining</a></li>
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/product">Belanja</a></li>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>CASDI</span></a>
+                  <ul className="dropdown-menu">
+                    <li className="nav-item"><a className="dropdown-item" href="/casdi/about">Tentang CASDI</a></li>                    
+                    <li className="nav-item"><a className="dropdown-item" href="/casdi/riset">Riset CASDI</a></li>                    
+                    <li className="nav-item"><a className="dropdown-item" href="/casdi/article">Seputar CASDI</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/casdi/question">Tanya CASDI</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/casdi/appointment">Jadwal CASDI</a></li>
+                  </ul>
+                </li>
               </ul>
             </div>
 

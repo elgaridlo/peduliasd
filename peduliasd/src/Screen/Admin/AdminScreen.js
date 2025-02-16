@@ -6,6 +6,7 @@ import AddEduProgram from './EduProgram/AddEduProgram'
 import ListEduProgramScreen from './EduProgram/ListEduProgramScreen'
 import CreateShop from './Shop/CreateShop'
 import AddWorkshop from './Workshop/AddWorkshop'
+import CASDIFormArticle from '../CASDI/Article/FormCasdiArticleScreen'
 
 const AdminScreen = () => {
     const userList = useSelector((state) => state.userList)
@@ -71,6 +72,12 @@ const AdminScreen = () => {
                                     <li className="nav-item">
                                         <a className="nav-link" data-bs-toggle="tab" href="#tab1-5">
                                             <i className="uil uil-file-plus-alt pe-1"></i>
+                                            <span>CASDI Artikel</span>
+                                        </a>
+                                    </li>
+                                    {/* <li className="nav-item">
+                                        <a className="nav-link" data-bs-toggle="tab" href="#tab1-5">
+                                            <i className="uil uil-file-plus-alt pe-1"></i>
                                             <span>List Kategori Workshop</span>
                                         </a>
                                     </li>
@@ -79,7 +86,7 @@ const AdminScreen = () => {
                                             <i className="uil uil-file-plus-alt pe-1"></i>
                                             <span>List Artikel</span>
                                         </a>
-                                    </li>
+                                    </li> */}
                                 </ul>
                                 <div className="tab-content">
                                     <div className="tab-pane fade show active" id="tab1-1">
@@ -95,11 +102,14 @@ const AdminScreen = () => {
                                         <CreateShop />
                                     </div>
                                     <div className="tab-pane fade" id="tab1-5">
+                                        <CASDIFormArticle />
+                                    </div>
+                                    {/* <div className="tab-pane fade" id="tab1-5">
                                         <CreateArticle />
                                     </div>
                                     <div className="tab-pane fade" id="tab1-6">
                                         <CreateArticle />
-                                    </div>
+                                    </div> */}
                                 </div>
 
                             </div>

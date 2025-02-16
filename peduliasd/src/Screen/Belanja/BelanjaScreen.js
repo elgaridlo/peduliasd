@@ -6,7 +6,7 @@ const BelanjaScreen = () => {
     const dispatch = useDispatch()
 
     const products = useSelector(state => state.products)
-    const {error, loading, listProduct} = products
+    const { listProduct} = products
 
     useEffect(() => {
         if(!listProduct) {
@@ -35,8 +35,8 @@ const BelanjaScreen = () => {
                             </div>
                             <div className="row gx-md-10 gy-10 gy-md-13">
                                 {listProduct && listProduct.map(item => (
-                                    <div key={item._id} className="project item col-md-6 workshop">
-                                        <figure className="lift rounded mb-6"><a href={`/product/${item._id}`}> <img src={item.photo} alt="" /></a></figure>
+                                    <div key={item.id} className="project item col-md-6 workshop">
+                                        <figure className="lift rounded mb-6"><a href={`/product/${item.id}`}> <img src={item.photo} alt="" /></a></figure>
                                         <div className="project-details d-flex justify-content-center flex-column">
                                             <div className="post-header">
                                                 <div className="post-category text-line mb-3 text-leaf">Ayya</div>

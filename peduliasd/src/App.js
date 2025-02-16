@@ -32,6 +32,13 @@ import ScoreScreen from './Screen/Skrining/ScoreScreen'
 import { FilosofiLogoScreen } from './Screen/About/FilosofiLogoScreen'
 import GermasifScreen from './Screen/EducationProgram/GermasifScreen'
 import ASDTeleHealthScreen from './Screen/EducationProgram/ASDTeleHealthScreen'
+import FormAppointment from './Screen/CASDI/Appointment/FormAppointment'
+import QuestionScreen from './Screen/CASDI/Question/QuestionScreen'
+import ArticleCASDIScreen from './Screen/CASDI/Article/ArticleScreen'
+import EditCasdiArticleScreen from './Screen/CASDI/Article/EditCasdiArticleScreen'
+import ArticleCASDIByIdScreen from './Screen/CASDI/Article/ArticleByIdScreen'
+import CasdiResearch from './Screen/CASDI/StaticPage/CasdiResearch'
+import CasdiAbout from './Screen/CASDI/StaticPage/CasdiAbout'
 
 export const RoleStatusContext = React.createContext()
 
@@ -70,6 +77,13 @@ function App() {
                 <Route path="/artikel" component={BlogScreen} exact/>
                 <Route path="/artikel/:id" component={ArticleByIdScreen} exact />
                 <Route path="/artikel/:id/edit" component={EditArticleScreen} exact />
+                <Route path="/casdi/about" component={CasdiAbout} exact />
+                <Route path="/casdi/riset" component={CasdiResearch} exact />
+                <Route path="/casdi/appointment" component={FormAppointment} exact />
+                <Route path="/casdi/question" component={QuestionScreen} exact />
+                <Route path="/casdi/article" component={ArticleCASDIScreen} exact />
+                <Route path="/casdi/article/:id" component={ArticleCASDIByIdScreen} exact />
+                <Route path="/casdi/article/:id/edit" component={EditCasdiArticleScreen} exact />
                 <Route path="/product" component={BelanjaScreen} exact/>
                 <Route path="/skrining" component={SkriningScreen} />
                 <Route path="/add-user" component={AddUserScreen} exact />

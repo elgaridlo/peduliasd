@@ -32,7 +32,7 @@ const ArticleByIdScreen = ({ match, history }) => {
   }, [success])
 
   const deleteHandler = () => {
-    dispatch(deleteArticleAction(detail._id))
+    dispatch(deleteArticleAction(detail.id))
   }
   return (
     <>
@@ -57,7 +57,7 @@ const ArticleByIdScreen = ({ match, history }) => {
                   <li className="post-date">
                     <i className="uil uil-calendar-alt"></i>
                     <span>
-                      {detail && formatDate(new Date(detail.updatedAt))}
+                      {detail && formatDate(new Date(detail.updated_at))}
                     </span>
                   </li>
                   <li className="post-author">

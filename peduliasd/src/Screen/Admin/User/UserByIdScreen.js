@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { userByIdAction } from '../../../actions/userAction'
@@ -52,7 +52,7 @@ const UserByIdScreen = ({ location, history, match }) => {
                                                         <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
                                                         {
                                                             data && data.programEducation.map(item => (
-                                                                <div key={item._id}>
+                                                                <div key={item.id}>
                                                                 {item.workshops.workshopType === 'workshopClass' ? (
                                                                     <li className="my-3"><span><i className={`uil ${item.join ? 'uil-check': 'uil-times'}`}></i></span><span>{item.workshops.description}</span></li>
 
@@ -78,7 +78,7 @@ const UserByIdScreen = ({ location, history, match }) => {
                                                         <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
                                                         {
                                                             data && data.programEducation.map(item => (
-                                                                <div key={item._id}>
+                                                                <div key={item.id}>
                                                                 {item.workshops.workshopType === 'virtualClass' ? (
                                                                     <li className="my-3"><span><i className={`uil ${item.join ? 'uil-check': 'uil-times'}`}></i></span><span>{item.workshops.description}</span></li>
 
@@ -104,7 +104,7 @@ const UserByIdScreen = ({ location, history, match }) => {
                                                         <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
                                                         {
                                                             data && data.programEducation.map(item => (
-                                                                <div key={item._id}>
+                                                                <div key={item.id}>
                                                                 {item.workshops.workshopType === 'zoominarClass' ? (
                                                                     <li className="my-3"><span><i className={`uil ${item.join ? 'uil-check': 'uil-times'}`}></i></span><span>{item.workshops.description}</span></li>
 

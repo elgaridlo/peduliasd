@@ -91,7 +91,7 @@ const BlogScreen = () => {
                     {loading && <Loader size={"50"} />}
                     {listArticle &&
                       listArticle.map((item) => (
-                        <article key={item._id} className="item post col-md-6">
+                        <article key={item.id} className="item post col-md-6">
                           <div className="card">
                             <figure className="card-img-top overlay overlay1 hover-scale">
                               <a href={`/artikel/${item.urlTitle}`}>

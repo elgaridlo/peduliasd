@@ -9,7 +9,7 @@ const HomeScreen = () => {
   const dispatch = useDispatch()
 
   const products = useSelector((state) => state.products)
-  const { error, loading, listProduct } = products
+  const { listProduct } = products
 
   useEffect(() => {
     if (!listProduct) {
@@ -286,7 +286,7 @@ const HomeScreen = () => {
               <a
                 href={socialMedia.whatsappAdmin}
                 target="_blank"
-                className="btn btn-white rounded-pill mb-0 text-nowrap"
+                className="btn btn-white rounded-pill mb-0 text-nowrap" rel="noreferrer"
               >
                 Bergabung
               </a>
@@ -343,11 +343,11 @@ const HomeScreen = () => {
                   {listProduct &&
                     listProduct.slice(0, 2).map((item) => (
                       <div
-                        key={item._id}
+                        key={item.id}
                         className="project item col-md-6 col-xl-6 product"
                       >
                         <figure className="lift rounded mb-6">
-                          <Link to={`/product/${item._id}`}>
+                          <Link to={`/product/${item.id}`}>
                             {' '}
                             <img src={item.photo} alt="" />
                           </Link>

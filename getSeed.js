@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 const importData = async () => {
     try {
-        const dataArticle = await Articles.find();
+        const dataArticle = await Articles.find().sort('-createdAt');
         const artics = dataArticle.map((item) => ({
             publish: item.publish,
             title: item.title,
