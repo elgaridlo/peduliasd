@@ -29,66 +29,16 @@ const LandasanScreen = () => {
                                 alt=""
                             />
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;<i>Autism Spectrum Disorder (ASD) </i> adalah
-                                diagnosis resmi yang dikeluarkan oleh APA pada tahun 2013 yang
-                                memiliki kriteria-kriteria khusus untuk mengelompokkan anak-anak
-                                dengan gangguan autistik ke dalam satu payung yang sama. Sebelum
-                                istilah ASD diperbaharui, masyarakat masih menggunakan istilah
-                                autisme atau autis pada anak-anak yang memiliki gangguan
-                                perkembangan dan memenuhi kriteria khas autistik. Setelah
-                                istilah ini digunakan lebih dari 8 tahun, masyarakat mulai
-                                menggunakan “ASD” sebagai penyebutan yang umum terhadap
-                                anak-anak yang terdiagnosis dan tumbuh dengan kondisi autistik.
-                                Namun, tidak semua lapisan masyarakat memahami terkait
-                                pergantian istilah ASD. Sehingga dengan istilah “autis” stigma
-                                terhadap kelompok dengan kondisi ASD masih sangat sering ditemui
-                                di dunia. Penggunaan istilah yang tepat dan edukasi secara
-                                ilmiah kepada masyakarat tentu dapat menjadi salah satu cara
-                                untuk mengurangi stigma masyarakat yang dapat menurunkan
-                                kualitas kehidupan keluarga yang mengasuh anak dengan kondisi
-                                autistik.
+                                &emsp;&ensp;Peduli ASD berdiri atas kesadaran akan besarnya kebutuhan keluarga individu autistik terhadap informasi yang valid, berbasis sains, dan dapat dipercaya. Di tengah maraknya informasi yang tidak terverifikasi dan sering kali saling bertentangan, banyak orang tua merasa bingung, cemas, dan tidak memiliki pegangan yang jelas dalam mendampingi anak autistik.
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;Banyaknya beredar informasi yang kurang ilmiah atau
-                                tergolong pseudoscience di internet terkait ASD membuat
-                                orang-orang yang bersentuhan erat dengan individu ASD mengalami
-                                kebingungan saat memilih informasi mana yang layak dipercaya.
-                                Sebagian besar saran yang diberikan kadang bertolak belakang
-                                dengan ilmu pengetahuan yang telah ada. Hal inilah yang
-                                mendorong Isti Anindya (CEO Peduli ASD) membentuk platform
-                                edukasi Peduli ASD. Selain berperan sebagi CEO, beliau juga
-                                merupakan ibu dari anak autistik bernama Fayyaza yang tahun ini
-                                berusia 9 tahun. Berlatar belakang pendidikan di bidang biologi
-                                dan ilmu kedokteran dasar, beliau yang juga berprofesi sebagai
-                                seorang dosen ilmu biomedis di Universitas Indonesia Maju
-                                menjawab keresahannya terkait informasi seputar ASD yang
-                                seringkali tidak ilmiah dan memiliki landasan ilmu pengetahuan
-                                yang kuat melalui peduli ASD. Bagi beliau memberikan informasi
-                                yang valid dengan sumber yang dapat dipercaya serta tidak
-                                merekayasa informasi untuk membuat bingung para orangtua anak
-                                autistik adalah semangat yang pada akhirnya membawa peduli ASD
-                                berjalan baik sejauh ini.
+                                &emsp;&ensp;Peduli ASD berawal pada 30 April 2020 sebagai platform edukasi digital yang berfokus pada penyebaran informasi ilmiah seputar Autism Spectrum Disorder (ASD). Pada fase awal, Peduli ASD hadir sebagai ruang belajar bersama yang terbuka, dengan tujuan membantu orang tua dan masyarakat memahami autisme secara lebih utuh dan manusiawi.
                             </p>
                             <p className="mb-6" style={{ textAlign: 'justify' }}>
-                                &emsp;&ensp;Ide menciptakan Peduli ASD sebagai sarana edukasi
-                                tercetus pada tanggal 30 April 2020 yang mana tepat diakhir
-                                bulan peduli Autisme yang dirayakan seluruh dunia. Awalnya
-                                platform ini diciptakan sebagai media satu arah yang menyimpan
-                                informasi seputar ASD. Perlahan lambat laun berubah menjadi
-                                media edukasi dua arah karena foundernya mencoba menyembatani
-                                orangtua dengan orang-orang yang dapat memberikan informasi yang
-                                memiliki landasan ilmiah yang baik. Meskipun platform ini sempat
-                                tidak aktif setengah tahun di awal tahun 2021, peduli ASD
-                                kembali bangkit dengan wajah baru di bulan Juli 2021 sebagai
-                                platform edukasi berbayar yang menyediakan layanan edukasi yang
-                                melibatkan orangtua anak ASD. Besar harapannya peduli ASD dapat
-                                terus bertumbuh menjadi platform edukasi yang dapat memberikan
-                                informasi berimbang dan dapat dipertanggung jawabkan
-                                kebenarannya. Selain itu, semoga keberadaan peduli ASD juga
-                                dapat mendorong orangtua anak ASD untuk tumbuh dan belajar
-                                bersama yang mana akan menjadi bekal untuk mereka menemani anak
-                                spesial yang sangat membutuhkan pertolongan keluarga dan
-                                orangtuanya.
+                                &emsp;&ensp;Seiring waktu, kebutuhan akan edukasi yang lebih terstruktur, berkelanjutan, dan akuntabel semakin nyata. Hal ini mendorong Peduli ASD untuk bertransformasi secara kelembagaan dan beroperasi secara resmi sebagai PT Peduli Autisme Indonesia pada tanggal 17 Februari 2025. Transformasi ini dilakukan agar Peduli ASD dapat menjalankan perannya secara profesional, memiliki tata kelola yang jelas, serta mampu mengembangkan layanan, riset, dan teknologi secara berkelanjutan.
+                            </p>
+                            <p className="mb-6" style={{ textAlign: 'justify' }}>
+                                &emsp;&ensp;Landasan berdirinya Peduli ASD adalah keyakinan bahwa individu autistik adalah manusia yang utuh, dengan hak untuk tumbuh, belajar, berkomunikasi, dan berperan dalam masyarakat. Oleh karena itu, setiap langkah Peduli ASD dibangun di atas nilai empati, ilmu pengetahuan, dan komitmen untuk mengurangi stigma serta memperluas akses edukasi yang berkualitas.
                             </p>
                         </div>
                     </div>

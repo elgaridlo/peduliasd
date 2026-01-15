@@ -32,6 +32,10 @@ import ScoreScreen from './Screen/Skrining/ScoreScreen'
 import { FilosofiLogoScreen } from './Screen/About/FilosofiLogoScreen'
 import GermasifScreen from './Screen/EducationProgram/GermasifScreen'
 import ASDTeleHealthScreen from './Screen/EducationProgram/ASDTeleHealthScreen'
+import FPAScreen from './Screen/EducationProgram/FPAScreen'
+import IARCScreen from './Screen/EducationProgram/IARCScreen'
+import SWARAScreen from './Screen/EducationProgram/SWARAScreen'
+import SWARAAppScreen from './Screen/SWARA/SWARAAppScreen'
 import FormAppointment from './Screen/CASDI/Appointment/FormAppointment'
 import QuestionScreen from './Screen/CASDI/Question/QuestionScreen'
 import ArticleCASDIScreen from './Screen/CASDI/Article/ArticleScreen'
@@ -72,6 +76,10 @@ function App() {
                 <Route path="/pep" component={PEPScreen} exact />
                 <Route path="/germasif" component={GermasifScreen} exact />
                 <Route path="/asd-telehealth" component={ASDTeleHealthScreen} exact />
+                <Route path="/fpa" component={FPAScreen} exact />
+                <Route path="/iarc" component={IARCScreen} exact />
+                <Route path="/swara" component={SWARAScreen} exact />
+                <Route path="/swara-app" component={SWARAAppScreen} exact />
                 <Route path="/program-edukasi" component={EducationProgramScreen} exact />
                 <Route path="/program-edukasi/:id" component={EduProgramByIdScreen} exact />
                 <Route path="/artikel" component={BlogScreen} exact/>

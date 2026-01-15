@@ -42,18 +42,19 @@ const ASDTeleHealthScreen = () => {
                             />
                             <h2 className="display-5 mb-3">ASD Telehealth</h2>
                             <p className="mb-6 text-justify">
-                                Sebuah layanan telehealth dan konsultasi jarak jauh yang
-                                menghubungkan professional dengan keluarga individu autistik.
-                                Profesional yang kami sediakan di sini terdiri dari terapis
-                                okupasi, terapis wicara, orthopedagog, psikolog klinik anak yang
-                                sering bersinggungan dengan klien ASD, serta dokter dan tenaga
-                                medis lainnya yang memiliki kompetensi dalam ruang lingkup ASD.
-                                Layanan ini akan menghubungkan orangtua, pengasuh, keluarga, dan
-                                orang-orang yang bersinggungan langsung dengan individu ASD
-                                dengan ahli untuk dapat melakukan konseling jarak jauh. Program
-                                dalam layanan ini bukan untuk menegakkan diagnosis atau
-                                melakukan terapi jarak jauh, namun lebih ke deteksi dini, saran
-                                medis, dan konsultasi.
+                                ASD Telehealth Services (ATS) adalah layanan konsultasi dan pendampingan jarak jauh bagi individu autistik dan keluarganya dengan memanfaatkan teknologi digital.
+                                Program ini dikembangkan untuk memperluas akses layanan autisme, terutama bagi keluarga yang menghadapi keterbatasan geografis, waktu, atau sumber daya. Melalui media daring, ATS menyediakan edukasi, diskusi, serta pendampingan terstruktur yang dapat dilakukan secara fleksibel dan berkelanjutan.
+                            </p>
+                            <p className="mb-6 text-justify">
+                                <strong>Tujuan ASD Telehealth Services:</strong>
+                                <ul className="mt-2">
+                                    <li>Memastikan keluarga di berbagai daerah dapat memperoleh akses edukasi dan pendampingan.</li>
+                                    <li>Membantu orang tua memahami kebutuhan anak dan strategi penanganan awal.</li>
+                                    <li>Menjaga kesinambungan layanan saat layanan tatap muka tidak memungkinkan.</li>
+                                </ul>
+                            </p>
+                            <p className="mb-6 text-justify">
+                                ATS menempatkan orang tua sebagai fasilitator utama, dengan dukungan profesional yang terarah dan bertanggung jawab.
                             </p>
                             <a href={socialMedia.telehealthAccess} target="_blank" className="btn btn-primary rounded-pill mx-1 mb-2 mb-md-0" >Akses Layanan</a>
                         </div>

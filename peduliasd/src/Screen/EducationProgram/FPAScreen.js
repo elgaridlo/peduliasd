@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PEPScreen = () => {
+const FPAScreen = () => {
     return (
         <>
             <section className="wrapper bg-light">
@@ -19,27 +19,28 @@ const PEPScreen = () => {
                         </div>
                         <div className="col-lg-6">
                             <img src="./assets/img/icons/megaphone.svg" className="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-                            <h2 className="display-5 mb-3"><span className="fst-italic">Parent Education Program (PEP)</span></h2>
+                            <h2 className="display-5 mb-3"><span className="fst-italic">Festival Peduli Autisme (FPA)</span></h2>
                             <p className="mb-6 text-justify">
-                                Parent Education Program (PEP) adalah program edukasi terstruktur bagi orang tua dan keluarga individu autistik yang bertujuan meningkatkan kapasitas pengetahuan dan keterampilan orang tua dalam membersamai anak autistik secara tepat dan berdaya.
+                                Festival Peduli Autisme (FPA) adalah rangkaian kegiatan edukasi publik yang diselenggarakan dalam rangka Bulan Peduli Autisme, baik secara daring maupun luring.
                             </p>
                             <p className="mb-6 text-justify">
-                                PEP dikembangkan dengan pendekatan berbasis sains dan melibatkan tenaga profesional lintas disiplin sesuai keahlian masing-masing. Program ini dirancang untuk menjawab kebutuhan nyata orang tua dalam menghadapi tantangan sehari-hari, sekaligus melindungi mereka dari misinformasi dan praktik yang tidak berbasis bukti.
+                                FPA berfungsi sebagai ruang edukasi kolektif yang mempertemukan orang tua, individu autistik, profesional, pendidik, dan masyarakat umum. Seluruh kegiatan festival dirancang untuk meningkatkan pemahaman autisme melalui pendekatan yang berbasis sains, inklusif, dan mudah diterapkan dalam kehidupan sehari-hari.
                             </p>
                             <p className="mb-6 text-justify">
-                                Fokus Utama PEP mencakup tiga aspek utama:
+                                Pilar Utama FPA mencakup empat aspek utama:
                             </p>
                             <div className="row gy-3 gx-xl-8">
                                 <div className="col-xl-12">
                                     <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
-                                        <li><span><i>1</i></span><span className="fw-bolder">Kemandirian Anak – membangun keterampilan hidup sehari-hari sesuai tahapan perkembangan</span></li>
-                                        <li className="mt-3"><span><i>2</i></span><span className="fw-bolder">Persiapan Sekolah – membantu orang tua memahami kesiapan akademik, gaya belajar, dan kebutuhan anak di lingkungan pendidikan</span></li>
-                                        <li className="mt-3"><span><i>3</i></span><span className="fw-bolder">Kesehatan Fisik dan Mental – menempatkan kesehatan sebagai fondasi utama tumbuh kembang anak dan kesejahteraan keluarga</span></li>
+                                        <li><span><i>1</i></span><span className="fw-bolder">Tata laksana autisme berbasis bukti – pendekatan ilmiah dalam penanganan dan pendampingan individu autistik</span></li>
+                                        <li className="mt-3"><span><i>2</i></span><span className="fw-bolder">Kemandirian individu autistik – membangun keterampilan hidup dan sosial untuk meningkatkan kualitas hidup</span></li>
+                                        <li className="mt-3"><span><i>3</i></span><span className="fw-bolder">Kesehatan fisik dan mental – menempatkan kesehatan sebagai fondasi utama tumbuh kembang individu autistik</span></li>
+                                        <li className="mt-3"><span><i>4</i></span><span className="fw-bolder">Pencapaian akademik dan non-akademik – mendukung pengembangan potensi individu autistik secara menyeluruh</span></li>
                                     </ul>
                                 </div>
                             </div>
                             <p className="mt-6 text-justify">
-                                Program ini juga berfungsi sebagai ruang dukungan (support system) bagi orang tua agar merasa tidak sendiri, lebih percaya diri, dan bangga membersamai individu autistik.
+                                FPA juga berperan sebagai instrumen advokasi publik untuk mengurangi stigma dan mendorong pengambilan keputusan berbasis ilmu pengetahuan.
                             </p>
                         </div>
                     </div>
@@ -49,4 +50,4 @@ const PEPScreen = () => {
     )
 }
 
-export default PEPScreen
+export default FPAScreen

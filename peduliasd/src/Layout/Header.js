@@ -60,7 +60,7 @@ const Header = () => {
                 ></button>
               </div>
               <ul className="navbar-nav">
-                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/">Beranda</a></li>
+                {/* <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/">Beranda</a></li> */}
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/tentang-asd">Tentang ASD</a></li>
                 <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Tentang Kami</span></a>
                   <ul className="dropdown-menu">
@@ -73,10 +73,12 @@ const Header = () => {
                 </li>
                 <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Program</span></a>
                   <ul className="dropdown-menu">
-                    <li className="nav-item"><a className="dropdown-item" href="/program-edukasi">Zoominar dan IG Live</a></li>                    
-                    <li className="nav-item"><a className="dropdown-item" href="/germasif">Gerakan Masyarakat Inklusif (GERMASIF)</a></li>                    
+                    {/* <li className="nav-item"><a className="dropdown-item" href="/program-edukasi">Zoominar dan IG Live</a></li> */}
+                    {/* <li className="nav-item"><a className="dropdown-item" href="/germasif">Gerakan Masyarakat Inklusif (GERMASIF)</a></li> */}
                     <li className="nav-item"><a className="dropdown-item" href="/asd-telehealth">ASD Telehealth</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/pep">Parents Education Programme</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/fpa">Festival Peduli Autisme</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/iarc">Indonesia Autism Research Center</a></li>
                   </ul>
                 </li>
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/artikel">Artikel</a></li>
@@ -84,17 +86,23 @@ const Header = () => {
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/product">Belanja</a></li>
                 <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>CASDI</span></a>
                   <ul className="dropdown-menu">
-                    <li className="nav-item"><a className="dropdown-item" href="/casdi/about">Tentang CASDI</a></li>                    
-                    <li className="nav-item"><a className="dropdown-item" href="/casdi/riset">Riset CASDI</a></li>                    
+                    <li className="nav-item"><a className="dropdown-item" href="/casdi/about">Tentang CASDI</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/casdi/riset">Riset CASDI</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/casdi/article">Seputar CASDI</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/casdi/question">Tanya CASDI</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/casdi/appointment">Jadwal CASDI</a></li>
                   </ul>
                 </li>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>SWARA App</span></a>
+                  <ul className="dropdown-menu">
+                    <li className="nav-item"><a className="dropdown-item" href="/swara">Tentang SWARA</a></li>
+                    <li className="nav-item"><a className="dropdown-item" href="/swara-app">Langganan SWARA</a></li>
+                  </ul>
+                </li>
               </ul>
             </div>
 
-            <div className="navbar-other w-100 d-flex ms-auto">
+            {/* <div className="navbar-other w-100 d-flex ms-auto">
               <ul
                 className="navbar-nav flex-row align-items-center ms-auto"
                 data-sm-skip="true"
@@ -140,7 +148,7 @@ const Header = () => {
                   </div>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </nav>
       </header>

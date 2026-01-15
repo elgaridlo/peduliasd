@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { listProductAction } from '../actions/productAction'
 import { socialMedia } from '../model/SocialMediaModel'
+import OurTeam from './About/OurTeam'
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
@@ -11,11 +12,11 @@ const HomeScreen = () => {
   const products = useSelector((state) => state.products)
   const { listProduct } = products
 
-  useEffect(() => {
-    if (!listProduct) {
-      dispatch(listProductAction())
-    }
-  }, [listProduct])
+  // useEffect(() => {
+  //   if (!listProduct) {
+  //     dispatch(listProductAction())
+  //   }
+  // }, [listProduct])
   return (
     <>
       <section className="wrapper bg-soft-primary">
@@ -54,7 +55,7 @@ const HomeScreen = () => {
             <div
               className="player"
               data-plyr-provider="youtube"
-              data-plyr-embed-id="xux8jQphyjU"
+              data-plyr-embed-id="nlD-2TCHzmI"
               style={{ width: '80%' }}
             ></div>
           </div>
@@ -84,8 +85,8 @@ const HomeScreen = () => {
               ></div>
               <figure className="rounded mb-0">
                 <img
-                  src="./assets/img/photos/se3.png"
-                  srcSet="./assets/img/photos/se3.png"
+                  src="./assets/img/new/pep.png"
+                  srcSet="./assets/img/new/pep.png"
                   alt=""
                 />
               </figure>
@@ -93,73 +94,47 @@ const HomeScreen = () => {
 
             <div className="col-lg-6">
               <h3 className="display-6 mb-4">
-                Peduli ASD{' '}
-                <span className="fst-italic">
-                  Parents Education Programme (PEP){' '}
-                </span>
+                Parent Education Program (PEP)
               </h3>
-              <p className="mb-5 ">
-                Program edukasi intensif seputar{' '}
-                <span className="fst-italic"> Autism Spectrum Disorder </span>
-                (ASD) yang berlangsung selama 1 semester (6 bulan). Peserta
-                dibatasi maksimal 10 orang per semester dan akan berjalan ketika
-                peserta di atas 5 orang. Peserta berasal dari orangtua individu
-                autistik dan orang-orang yang terlibat dalam pengasuhan individu
-                autistik. Awal semester perdana berjalan per tanggal 1 Juli 2022
-                dan berakhir Desember 2022. Adapun materi kelas akan diberikan
-                setiap akhir pekan (120 menit per pertemuan) dengan penjabaran
-                materi sebagai berikut:{' '}
+              <p className="mb-5">
+                Parent Education Program (PEP) adalah program edukasi terstruktur bagi orang tua dan keluarga individu autistik yang bertujuan meningkatkan kapasitas pengetahuan dan keterampilan orang tua dalam membersamai anak autistik secara tepat dan berdaya.
               </p>
-              <div className="row gy-3">
-                <div className="col-xl-6">
-                  <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
-                    <li>
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>
-                        Materi Pengantar tentang{' '}
-                        <span className="fst-italic">
-                          {' '}
-                          Autism Spectrum Disorder (ASD){' '}
-                        </span>{' '}
-                        (1 kali pertemuan)
-                      </span>
-                    </li>
-                    <li className="mt-3">
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>
-                        Materi Kemandirian Anak Autistik (6 kali Pertemuan)
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-xl-6">
-                  <ul className="icon-list bullet-bg bullet-soft-leaf mb-0">
-                    <li>
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>
-                        Materi Persiapan Sekolah Anak Autistik (4 kali
-                        pertemuan)
-                      </span>
-                    </li>
-                    <li className="mt-3">
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>
-                        Materi Kesehatan Anak Autistik (7 kali pertemuan)
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
+              <p className="mb-5">
+                PEP dikembangkan dengan pendekatan berbasis sains dan melibatkan tenaga profesional lintas disiplin sesuai keahlian masing-masing. Program ini dirancang untuk menjawab kebutuhan nyata orang tua dalam menghadapi tantangan sehari-hari, sekaligus melindungi mereka dari misinformasi dan praktik yang tidak berbasis bukti.
+              </p>
+              <h4 className="mb-4">Fokus Utama PEP</h4>
+              <p className="mb-5">
+                PEP mencakup tiga aspek utama:
+              </p>
+              <ul className="icon-list bullet-bg bullet-soft-leaf mb-5">
+                <li>
+                  <span>
+                    <i className="uil uil-check"></i>
+                  </span>
+                  <span>
+                    1. Kemandirian Anak – membangun keterampilan hidup sehari-hari sesuai tahapan perkembangan.
+                  </span>
+                </li>
+                <li className="mt-3">
+                  <span>
+                    <i className="uil uil-check"></i>
+                  </span>
+                  <span>
+                    2. Persiapan Sekolah – membantu orang tua memahami kesiapan akademik, gaya belajar, dan kebutuhan anak di lingkungan pendidikan.
+                  </span>
+                </li>
+                <li className="mt-3">
+                  <span>
+                    <i className="uil uil-check"></i>
+                  </span>
+                  <span>
+                    3. Kesehatan Fisik dan Mental – menempatkan kesehatan sebagai fondasi utama tumbuh kembang anak dan kesejahteraan keluarga.
+                  </span>
+                </li>
+              </ul>
+              <p className="mb-5">
+                Program ini juga berfungsi sebagai ruang dukungan (support system) bagi orang tua agar merasa tidak sendiri, lebih percaya diri, dan bangga membersamai individu autistik.
+              </p>
               <a
                 href="/pep"
                 className="btn btn-soft-leaf rounded-pill mt-6 mb-0"
@@ -178,8 +153,8 @@ const HomeScreen = () => {
               ></div>
               <figure className="rounded mb-0">
                 <img
-                  src="./assets/img/photos/se4.png"
-                  srcSet="./assets/img/photos/se4.png"
+                  src="./assets/img/new/asd.png"
+                  srcSet="./assets/img/new/asd.png"
                   alt=""
                 />
               </figure>
@@ -270,7 +245,7 @@ const HomeScreen = () => {
 
       <section
         className="wrapper image-wrapper bg-image bg-overlay"
-        data-image-src="./assets/img/photos/bg10.png"
+        data-image-src="./assets/img/new/edukasi.png"
       >
         <div className="container py-18">
           <div className="row text-center">
@@ -500,8 +475,8 @@ const HomeScreen = () => {
               ></div>
               <figure className="rounded">
                 <img
-                  src="./assets/img/photos/about20.png"
-                  srcSet="./assets/img/photos/about20@2x.png 2x"
+                  src="./assets/img/new/skrining.png"
+                  srcSet="./assets/img/new/skrining.png 2x"
                   alt=""
                 />
               </figure>
@@ -558,86 +533,16 @@ const HomeScreen = () => {
             {/*  */}
           </div>
           {/*  */}
-          <div className="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-            <div className="col-lg-6 order-lg-2 position-relative">
-              <div
-                className="shape rounded-circle bg-line leaf rellax w-18 h-18"
-                data-rellax-speed="1"
-                style={{ bottom: '-2.5rem', right: '-1.5rem' }}
-              ></div>
-              <figure className="rounded">
-                <img
-                  src="./assets/img/photos/about19.png"
-                  srcSet="./assets/img/photos/about19@2x.png 2x"
-                  alt=""
-                />
-              </figure>
-            </div>
-            {/*  */}
-            <div className="col-lg-6">
-              <h3 className="display-6 mb-4">Tentang Kami</h3>
-              <p className="mb-5">
-                Terbentuknya tim Peduli ASD berawal dari kesamaan visi dan misi
-                untuk mempopulerkan tagar
-                <span className="fw-bold">
-                  {' '}
-                  #banggamembersamaiindividuautistik{' '}
-                </span>
-                dan keinginan yang konsisten dalam menyajikan edukasi berbasis
-                sains. Kami memiliki fokus kerja dalam 4 bidang utama :
-              </p>
-              <div className="row gy-3">
-                <div className="col-xl-6">
-                  <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
-                    <li>
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>Edukasi berbasis Sains</span>
-                    </li>
-                    <li className="mt-3">
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>Pengembangan teknologi</span>
-                    </li>
-                  </ul>
-                </div>
-                {/*  */}
-                <div className="col-xl-6">
-                  <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
-                    <li>
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>Pengadaan media edukasi</span>
-                    </li>
-                    <li className="mt-3">
-                      <span>
-                        <i className="uil uil-check"></i>
-                      </span>
-                      <span>Pengelolaan media sosial</span>
-                    </li>
-                  </ul>
-                </div>
-                {/*  */}
-              </div>
-              {/*  */}
-              <a
-                href="/visi-misi"
-                className="btn btn-soft-primary rounded-pill mt-6 mb-0"
-              >
-                Baca selengkapnya
-              </a>
-            </div>
-            {/*  */}
-          </div>
+          
           {/*  */}
         </div>
         {/*  */}
       </section>
+      
+      <OurTeam />
     </>
   )
 }
 
 export default HomeScreen
+

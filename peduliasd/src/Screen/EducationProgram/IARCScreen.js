@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PEPScreen = () => {
+const IARCScreen = () => {
     return (
         <>
             <section className="wrapper bg-light">
@@ -19,28 +19,29 @@ const PEPScreen = () => {
                         </div>
                         <div className="col-lg-6">
                             <img src="./assets/img/icons/megaphone.svg" className="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-                            <h2 className="display-5 mb-3"><span className="fst-italic">Parent Education Program (PEP)</span></h2>
+                            <h2 className="display-5 mb-3"><span className="fst-italic">Indonesia Autism Research Center (IARC)</span></h2>
                             <p className="mb-6 text-justify">
-                                Parent Education Program (PEP) adalah program edukasi terstruktur bagi orang tua dan keluarga individu autistik yang bertujuan meningkatkan kapasitas pengetahuan dan keterampilan orang tua dalam membersamai anak autistik secara tepat dan berdaya.
+                                Indonesia Autism Research Center (IARC) adalah pusat studi dan riset autisme yang menjadi fondasi ilmiah seluruh program Peduli ASD.
                             </p>
                             <p className="mb-6 text-justify">
-                                PEP dikembangkan dengan pendekatan berbasis sains dan melibatkan tenaga profesional lintas disiplin sesuai keahlian masing-masing. Program ini dirancang untuk menjawab kebutuhan nyata orang tua dalam menghadapi tantangan sehari-hari, sekaligus melindungi mereka dari misinformasi dan praktik yang tidak berbasis bukti.
+                                IARC berfokus pada penelitian multidisipliner yang mencakup aspek biomedis, perilaku, pendidikan, dan teknologi kesehatan. Pusat studi ini hadir untuk menjembatani kesenjangan antara riset ilmiah dan kebutuhan nyata di lapangan, serta memastikan bahwa seluruh produk dan layanan Peduli ASD memiliki dasar ilmiah yang valid dan etis.
                             </p>
                             <p className="mb-6 text-justify">
-                                Fokus Utama PEP mencakup tiga aspek utama:
+                                Peran Strategis IARC mencakup:
                             </p>
                             <div className="row gy-3 gx-xl-8">
                                 <div className="col-xl-12">
                                     <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
-                                        <li><span><i>1</i></span><span className="fw-bolder">Kemandirian Anak – membangun keterampilan hidup sehari-hari sesuai tahapan perkembangan</span></li>
-                                        <li className="mt-3"><span><i>2</i></span><span className="fw-bolder">Persiapan Sekolah – membantu orang tua memahami kesiapan akademik, gaya belajar, dan kebutuhan anak di lingkungan pendidikan</span></li>
-                                        <li className="mt-3"><span><i>3</i></span><span className="fw-bolder">Kesehatan Fisik dan Mental – menempatkan kesehatan sebagai fondasi utama tumbuh kembang anak dan kesejahteraan keluarga</span></li>
+                                        <li><span><i>1</i></span><span className="fw-bolder">Menjadi rujukan ilmiah terpercaya terkait riset autisme di Indonesia</span></li>
+                                        <li className="mt-3"><span><i>2</i></span><span className="fw-bolder">Mengembangkan basis data riset nasional</span></li>
+                                        <li className="mt-3"><span><i>3</i></span><span className="fw-bolder">Mendukung inovasi produk dan layanan berbasis bukti</span></li>
+                                        <li className="mt-3"><span><i>4</i></span><span className="fw-bolder">Meningkatkan kapasitas profesional melalui pelatihan dan publikasi ilmiah</span></li>
                                     </ul>
                                 </div>
-                            </div>
                             <p className="mt-6 text-justify">
-                                Program ini juga berfungsi sebagai ruang dukungan (support system) bagi orang tua agar merasa tidak sendiri, lebih percaya diri, dan bangga membersamai individu autistik.
+                                Proyek Perdana IARC: <a href="https://peduliasd.id/casdi" target="_blank" rel="noopener noreferrer">https://peduliasd.id/casdi</a>
                             </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,4 +50,4 @@ const PEPScreen = () => {
     )
 }
 
-export default PEPScreen
+export default IARCScreen

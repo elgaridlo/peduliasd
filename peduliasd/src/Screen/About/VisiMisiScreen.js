@@ -25,10 +25,10 @@ const VisiMisiScreen = () => {
                                     Menjadi platform edukasi berbasis sains dan ilmu pengetahuan yang memiliki landasan ilmiah yang kuat.
                                 </li>
                                 <li>
-                                    Membantu mewujudkan tumbuhnya kelompok orangtua/keluarga individu ASD yang mampu mengedukasi diri dan lingkungannya guna berjuang bersama melawan stigma negatif masyarakat.
+                                    Membantu mewujudkan tumbuhnya kelompok orang tua dan keluarga individu autistik yang mampu mengedukasi diri dan lingkungannya untuk berjuang bersama melawan stigma negatif.
                                 </li>
                                 <li>
-                                    Mewujudkan masyarakat inklusif yang menerima utuh individu ASD dan keluarganya serta senantiasa mendukung mereka agar dapat terlibat dalam peran sosial di Indonesia.
+                                    Mewujudkan masyarakat inklusif yang menerima individu autistik secara utuh dan senantiasa mendukung keterlibatan mereka dalam peran sosial di Indonesia.
                                 </li>
                             </ol>
                         </div>
@@ -36,18 +36,70 @@ const VisiMisiScreen = () => {
                             <h2 className="display-6 mb-3">Misi</h2>
                             <ol>
                                 <li>
-                                    Memfasilitasi orangtua untuk mendapatkan edukasi ilmiah dengan penyampaian dan bahasa yang mudah dipahami.
+                                    Memfasilitasi orang tua dan keluarga individu autistik untuk memperoleh edukasi ilmiah dengan penyampaian dan bahasa yang mudah dipahami.
                                 </li>
                                 <li>
-                                    Menyediakan layanan edukasi yang senantiasa melibatkan ahli yang sesuai dengan keahliannya dan memiliki lisensi untuk memberikan edukasi guna menjaga agar informasi yang mereka sampaikan dapat dipertanggungjawabkan kebenarannya.
+                                    Menyediakan layanan edukasi yang melibatkan para ahli sesuai bidang keahliannya serta memiliki lisensi profesional, guna menjaga akurasi dan akuntabilitas informasi.
                                 </li>
                                 <li>
-                                    Membentuk gerakan masyarakat inklusif peduli ASD agar dapat perlahan menghapuskan stigma negatif terhadap individu autistik dan keluarganya.
+                                    Membentuk gerakan masyarakat inklusif yang peduli terhadap ASD untuk secara bertahap menghapus stigma negatif terhadap individu autistik dan keluarganya.
                                 </li>
                                 <li>
-                                    Mendorong orangtua/keluarga individu autistik untuk berani menyuarakan aspirasinya dan bangga mengakui bahwa mereka adalah lapisan terdepan yang bersiap membantu individu autistik untuk bertumbuh.
+                                    Mendorong orang tua dan keluarga individu autistik untuk berani menyuarakan aspirasi serta bangga menjadi garda terdepan dalam mendukung tumbuh kembang individu autistik.
                                 </li>
                             </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="wrapper bg-light">
+                <div className="container py-14 py-md-16">
+                    <div className="row mb-5">
+                        <div className="col-md-10 col-xl-8 col-xxl-7 mx-auto text-center">
+                            <h2 className="display-4 mb-4 px-lg-14">Nilai Peduli ASD</h2>
+                        </div>
+                    </div>
+
+                    <div className="row gx-lg-6 gy-6">
+                        <div className="col-md-6 col-lg-3">
+                            <div className="card card-body text-center h-100 d-flex flex-column">
+                                <div className="icon btn btn-circle btn-lg btn-soft-primary disabled mx-auto mb-4">
+                                    <i className="uil uil-star"></i>
+                                </div>
+                                <h3 className="fs-22">Empati</h3>
+                                <p className="mb-0">Peduli ASD berkomitmen untuk memahami secara mendalam tantangan emosional, sosial, dan praktis yang dihadapi keluarga dengan anak autistik.</p>
+                            </div>
+                        </div>
+
+                        <div className="col-md-6 col-lg-3">
+                            <div className="card card-body text-center h-100 d-flex flex-column">
+                                <div className="icon btn btn-circle btn-lg btn-soft-primary disabled mx-auto mb-4">
+                                    <i className="uil uil-star"></i>
+                                </div>
+                                <h3 className="fs-22">Inklusivitas</h3>
+                                <p className="mb-0">Peduli ASD mendorong penerimaan terhadap keberagaman serta penghargaan terhadap setiap individu autistik sebagai manusia yang utuh.</p>
+                            </div>
+                        </div>
+
+                        <div className="col-md-6 col-lg-3">
+                            <div className="card card-body text-center h-100 d-flex flex-column">
+                                <div className="icon btn btn-circle btn-lg btn-soft-primary disabled mx-auto mb-4">
+                                    <i className="uil uil-star"></i>
+                                </div>
+                                <h3 className="fs-22">Berbasis Sains</h3>
+                                <p className="mb-0">Seluruh edukasi, konten, dan produk Peduli ASD disusun berdasarkan riset ilmiah, bukti empiris, dan sumber terpercaya.</p>
+                            </div>
+                        </div>
+
+                        <div className="col-md-6 col-lg-3">
+                            <div className="card card-body text-center h-100 d-flex flex-column">
+                                <div className="icon btn btn-circle btn-lg btn-soft-primary disabled mx-auto mb-4">
+                                    <i className="uil uil-star"></i>
+                                </div>
+                                <h3 className="fs-22">Keberlanjutan</h3>
+                                <p className="mb-0">Peduli ASD berupaya terus berkembang secara berkelanjutan untuk memberikan dampak positif jangka panjang bagi individu autistik, keluarga, dan masyarakat.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
