@@ -289,15 +289,10 @@ const SWARAAppScreen = () => {
             <div className="col-lg-10 text-center">
               <h2 className="display-4 mb-6">Siap Mulai Menggunakan SWARA App?</h2>
               <div className="d-flex flex-wrap justify-content-center gap-3">
-                <Button href="#" variant="primary" className="rounded-pill px-5 py-3 me-3">
+                <Button href="https://web.swara-app.id" variant="primary" className="rounded-pill px-5 py-3 me-3">
                   Daftar Sekarang
                 </Button>
-                <Button href="#" variant="outline-primary" className="rounded-pill px-5 py-3 me-3">
-                  Mulai Langganan SWARA App
-                </Button>
-                <Button href="#" variant="secondary" className="rounded-pill px-5 py-3">
-                  Pelajari Fitur SWARA
-                </Button>
+               
               </div>
             </div>
           </div>

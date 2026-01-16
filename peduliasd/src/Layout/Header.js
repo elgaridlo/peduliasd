@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/authActions'
 import { isMobile } from 'react-device-detect';
 
 
 const Header = () => {
-  const [showLogin, setShowLogin] = useState(true)
-
   const [showNav, setShowNav]= useState(false)
 
   const userLogin = useSelector((state) => state.userLogin)
@@ -15,11 +12,7 @@ const Header = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (!userInfo) {
-      setShowLogin(true)
-    } else {
-      setShowLogin(false)
-    }
+    // This ensures the component re-renders when user info changes
   }, [userInfo])
 
   const changeShowNav = () => {
@@ -50,7 +43,7 @@ const Header = () => {
               </a>
             </div>
             <div className={`navbar-collapse offcanvas-nav ${showNav ? 'open': ''}`} >
-              <div className="offcanvas-header d-lg-none d-xl-none">                
+              <div className="offcanvas-header d-lg-none d-xl-none">
                 <a href="/"><img src="/logoasd.png" srcSet="/logoasd.png" alt="" /></a>
                 <button
                   type="button"
@@ -60,9 +53,9 @@ const Header = () => {
                 ></button>
               </div>
               <ul className="navbar-nav">
-                {/* <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/">Beranda</a></li> */}
+                <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/">Beranda</a></li>
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/tentang-asd">Tentang ASD</a></li>
-                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Tentang Kami</span></a>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!" data-bs-toggle="dropdown" data-bs-auto-close="outside"><span>Tentang Kami</span></a>
                   <ul className="dropdown-menu">
                     <li className="nav-item"><a className="dropdown-item" href="/landasan-berdiri">Landasan Berdiri</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/filosofi-logo">Filosofi Logo</a></li>
@@ -71,10 +64,8 @@ const Header = () => {
                     {userInfo && userInfo.user.role === 'admin' && (<li className="nav-item"><a className="dropdown-item" href="/user-list">User Data</a></li>)}
                   </ul>
                 </li>
-                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>Program</span></a>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!" data-bs-toggle="dropdown" data-bs-auto-close="outside"><span>Program</span></a>
                   <ul className="dropdown-menu">
-                    {/* <li className="nav-item"><a className="dropdown-item" href="/program-edukasi">Zoominar dan IG Live</a></li> */}
-                    {/* <li className="nav-item"><a className="dropdown-item" href="/germasif">Gerakan Masyarakat Inklusif (GERMASIF)</a></li> */}
                     <li className="nav-item"><a className="dropdown-item" href="/asd-telehealth">ASD Telehealth</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/pep">Parents Education Programme</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/fpa">Festival Peduli Autisme</a></li>
@@ -84,7 +75,7 @@ const Header = () => {
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/artikel">Artikel</a></li>
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/skrining">Skrining</a></li>
                 <li className="nav-item"><a className="nav-link" style={{paddingTop: `${isMobile ? '0px' : '27px'}`}} href="/product">Belanja</a></li>
-                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>CASDI</span></a>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!" data-bs-toggle="dropdown" data-bs-auto-close="outside"><span>CASDI</span></a>
                   <ul className="dropdown-menu">
                     <li className="nav-item"><a className="dropdown-item" href="/casdi/about">Tentang CASDI</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/casdi/riset">Riset CASDI</a></li>
@@ -93,7 +84,7 @@ const Header = () => {
                     <li className="nav-item"><a className="dropdown-item" href="/casdi/appointment">Jadwal CASDI</a></li>
                   </ul>
                 </li>
-                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!"><span>SWARA App</span></a>
+                <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="#!" data-bs-toggle="dropdown" data-bs-auto-close="outside"><span>SWARA App</span></a>
                   <ul className="dropdown-menu">
                     <li className="nav-item"><a className="dropdown-item" href="/swara">Tentang SWARA</a></li>
                     <li className="nav-item"><a className="dropdown-item" href="/swara-app">Langganan SWARA</a></li>
@@ -102,7 +93,7 @@ const Header = () => {
               </ul>
             </div>
 
-            {/* <div className="navbar-other w-100 d-flex ms-auto">
+            <div className="navbar-other w-100 d-flex ms-auto">
               <ul
                 className="navbar-nav flex-row align-items-center ms-auto"
                 data-sm-skip="true"
@@ -115,26 +106,22 @@ const Header = () => {
                   </>
                 )}
                 
-                  {
-                    showLogin ? (
-                    <li className="nav-item d-md-block">
-                      <LinkContainer to="/login">
-                        <button className="btn btn-primary rounded-pill mx-1 mb-2 mb-md-0" >Login</button>
-                      </LinkContainer>
-                    </li>
-                    ) : (
-                      <li className="nav-item dropdown language-select">
-                        <a className="nav-link dropdown-item dropdown-toggle" href="/"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i className="uil uil-cog"></i>
-                        </a>
-                        <ul className="dropdown-menu">
-                          {userInfo.user.role === 'admin' && (<li className="nav-item"><a className="dropdown-item" href="/admin">Admin</a></li>)}
-                          <li className="nav-item"><a className="dropdown-item" href="/profil">Profile</a></li>
-                          <li className="nav-item"><a className="dropdown-item" href="/" onClick={logoutHandler}>Logout</a></li>
-                        </ul>
-                      </li>
-                    )
-                  }
+                {userInfo ? (
+                  <li className="nav-item dropdown language-select">
+                    <a className="nav-link dropdown-item dropdown-toggle" href="/"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i className="uil uil-cog"></i>
+                    </a>
+                    <ul className="dropdown-menu">
+                      {userInfo.user.role === 'admin' && (<li className="nav-item"><a className="dropdown-item" href="/admin">Admin</a></li>)}
+                      <li className="nav-item"><a className="dropdown-item" href="/profil">Profile</a></li>
+                      <li className="nav-item"><a className="dropdown-item" href="/" onClick={logoutHandler}>Logout</a></li>
+                    </ul>
+                  </li>
+                ) : (
+                  <li className="nav-item d-md-block">
+                    {/* Login button removed as requested */}
+                  </li>
+                )}
 
                 <li className="nav-item d-lg-none">
                   <div className="navbar-hamburger">
@@ -148,7 +135,7 @@ const Header = () => {
                   </div>
                 </li>
               </ul>
-            </div> */}
+            </div>
           </div>
         </nav>
       </header>
