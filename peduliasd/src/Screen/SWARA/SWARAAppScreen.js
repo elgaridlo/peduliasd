@@ -292,7 +292,6 @@ const SWARAAppScreen = () => {
                 <Button href="https://web.swara-app.id" variant="primary" className="rounded-pill px-5 py-3 me-3">
                   Daftar Sekarang
                 </Button>
-               
               </div>
             </div>
           </div>
