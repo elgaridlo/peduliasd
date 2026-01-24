@@ -18,7 +18,7 @@ const AboutUsScreen = () => {
 
                 </div>
                 {/* <img src="/assets/img/gambar/landasan_berdiri.png" alt="" /> */}
-                <figure className="position-absoute" style={{ bottom: "0", left: "0", zIndex: "2", width: "100%" }}><img src="./assets/img/new/peduliasd.webp" alt="" style={{ maxHeight: "700px", objectFit: "cover", objectPosition: "bottom", width: "100%", height: "200px" }} /></figure>
+                <figure className="position-absoute" style={{ bottom: "0", left: "0", zIndex: "2", width: "100%" }}><img src="./assets/img/new/peduliasd.webp" alt="" style={{ maxHeight: "700px", objectFit: "cover", width: "100%", height: "200px" }} /></figure>
             </section>
 
             <section className="wrapper bg-light angled upper-end lower-end">

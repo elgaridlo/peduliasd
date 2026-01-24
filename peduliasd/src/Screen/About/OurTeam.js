@@ -25,8 +25,9 @@ const OurTeam = () => {
                                     <nav className="nav social justify-content-center mb-3">
                                         <a href={memberSocialMedia.isti.instagram} target="_blank" rel="noreferrer"><i className="uil uil-instagram"></i></a>
                                         <a href={`mailto:`+ memberSocialMedia.isti.email}><i className="uil uil-envelope"></i></a>
+                                        <a href="https://www.linkedin.com/in/isti-anindya-a2b71a154/"><i className="uil uil-linkedin"></i></a>
                                     </nav>
-                                    <h4 className="mb-1">Isti Anindya, S.Si., M.Sc</h4>
+                                    <h4 className="mb-1">Dr. Isti Anindya, S.Si., M.Sc</h4>
                                     <div className="meta mb-2">Founder & Chief Executive Officer (CEO)</div>
                                     <p className="mb-2 text-muted">Memimpin visi, arah strategis, dan tata kelola perusahaan. Berbasis latar belakang biomedik dan pengalaman lived experience sebagai orang tua individu autistik, CEO memastikan setiap keputusan Peduli ASD berlandaskan sains, etika, dan dampak sosial berkelanjutan.</p>
                                 </div>
@@ -53,10 +54,11 @@ const OurTeam = () => {
                                     <nav className="nav social justify-content-center mb-3">
                                         <a href={memberSocialMedia.novika.instagram} target="_blank" rel="noreferrer"><i className="uil uil-instagram"></i></a>
                                         <a href={`mailto:`+ memberSocialMedia.novika.email}><i className="uil uil-envelope"></i></a>
+                                        <a href="https://www.linkedin.com/in/nandiass/"><i className="uil uil-linkedin"></i></a>
                                     </nav>
-                                    <h4 className="mb-1">Novika Purnama Sari, PhD</h4>
+                                    <h4 className="mb-1">Ns. Nandia Septiyorini, S.Kep., M.Sc</h4>
                                     <div className="meta mb-2">Chief Research & Clinical Officer (CRCO)</div>
-                                    <p className="mb-2 text-muted">Memimpin arah riset dan validasi ilmiah selurух produk dan layanan. CRCO mengoordinasikan Pusat Studi IARC untuk memastikan integritas ilmiah, etika riset, dan relevansi klinis dalam setiap inovasi.</p>
+                                    <p className="mb-2 text-muted">Memimpin arah riset dan validasi ilmiah seluruh produk dan layanan. CRCO mengoordinasikan Pusat Studi IARC untuk memastikan integritas ilmiah, etika riset, dan relevansi klinis dalam setiap inovasi.</p>
                                     
                                 </div>
                             </div>
@@ -68,6 +70,7 @@ const OurTeam = () => {
                                     <nav className="nav social justify-content-center mb-3">
                                         <a href={memberSocialMedia.tia.instagram} target="_blank" rel="noreferrer"><i className="uil uil-instagram"></i></a>
                                         <a href={`mailto:`+ memberSocialMedia.tia.email}><i className="uil uil-envelope"></i></a>
+                                        <a href="https://www.linkedin.com/in/tia-wida-ekaputri-hz-b4b885231/"><i className="uil uil-linkedin"></i></a>
                                     </nav>
                                     <h4 className="mb-1">Tia Wida Ekaputri HZ, S.Si., M.Sc</h4>
                                     <div className="meta mb-2">Chief Product Officer (CPO)</div>
@@ -98,8 +101,8 @@ const OurTeam = () => {
                                         <a href={`mailto:`+ memberSocialMedia.nandia.email}><i className="uil uil-envelope"></i></a>
                                     </nav>
                                     <h4 className="mb-1">Isfan Azhabil, S.Si</h4>
-                                    <div className="meta mb-2">Senior Technical Advisor</div>
-                                    <p className="mb-2 text-muted">Memberikan arahan teknis strategis dan review keputusan teknologi utama. Berperan menjaga kualitas arsitektur sistem dan mitigasi risiko teknis jangka panjang.</p>
+                                    <div className="meta mb-2">Business Development</div>
+                                    <p className="mb-2 text-muted">Mengembangkan peluang kerja sama dan bisnis strategis; mengoordinasikan implementasi kemitraan; serta memastikan peluang bisnis berjalan efektif dan berkelanjutan.</p>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +142,7 @@ const OurTeam = () => {
                                         <a href="#"><i className="uil uil-instagram"></i></a>
                                         <a href="#"><i className="uil uil-envelope"></i></a>
                                     </nav>
-                                    <h4 className="mb-1">Herofi Azhar</h4>
+                                    <h4 className="mb-1">Herofi Azhar, S.Si</h4>
                                     <div className="meta mb-2">Chief Operating Officer (COO)</div>
                                     <p className="mb-2 text-muted">Mengelola operasional harian, koordinasi lintas divisi, dan implementasi strategi perusahaan. COO memastikan seluruh program berjalan efisien, tepat waktu, dan selaras dengan standar kualitas Peduli ASD.</p>
                                 </div>
