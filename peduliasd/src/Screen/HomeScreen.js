@@ -133,7 +133,8 @@ const HomeScreen = () => {
                 </li>
               </ul>
               <p className="mb-5">
-                Program ini juga berfungsi sebagai ruang dukungan (support system) bagi orang tua agar merasa tidak sendiri, lebih percaya diri, dan bangga membersamai individu autistik.
+                Program ini juga berfungsi sebagai ruang dukungan {' '} 
+                <span className="fst-italic">(support system)</span> {' '} bagi orang tua agar merasa tidak sendiri, lebih percaya diri, dan bangga membersamai individu autistik.
               </p>
               <a
                 href="/pep"
@@ -192,11 +193,11 @@ const HomeScreen = () => {
                       </span>
                       <span>
                         Diagnosis klinis spektrum autisme pertama kali pada
-                        tahun 1980 diatur oleh
+                        tahun 1980 diatur oleh {' '}
                         <span className="fst-italic">
                           American Psychiatric Association
                         </span>{' '}
-                        (APA) dalam
+                        (APA) dalam {' '}
                         <span className="fst-italic">
                           Diagnostic and Statistical Manual of Mental Disorders
                         </span>{' '}
@@ -223,7 +224,7 @@ const HomeScreen = () => {
                       </span>
                       <span>
                         Pada DSM V (2013), beragam jenis gangguan yang masih
-                        dalam satu spektrum digabungkan dalam istilah
+                        dalam satu spektrum digabungkan dalam istilah {' '}
                         <span className="fst-italic">
                           Autism Spectrum Disorder (ASD).
                         </span>

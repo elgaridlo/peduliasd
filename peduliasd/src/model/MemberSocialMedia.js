@@ -32,7 +32,11 @@ export const memberSocialMedia = {
         email: 'septiyorininandia@gmail.com'
     },
     novika: {
-        instagram: 'https://www.instagram.com/novika911/',
-        email: 'novikapurnamasari@gmail.com'
-    }
+        instagram: 'https://www.instagram.com/nandia.s/',
+        email: 'septiyorininandia@gmail.com'
+    },
+    // novika: {
+    //     instagram: 'https://www.instagram.com/novika911/',
+    //     email: 'novikapurnamasari@gmail.com'
+    // }
 }

@@ -39,7 +39,8 @@ const PEPScreen = () => {
                                 </div>
                             </div>
                             <p className="mt-6 text-justify">
-                                Program ini juga berfungsi sebagai ruang dukungan (support system) bagi orang tua agar merasa tidak sendiri, lebih percaya diri, dan bangga membersamai individu autistik.
+                                Program ini juga berfungsi sebagai ruang dukungan {' '} 
+                <span className="fst-italic">(support system)</span> {' '} bagi orang tua agar merasa tidak sendiri, lebih percaya diri, dan bangga membersamai individu autistik.
                             </p>
                         </div>
                     </div>
